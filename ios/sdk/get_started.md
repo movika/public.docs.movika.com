@@ -2,10 +2,13 @@
 ```
 # Podfile
 use_frameworks!
-
+ 
+source 'https://bitbucket.org/interactiveplatform/ios.sdk.player.interactive.film.git'
+ 
 target 'YOUR_TARGET_NAME' do
     pod 'MovikaSDK'
 end
+
 ```
 
 Замените YOUR_TARGET_NAME и перейдите в папку Podfile и выполните команду:
