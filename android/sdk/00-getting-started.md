@@ -69,3 +69,5 @@ AsyncMovieBundleLoader().load(url) { status ->
 }
 
 ```
+
+Вы можете воспользоваться примером проекта: [ссылка](https://github.com/movika/android.sdk.sample.movika.com)
