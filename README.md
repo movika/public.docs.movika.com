@@ -8,10 +8,10 @@ Interactive Platform Documentation
 Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. Напишите нам на email salavat@movika.com или fanis@movika.com, чтобы получить API key.  
 
 #### iOS SDK
-1. Начало работы
-2. Сохранение фильмов 
-3. Настройка интерфейса 
-4. Пользовательские интерактивы
+1. [Начало работы](https://github.com/movika/public.docs.movika.com/blob/ios/ios/sdk/get_started.md)
+2. [Сохранение фильмов](https://github.com/movika/public.docs.movika.com/blob/ios/ios/sdk/save_state.md) 
+3. [Настройка интерфейса](https://github.com/movika/public.docs.movika.com/blob/ios/ios/sdk/ui_customization.md) 
+4. [Пользовательские интерактивы](https://github.com/movika/public.docs.movika.com/blob/ios/ios/sdk/custom_events.md)
 
 #### Android SDK
 1. Начало работы
@@ -31,6 +31,7 @@ allowFullScreen - разрешает или запрещает полноэкр�
 Пример тега <iframe>, отображающего интерактивный видеопроигрыватель размером 840x560 пикселей представлен ниже:
 
 ```
- <iframe style="width:840px; height:560px" allowFullScreen src="https://movika.com/player/123Sd"></iframe>
+ <iframe style="width:840px; height:560px" allowFullScreen src="https://movika.com/player/123Sd">
+ </iframe>
 ```
 
