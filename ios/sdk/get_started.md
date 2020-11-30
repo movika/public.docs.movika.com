@@ -1,23 +1,28 @@
-# 1. Добавте sdk через pod
+# Movika iOS SDK Getting Started
+## 1. Добавьте sdk через pod
 ```
 # Podfile
 use_frameworks!
- 
-source 'https://bitbucket.org/interactiveplatform/ios.sdk.player.interactive.film.git'
- 
+
 target 'YOUR_TARGET_NAME' do
-    pod 'MovikaSDK'
+  use_frameworks!
+  pod 'MovikaSDK', :git => 'https://bitbucket.org/interactiveplatform/ios.sdk.movika.com.git'
+  pod 'MKAnalytics', :git => 'https://bitbucket.org/interactiveplatform/ios.metrics.movika.com.git'
+  pod 'MKLogger', :git => 'https://bitbucket.org/lenar-gilyazov/mklogger.git'
 end
 
 ```
+Для получения доступа к git репозиториям напишите на email salavat@movika.com либо fanis@movika.com. 
 
-Замените YOUR_TARGET_NAME и перейдите в папку Podfile и выполните команду:
+Замените YOUR_TARGET_NAME, перейдите в папку Podfile и выполните команду:
 
 ````
 $ pod install
 ````
 
-2. Добавьте ваш ApiKey 
+## 2. Добавьте ваш ApiKey 
+
+Для получения ключа API_KEY напишите на email salavat@movika.com либо fanis@movika.com. 
 
 В классе AppDelegate в методе application didFinishLaunchingWithOptions
 
@@ -35,47 +40,37 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     }
 ````
 
-### ### Настройте плеер
+## 3. Создайте свой плеер
 
 1. Создайте новый класс view controller и унаследйте его от класса MovikaPlayerViewController
 2. Загрузите данные (стуктура GameManifest) необходимые для воспроизведения фильма, используя DefaultGameManifestDownloader метод load
-3. Когда GameManifest будет загружен передайте его плееру вызвав метод класса контроллера setup
-4. Когда плеер завершит воспроизведения фильма будет вызван метод контроллера onMovieEnded, либо onMovieClose если пользователь нажмет на кнопку завершить воспроизведение
+```
+let downloader = DefaultGameManifestDownloader(downloadManifestDelegate: self)
+downloader.load(movie: Movie(id: movieId, manifestUrl: movieManifestLink), downloadWasEnded: { manifest, error  in
+    if let error = error {
+        print("Error loading manifeist \(error.localizedDescription)")
+    } else {
+        self.manifest = manifest
+        print("Manifest ready for playing")
+    }
+})
+```
 
+3. Когда GameManifest будет загружен передайте его плееру вызвав метод класса контроллера setup
 ````
  self.setup(playerRepository: DefaultPlayerRepository(),
                    manifest: manifest,
                    startFromSavePoint: false,
                    customEventViewFactory: nil)
 ````
+4. Когда плеер завершит воспроизведения фильма будет вызван метод контроллера onMovieEnded, либо onMovieClose если пользователь нажмет на кнопку завершить воспроизведение
+```
+func onMovieClose() {
+    self.dismiss(animated: true, completion:nil)
+}
 
-### ### Настройте внешний вид элементов управления воспроизведением
+func onMovieEnded(history: InteractionHistory) {
+    self.dismiss(animated: true, completion:nil)
+}
+```
 
-Если необходимо настроить внешний вид меню паузы и кнопки остановки воспроизведения, просто переопределится методы класса контроллера 
-- [ ] providePauseMenu 
-- [ ] providePauseButton
-
-Данные методы вернут UIView элементы которые будут использоваться вместо элементов по умолчанию
-
-### ### Сохранение фильма
-
-В процессе воспроизведения фильма происходит автоматическое сохранение состояния фильма в текущий момент. Такого рода сохранения происходят перед наступлением событий меняющих сюжет фильма (пользователю предоставляется кнопочный выбор варианта сюжета).
-
-Если пользователь вышел из фильма не досмотрев его, вы можете предоставить ему возможность продолжить воспроизведения с точки сохранения. Для этого при вызове метода self.setup в параметре startFromSavePoint поредейте true
-
-Наличие точек сохранения можно проверить используя класс PlayerRepository:
-
-````
-PlayerRepository.isMoveSaved(movieId: String)
-````
-
-### ### Создание пользовательских интерактивов
-
-1. Создается представление(интерактив), как правило наследуемое от UIView
-2. Класс интерактива реализует протокол CustomEventViewProtocol 
-3. В конструктор интерактива передается структура InteractiveEvent содержащая основную информацию по интерактиву (время начала, время завершения, список доступных вариантов развития сюжета, тип и т.д.)
-4. В конструктор интерактива передается класс CustomEventResultDelegate позволяющий передать результат взаимодействия пользователя с интерактивом
-5. Вызвав метод  resultSelected(index: Int) интерактив передаст результат, после чего мгновенно будет удален со сцены 
-6. Если вам необходимо сначала передать результат после чего отобразить какую-то анимацию используйте методы resultSelected(index: Int, instantlyDetach: true), после завершения анимации метод detachFromParent()
-7. Для создания кастомных интерактивов необходимо при создании контроллера плеера передать фабрику создающую по customType определенный интерактив 
-8. Фабрика интерактивов должны реализовать протокол CustomEventViewFactory
