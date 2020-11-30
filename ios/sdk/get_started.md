@@ -56,7 +56,7 @@ downloader.load(movie: Movie(id: movieId, manifestUrl: movieManifestLink), downl
 })
 ```
 
-3. Когда GameManifest будет загружен передайте его плееру вызвав метод класса контроллера setup
+3. Когда GameManifest будет загружен передайте его плееру вызвав метод класса контроллера setup. (Ссылка на тестовый манифест https://bitbucket.org/Ortyom/mobileassets/raw/HEAD/vertical/json/manifest.json)
 ````
  self.setup(playerRepository: DefaultPlayerRepository(),
                    manifest: manifest,

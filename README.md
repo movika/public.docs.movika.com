@@ -14,10 +14,15 @@ Interactive Platform Documentation
 4. [Пользовательские интерактивы](https://github.com/movika/public.docs.movika.com/blob/ios/ios/sdk/custom_events.md)
 
 #### Android SDK
-1. Начало работы
-2. Сохранение фильмов 
-3. Настройка интерфейса 
-4. Пользовательские интерактивы
+0. [Начало работы](/blob/ios/ios/sdk/00-getting-started.md)
+1. [Получение данных для воспроизведения](/blob/ios/ios/sdk/01-getting-movie-bundle.md) 
+2. [Воспроизведение](/blob/ios/ios/sdk/02-run-interactiveplayerview.md)
+3. [Конфигурация плеера](/blob/ios/ios/sdk/03-config.md)
+4. [События плеера](/blob/ios/ios/sdk/04-player-events.md)
+5. [Кастомизация плеера](/blob/ios/ios/sdk/05-introduce-to-player-customization.md)
+6. [Кастомизация элементов интерфейса паузы/воспроизведение](/blob/ios/ios/sdk/06-play-pause-customization.md)
+7. [Кастомизация элементов интерфейса смены аудио-дорожек и субтитров](/blob/ios/ios/sdk/07-audio-subtitles-customization.md)
+8. [Кастомизация интерактивов](/blob/ios/ios/sdk/08-interactive-customization.md)
 
 ### Web 
 Интеграция Web SDK Movika со страницей сайта осуществляется с помощью встраивания тега <iframe>.
