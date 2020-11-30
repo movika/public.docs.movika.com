@@ -5,7 +5,7 @@ Interactive Platform Documentation
 ### Mobile SDK
 Для добавления интерактивного плеера в свое мобильное приложение, воспользуйстель данной инструкцией для Android, iOS
 
-Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. Напишите нам на email salavat@movika.com или fanis@movika.com, чтобы получить API key.  
+Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. Напишите нам на в Telegram https://t.me/Salavatsad или на почту salavat@movika.com, fanis@movika.com, чтобы получить API key.  
 
 #### iOS SDK
 1. [Начало работы](/ios/sdk/get_started.md)
