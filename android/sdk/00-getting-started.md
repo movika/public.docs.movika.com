@@ -25,7 +25,7 @@ allprojects {
 Затем подключите зависимость 
 
 ```
-implementation("com.movika:interactive-sdk:1.6.0")
+implementation("com.movika:interactive-sdk:1.6.5")
 ```
 ## Добавьте ваш ApiKey, AppName, AppVersion в классе, который наследуется от Application()
 
