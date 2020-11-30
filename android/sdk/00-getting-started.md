@@ -63,7 +63,7 @@ AsyncMovieBundleLoader().load(url) { status ->
         SimpleInteractivePlayerViewRunner(context).run(
             interactivePlayerView,
             movieBundle,
-            config
+            Config()
         )
     }
 }
