@@ -8,21 +8,21 @@ Interactive Platform Documentation
 Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. Напишите нам на email salavat@movika.com или fanis@movika.com, чтобы получить API key.  
 
 #### iOS SDK
-1. [Начало работы](https://github.com/movika/public.docs.movika.com/blob/ios/ios/sdk/get_started.md)
-2. [Сохранение фильмов](https://github.com/movika/public.docs.movika.com/blob/ios/ios/sdk/save_state.md) 
-3. [Настройка интерфейса](https://github.com/movika/public.docs.movika.com/blob/ios/ios/sdk/ui_customization.md) 
-4. [Пользовательские интерактивы](https://github.com/movika/public.docs.movika.com/blob/ios/ios/sdk/custom_events.md)
+1. [Начало работы](/ios/sdk/get_started.md)
+2. [Сохранение фильмов](/ios/sdk/save_state.md) 
+3. [Настройка интерфейса](/ios/sdk/ui_customization.md) 
+4. [Пользовательские интерактивы](/ios/sdk/custom_events.md)
 
 #### Android SDK
-0. [Начало работы](/ios/sdk/00-getting-started.md)
-1. [Получение данных для воспроизведения](/ios/sdk/01-getting-movie-bundle.md) 
-2. [Воспроизведение](/ios/sdk/02-run-interactiveplayerview.md)
-3. [Конфигурация плеера](/ios/sdk/03-config.md)
-4. [События плеера](/ios/sdk/04-player-events.md)
-5. [Кастомизация плеера](/ios/sdk/05-introduce-to-player-customization.md)
-6. [Кастомизация элементов интерфейса паузы/воспроизведение](/ios/sdk/06-play-pause-customization.md)
-7. [Кастомизация элементов интерфейса смены аудио-дорожек и субтитров](/ios/sdk/07-audio-subtitles-customization.md)
-8. [Кастомизация интерактивов](/ios/sdk/08-interactive-customization.md)
+0. [Начало работы](/android/sdk/00-getting-started.md)
+1. [Получение данных для воспроизведения](/android/sdk/01-getting-movie-bundle.md) 
+2. [Воспроизведение](/android/sdk/02-run-interactiveplayerview.md)
+3. [Конфигурация плеера](/android/sdk/03-config.md)
+4. [События плеера](/android/sdk/04-player-events.md)
+5. [Кастомизация плеера](/android/sdk/05-introduce-to-player-customization.md)
+6. [Кастомизация элементов интерфейса паузы/воспроизведение](/android/sdk/06-play-pause-customization.md)
+7. [Кастомизация элементов интерфейса смены аудио-дорожек и субтитров](/android/sdk/07-audio-subtitles-customization.md)
+8. [Кастомизация интерактивов](/android/sdk/08-interactive-customization.md)
 
 ### Web 
 Интеграция Web SDK Movika со страницей сайта осуществляется с помощью встраивания тега <iframe>.
