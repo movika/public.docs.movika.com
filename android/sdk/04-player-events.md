@@ -11,7 +11,7 @@ interface AbstractObservable<T> {
 }
 ```
 
-Для события, когда SDK является не зарегистрированным (неправильный ключ например)
+Для события, когда SDK является незарегистрированным (неправильный ключ)
 ```
 val invalidSdkObservable: AbstractObservable<OnInvalidSdkListener>
 ```
@@ -44,8 +44,8 @@ val walkthroughHistoryChangeObservable: AbstractObservable<OnWalkthroughHistoryC
 ```
 val readyObservable: AbstractObservable<OnReadyListener>
 ```
-Для оповещения об ошибки воспроизведения плеера. Может быть полезен, если в конфигурации плеера
- isUseDefaultPlaybackErrorUi принимает значение false, например
+Для оповещения об ошибке воспроизведения плеера. Может быть полезен, если в конфигурации плеера
+ isUseDefaultPlaybackErrorUi принимает значение false
 ```
 val playbackErrorObservable: AbstractObservable<OnPlaybackErrorListener>
 ```
