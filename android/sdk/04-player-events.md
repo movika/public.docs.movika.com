@@ -1,62 +1,72 @@
 ## События плеера
-Для прослушки событий плеера, достаточно добавить необходимые слушатели  с помощью следующих методов:   
+Для прослушивания событий плеера, достаточно добавить необходимые слушатели. Для добавления, необходимо 
+обращаться к специальным открытым полям класса InteractivePlayerView. Данные поля являются реализацией 
+**AbstractObservable<T>**, где T это тип слушателя.
+```
+interface AbstractObservable<T> {
+
+    fun addObserver(observer: T)
+
+    fun removeObserver(observer: T)
+}
+```
 
 Для события, когда SDK является не зарегистрированным (неправильный ключ например)
 ```
-fun addOnInvalidSdkListener(listener: OnInvalidSdkListener)
+val invalidSdkObservable: AbstractObservable<OnInvalidSdkListener>
 ```
 
 Для оповещения о начале интерактива
 ```
-fun addOnInteractiveStartListener(listener: OnInteractiveStartListener)
+val interactiveStartObservable: AbstractObservable<OnInteractiveStartListener>
 ```
 Для оповещения о завершении интерактива
 ```
-fun addOnInteractiveEndListener(listener: OnInteractiveEndListener)
+val interactiveEndObservable: AbstractObservable<OnInteractiveEndListener>
 ```
 
 Для события изменения текущей главы
 ```
-fun addOnCurrentChapterUpdateListener(listener: OnCurrentChapterUpdateListener)
+val currentChapterUpdateObservable: AbstractObservable<OnCurrentChapterUpdateListener>
 ```
 
 Для события изменения списка глав
 ```
-fun addOnChapterListChangeListener(listener: OnChapterListChangeListener)
+val chapterListChangeObservable: AbstractObservable<OnChapterListChangeListener>
 ```
 
 Для события обновления истории воспроизведения и данных взаимодействия пользователя с текущим интерактивным роликом
 ```
-fun addOnWalkthroughHistoryChangeListener(listener: OnWalkthroughHistoryChangeListener)
+val walkthroughHistoryChangeObservable: AbstractObservable<OnWalkthroughHistoryChangeListener>
 ```
 
 Для оповещения готовности плеера к воспроизведению
 ```
-fun addOnReadyListener(listener: OnReadyListener)
+val readyObservable: AbstractObservable<OnReadyListener>
 ```
-##### Некоторые слушатели устанавливаются путем изменения значения полей InteractivePlayerView:  
-Метод, вызываемый во время ошибки воспроизведения плеера. Может быть полезен, если в конфигурации плеера
+Для оповещения об ошибки воспроизведения плеера. Может быть полезен, если в конфигурации плеера
  isUseDefaultPlaybackErrorUi принимает значение false, например
 ```
-var onPlaybackErrorListener: ((error: Throwable) -> Unit)?
+val playbackErrorObservable: AbstractObservable<OnPlaybackErrorListener>
 ```
 Для оповещения об изменении состояния воспроизведения плеера (воспроизведение/пауза)
 ```
-var playPauseListener: PlayPauseListener?
+val playPauseObservable: AbstractObservable<PlayPauseListener>
 ```
 Для оповещения конца интерактивного ролика
 ```
-var onGameEndListener: OnGameEndListener?
+val gameEndObservable: AbstractObservable<OnGameEndListener>
 ```
 Для оповещения о достижении конца тупиковой главы
 ```
-var onEndChapterEndListener: OnEndChapterEndListener?
+val endChapterEndObservable: AbstractObservable<OnEndChapterEndListener>
 ```
 Для оповещения начала воспроизведения интерактивного ролика
 ```
-var onStartListener: OnStartListener?
+val startObservable: AbstractObservable<OnStartListener>
 ```
-Для оповещения изменения (например при выборе) текущей аудио-дорожки или субтитров
+[**Временно не поддерживается**] Для оповещения изменения (например при выборе) текущей аудио-дорожки 
+или субтитров
 ```
-var trackSelectionListener: TrackSelectionListener?
+val trackSelectionObservable: AbstractObservable<TrackSelectionListener>
 ```
