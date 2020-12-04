@@ -1,25 +1,15 @@
 ## Воспроизведение
-Для воспроизведения необходимо воспользоваться **SimpleInteractivePlayerViewRunner**
-реализацией интерфейса **InteractivePlayerViewRunner**   
-Сам интерфейс выглядит так:
+Для воспроизведения необходимо вызвать метод run у интерактивного плеера **InteractivePlayerView**
+Сам метод выглядит так:
 ```
-interface InteractivePlayerViewRunner {
-    fun run(
-        interactivePlayerView: InteractivePlayerView,
-        movieBundle: MovieBundle,
-        config: Config = Config(),
-        savedState: Bundle? = null
-    )
+fun run(
+    movieBundle: MovieBundle,
+    config: Config,
+    savedInstanceState: Bundle? = null
+)
+```
 
-    @Throws(IllegalArgumentException::class)
-    fun runByRawData(
-        interactivePlayerView: InteractivePlayerView,
-        manifest: String,
-        gameId: String,
-        config: Config = Config(),
-        savedState: Bundle? = null
-    )
-}
-```
-Метод **run**  предназначен для запуска при наличии MovieBundle.  
-Метод **runByRawData** предназначен для запуска манифеста в формате json.
+- movieBundle - содержит описание интерактивного фильма.
+- config - конфигурация интерактивного плеера.
+- savedInstanceState - экземпляр класса Bundle. Данный аргумент является опциональным. Необходим для 
+восстановления состояния после пересоздания Activity/Fragment.
