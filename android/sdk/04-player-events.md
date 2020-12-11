@@ -65,7 +65,7 @@ val endChapterEndObservable: AbstractObservable<OnEndChapterEndListener>
 ```
 val startObservable: AbstractObservable<OnStartListener>
 ```
-### События изменения аудио-дорожек и субтитров
+### События изменения аудиодорожек и субтитров
 Для отслеживания таких событий необходимо обратиться к полю
 ```
 val mediaOptionsControllerObservable: MediaOptionsControllerObservable?
