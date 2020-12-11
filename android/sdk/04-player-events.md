@@ -65,8 +65,15 @@ val endChapterEndObservable: AbstractObservable<OnEndChapterEndListener>
 ```
 val startObservable: AbstractObservable<OnStartListener>
 ```
-[**Временно не поддерживается**] Для оповещения изменения (например при выборе) текущей аудио-дорожки 
-или субтитров
+### События изменения аудиодорожек и субтитров
+Для отслеживания таких событий необходимо обратиться к полю
 ```
-val trackSelectionObservable: AbstractObservable<TrackSelectionListener>
+val mediaOptionsControllerObservable: MediaOptionsControllerObservable?
 ```
+Внимание! Значение этого поля доступно только после того, как плеер готов
+к воспроизведению. Для отслеживания готовности плеера обратитесь к полю 
+```
+val readyObservable: AbstractObservable<OnReadyListener>
+```
+При каждом вызова вызове метода **run** данное поле будет перезаписываться.
+Более подробно интерфейс **MediaOptionsControllerObservable** описан в этой статье: [ссылка](07-audio-subtitles-customization.md)
