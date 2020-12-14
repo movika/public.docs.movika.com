@@ -33,7 +33,7 @@ allprojects {
 Затем подключите зависимость
 
 ```
-implementation("com.movika:interactive-sdk:1.6.5")
+implementation("com.movika:interactive-sdk:2.0.0")
 ```
 
 ## Добавьте ваш ApiKey, AppName, AppVersion в классе, который наследуется от Application()
@@ -48,35 +48,46 @@ class App : Application() {
 ```
 
 ## Создайте плеер
-
+Вы можете создать экземпляр вручную или получить из вашей разметки
+#### Вручную
 ```
 val interactivePlayerView = InteractivePlayerView(context)
+// Добавьте плеер в вашу разметку
+yourViewGroup.addView(interactivePlayerView)
+```
+#### Из разметки
+```
+val interactivePlayerView = findViewById<InteractivePlayerView>(R.id.your_id)
+```
+
+### Далее привяжите плеер к жизненному циклу Activity/Fragment
+```
 lifecycle.addObserver(interactivePlayerView)
 ```
 
-### Добавьте плеер в вашу разметку
-
+### Затем добавьте в onSaveInstanceState вашего Activity или Fragment для сохранения состояния
 ```
-yourViewGroup.addView(interactivePlayerView)
+override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+    interactivePlayerView.onSaveInstanceState(outState)
+}
 ```
 
-## Загрузка и воспроизведения
+## Загрузка и воспроизведение
 
 Загрузите манифест. В данном примере для загрузки воспользуемся **AsyncMovieBundleLoader**, который является
-реализацией **MovieBundleLoader**. Примечание: если имеется готовый манифест, то можно воспользоваться
-**DefaultStringToGameManifestConverter**, который является реализацией **StringToGameManifestConverter**  
-Затем запустите с помощью вспомогательного класса **SimpleInteractivePlayerViewRunner**
-
+реализацией **MovieBundleLoader**. Примечание: если имеется локально готовый манифест в формате json, то можно воспользоваться
+**DefaultStringToGameManifestConverter**, который является реализацией **StringToGameManifestConverter**
 ```
 val url = "TODO URL"
 AsyncMovieBundleLoader().load(url) { status ->
     if (status.isComplete && status.error != null) {
         val movieBundle = status.data!!
-
-        SimpleInteractivePlayerViewRunner(context).run(
-            interactivePlayerView,
+        interactivePlayerView.run(
             movieBundle,
-            Config()
+            Config(),
+            // Опциональный аргумент. Необходим, для востановления состояния после пересоздания Activity/Fragment 
+            savedInstanceState
         )
     }
 }
