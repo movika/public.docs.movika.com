@@ -30,7 +30,7 @@ allprojects {
 }
 ```
 
-Затем подключите зависимость
+Затем подключите зависимость 
 
 ```
 implementation("com.movika:interactive-sdk:2.0.0")
