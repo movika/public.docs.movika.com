@@ -1,3 +1,11 @@
+---
+title: Начало работы
+description: Начало работы
+keywords: Начало работы
+---
+
+# Начало работы
+
 ## Получите доступ
 Для получения доступа к SDK необходимо написать на [salavat@movika.com](salavat@movika.com) или на
 [fanis@movika.com](fanis@movika.com). После одобрения, вам будет выдана связка **username** **password** для получения
