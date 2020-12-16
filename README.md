@@ -1,20 +1,42 @@
 ---
-title: Public documentation of movika.com
-description: Public documentation of movika.com
-keywords: Public documentation of movika.com
+title: Документация Movika
+description: Документация Movika SDK для web, iOS, Android
+keywords: документация, movika, sdk, ios, android, web, интерактивное видео
 ---
 
-# Public documentation of movika.com
-
-Interactive Platform Documentation
+# Документация Movika
 
 ## SDK
 
+### Web
+
+Интеграция Web SDK Movika на сайт осуществляется с помощью встраивания тега iframe в HTML разметку страницы.
+
+Пример тега **iframe**, отображающего интерактивный видеопроигрыватель размером 840x560 пикселей представлен ниже:
+
+```
+ <iframe style="width:840px; height:560px" allowFullScreen src="https://movika.com/player/123Sd">
+ </iframe>
+```
+
+Параметры (атрибуты) iframe:
+
+- **src** - содержит URL, указывающий на путь, содержащий интерактивный видеоконтент;
+- **width** - задает ширину плеера проигрываемого видеоконтента;
+- **height** - задает высоту плеера проигрываемого видеоконтента;
+- **allowFullScreen** - разрешает или запрещает полноэкранное воспроизведение видео.
+
+
+
 ### Mobile SDK
 
-Для добавления интерактивного плеера в свое мобильное приложение, воспользуйстель данной инструкцией для Android, iOS
+Для добавления интерактивного плеера в свое мобильное приложение, воспользуйстель данной инструкцией 
+для платформы Android или iOS.
 
-Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. Напишите нам на в Telegram [salavat@movika.com](https://t.me/Salavatsad) или на почту salavat@movika.com, fanis@movika.com, чтобы получить API key.
+Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. Напишите нам в 
+Telegram [@Salavatsad](https://t.me/Salavatsad) или на почту [salavat@movika.com](mailto:salavat@movika.com), 
+[fanis@movika.com](mailto:fanis@movika.com), 
+чтобы получить API key.
 
 #### iOS SDK
 
@@ -34,20 +56,3 @@ Interactive Platform Documentation
 6. [Кастомизация элементов интерфейса паузы и воспроизведение](/android/sdk/06-play-pause-customization.md)
 7. [Кастомизация элементов интерфейса смены аудио-дорожек и субтитров](/android/sdk/07-audio-subtitles-customization.md)
 8. [Кастомизация интерактивов](/android/sdk/08-interactive-customization.md)
-
-### Web
-
-Интеграция Web SDK Movika со страницей сайта осуществляется с помощью встраивания тега iframe.
-
-На странице сайта определяется местоположение тега iframe, который описывается следующими параметрами:
-
-src - содержит URL, указывающий на путь, содержащий интерактивный видеоконтент;
-width - задает ширину плеера проигрываемого видеоконтента;
-height - задает высоту плеера проигрываемого видеоконтента;
-allowFullScreen - разрешает или запрещает полноэкранное воспроизведение видео.
-Пример тега iframe, отображающего интерактивный видеопроигрыватель размером 840x560 пикселей представлен ниже:
-
-```
- <iframe style="width:840px; height:560px" allowFullScreen src="https://movika.com/player/123Sd">
- </iframe>
-```
