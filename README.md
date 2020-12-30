@@ -33,8 +33,8 @@ keywords: документация, movika, sdk, ios, android, web, интера
 для платформы Android или iOS.
 
 Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. Напишите нам в 
-Telegram [@Salavatsad](https://t.me/Salavatsad) или на почту [salavat@movika.com](mailto:salavat@movika.com), 
-[fanis@movika.com](mailto:fanis@movika.com), 
+Telegram [@Salavatsad](https://t.me/Salavatsad) или на почту [support@movika.com](mailto:support@movika.com), 
+[sdk@movika.com](mailto:sdk@movika.com), 
 чтобы получить API key.
 
 #### iOS SDK
