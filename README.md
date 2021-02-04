@@ -2,6 +2,7 @@
 title: Документация Movika
 description: Документация Movika SDK для web, iOS, Android
 keywords: документация, movika, sdk, ios, android, web, интерактивное видео
+sort: 0
 ---
 
 # Документация Movika
@@ -26,15 +27,14 @@ keywords: документация, movika, sdk, ios, android, web, интера
 - **height** - задает высоту плеера проигрываемого видеоконтента;
 - **allowFullScreen** - разрешает или запрещает полноэкранное воспроизведение видео.
 
-
 ### Mobile SDK
 
-Для добавления интерактивного плеера в свое мобильное приложение, воспользуйстель данной инструкцией 
+Для добавления интерактивного плеера в свое мобильное приложение, воспользуйстель данной инструкцией
 для платформы Android или iOS.
 
-Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. Напишите нам в 
-Telegram [@Salavatsad](https://t.me/Salavatsad) или на почту [support@movika.com](mailto:support@movika.com), 
-[sdk@movika.com](mailto:sdk@movika.com), 
+Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. Напишите нам в
+Telegram [@Salavatsad](https://t.me/Salavatsad) или на почту [support@movika.com](mailto:support@movika.com),
+[sdk@movika.com](mailto:sdk@movika.com),
 чтобы получить API key.
 
 #### iOS SDK

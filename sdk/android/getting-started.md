@@ -2,6 +2,7 @@
 title: Начало работы
 description: Начало работы
 keywords: Начало работы
+sort: 0
 ---
 
 # Начало работы
@@ -30,7 +31,7 @@ allprojects {
 }
 ```
 
-Затем подключите зависимость 
+Затем подключите зависимость
 
 ```
 implementation("com.movika:interactive-sdk:2.0.0")
@@ -48,24 +49,31 @@ class App : Application() {
 ```
 
 ## Создайте плеер
+
 Вы можете создать экземпляр вручную или получить из вашей разметки
+
 #### Вручную
+
 ```
 val interactivePlayerView = InteractivePlayerView(context)
 // Добавьте плеер в вашу разметку
 yourViewGroup.addView(interactivePlayerView)
 ```
+
 #### Из разметки
+
 ```
 val interactivePlayerView = findViewById<InteractivePlayerView>(R.id.your_id)
 ```
 
 ### Далее привяжите плеер к жизненному циклу Activity/Fragment
+
 ```
 lifecycle.addObserver(interactivePlayerView)
 ```
 
 ### Затем добавьте в onSaveInstanceState вашего Activity или Fragment для сохранения состояния
+
 ```
 override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
@@ -78,6 +86,7 @@ override fun onSaveInstanceState(outState: Bundle) {
 Загрузите манифест. В данном примере для загрузки воспользуемся **AsyncMovieBundleLoader**, который является
 реализацией **MovieBundleLoader**. Примечание: если имеется локально готовый манифест в формате json, то можно воспользоваться
 **DefaultStringToGameManifestConverter**, который является реализацией **StringToGameManifestConverter**
+
 ```
 val url = "TODO URL"
 AsyncMovieBundleLoader().load(url) { status ->
@@ -86,7 +95,7 @@ AsyncMovieBundleLoader().load(url) { status ->
         interactivePlayerView.run(
             movieBundle,
             Config(),
-            // Опциональный аргумент. Необходим, для востановления состояния после пересоздания Activity/Fragment 
+            // Опциональный аргумент. Необходим, для востановления состояния после пересоздания Activity/Fragment
             savedInstanceState
         )
     }
