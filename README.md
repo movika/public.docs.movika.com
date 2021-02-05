@@ -39,19 +39,19 @@ Telegram [@Salavatsad](https://t.me/Salavatsad) или на почту [support@
 
 #### iOS SDK
 
-1. [Начало работы](/sdk/ios/00-get-started.md)
-2. [Сохранение фильмов](/sdk/ios/01-save-state.md)
-3. [Настройка интерфейса](/sdk/ios/02-ui-customization.md)
-4. [Пользовательские интерактивы](/sdk/ios/03-custom-events.md)
+1. [Начало работы](/sdk/ios/get-started.md)
+2. [Сохранение фильмов](/sdk/ios/save-state.md)
+3. [Настройка интерфейса](/sdk/ios/ui-customization.md)
+4. [Пользовательские интерактивы](/sdk/ios/custom-events.md)
 
 #### Android SDK
 
-0. [Начало работы](/sdk/android/00-getting-started.md)
-1. [Получение данных для воспроизведения](/sdk/android/01-getting-movie-bundle.md)
-2. [Воспроизведение](/sdk/android/02-run-interactiveplayerview.md)
-3. [Конфигурация плеера](/sdk/android/03-config.md)
-4. [События плеера](/sdk/android/04-player-events.md)
-5. [Кастомизация плеера](/sdk/android/05-introduce-to-player-customization.md)
-6. [Кастомизация элементов интерфейса паузы и воспроизведение](/sdk/android/06-play-pause-customization.md)
-7. [Кастомизация элементов интерфейса смены аудио-дорожек и субтитров](/sdk/android/07-audio-subtitles-customization.md)
-8. [Кастомизация интерактивов](/sdk/android/08-interactive-customization.md)
+0. [Начало работы](/sdk/android/getting-started.md)
+1. [Получение данных для воспроизведения](/sdk/android/getting-movie-bundle.md)
+2. [Воспроизведение](/sdk/android/run-interactiveplayerview.md)
+3. [Конфигурация плеера](/sdk/android/config.md)
+4. [События плеера](/sdk/android/player-events.md)
+5. [Кастомизация плеера](/sdk/android/introduce-to-player-customization.md)
+6. [Кастомизация элементов интерфейса паузы и воспроизведение](/sdk/android/play-pause-customization.md)
+7. [Кастомизация элементов интерфейса смены аудио-дорожек и субтитров](/sdk/android/audio-subtitles-customization.md)
+8. [Кастомизация интерактивов](/sdk/android/interactive-customization.md)

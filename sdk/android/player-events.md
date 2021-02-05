@@ -109,4 +109,4 @@ val readyObservable: AbstractObservable<OnReadyListener>
 ```
 
 При каждом вызова вызове метода **run** данное поле будет перезаписываться.
-Более подробно интерфейс **MediaOptionsControllerObservable** описан в этой статье: [ссылка](/sdk/android/07-audio-subtitles-customization.md)
+Более подробно интерфейс **MediaOptionsControllerObservable** описан в этой статье: [ссылка](/sdk/android/audio-subtitles-customization.md)
