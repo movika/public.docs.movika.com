@@ -11,20 +11,20 @@ Language: [English](README.md), [Русский](README.ru.md)
 
 ### Web
 
-Integration of Web SDK Movika to the site is carried out by embedding the iframe tag in the HTML markup of the page. 
+Integration of the Movika Web SDK to your site can be done by embedding iframe in the HTML markup of the page. 
 
-Example tag **iframe**, displaying an interactive video player with a size of 840x560 pixels is shown below:
+Example of the tag **iframe**, displaying an interactive video player with a size of 840x560 pixels is shown below:
 
 ```
  <iframe style="width:840px; height:560px" allowFullScreen src="https://movika.com/player/123Sd">
  </iframe>
 ```
 
-Parameters (attributes) iframe:
+Parameters (attributes) of the iframe:
 
-- **src** - contains a URL pointing to a path containing interactive video content ;
-- **width** - sets the width of the video content player ;
-- **height** - sets the height of the video content player ;
+- **src** - URL path of the interactive video content ;
+- **width** - sets the width of the video player ;
+- **height** - sets the height of the video player ;
 - **allowFullScreen** - enables or disables full-screen video playback.
 
 ### Mobile SDK
@@ -32,10 +32,10 @@ Parameters (attributes) iframe:
 To add an interactive player to your mobile application, use the following instructions
 for Android or iOS platform. 
 
-To use sdk you also need to get API Key for your applications. Write to us at 
-Telegram [@Salavatsad](https://t.me/Salavatsad) or by mail [support@movika.com](mailto:support@movika.com),
+To use the sdk you also need to get an API Key for your applications. Write to 
+Telegram [@Salavatsad](https://t.me/Salavatsad) or e-mail [support@movika.com](mailto:support@movika.com),
 [sdk@movika.com](mailto:sdk@movika.com),
-to get the API key.
+to get your unique API key.
 
 #### iOS SDK
 
