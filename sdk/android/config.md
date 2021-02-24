@@ -2,15 +2,15 @@
 title: Player configuration
 description: Player configuration
 keywords: Player configuration
-sort: 3
+sort: 3 
 ---
 
 # Player configuration
 
-The basic configuration is set using the ** Config ** object, the transmission of which depends on the way the player is started
-(using ** InteractivePlayerViewRunner **, or directly with the run(..) method of the ** InteractivePlayerView ** class)
+The basic configuration is set using the **Config** object, the transmission of which depends on the way the player is started
+(using **InteractivePlayerViewRunner**, or directly with the run(..) method of the **InteractivePlayerView** class)
 Most of the parameters are directly related to player customization. Player customization will be described later.
-Class fields of ** Config **:
+Class fields of **Config**:
 
 - isUseDefaultPlayPauseController: Boolean - indicates whether the standard
   pause / play control interface should be used. If false, it is required to implement the pause button by the developer himself,
@@ -25,7 +25,7 @@ Class fields of ** Config **:
   the first chapter would be played. By default is false.
 - isCacheStartPartsOfNextChapters: Boolean - indicates whether initial fragments of following
   possible chapters should be cached or not. By default is true.
-- isLocalVideoContent: Boolean - This parameter is optional. Serves for playback optimization. 
+- isLocalVideoContent: Boolean - This parameter is optional. Serves for playback optimization.
   Indicates the type of content that being used. If true - local content on device would be used,
   if false - there is no content on device (the content is accessed via https protocol).
   By default is false.

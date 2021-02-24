@@ -2,7 +2,7 @@
 title: События плеера
 description: События плеера
 keywords: События плеера
-sort: 4
+sort: 4 
 ---
 
 # События плеера
@@ -109,4 +109,4 @@ val readyObservable: AbstractObservable<OnReadyListener>
 ```
 
 При каждом вызова вызове метода **run** данное поле будет перезаписываться.
-Более подробно интерфейс **MediaOptionsControllerObservable** описан в этой статье: [ссылка](/sdk/android/audio-subtitles-customization.md)
+Более подробно интерфейс **MediaOptionsControllerObservable** описан в этой статье: [ссылка](/sdk/android/audio-subtitles-customization-ru.md)

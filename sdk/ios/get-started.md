@@ -22,9 +22,10 @@ end
 
 ```
 
-To get access to git repositories, make an inquiry to the support@movika.com.
+To get access to git repositories, make an inquiry to the sdk@movika.com or support@movika.com.
 
 Replace YOUR_TARGET_NAME, go to the Podfile folder and run the command:
+
 ```
 $ pod install
 ```

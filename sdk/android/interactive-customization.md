@@ -47,21 +47,21 @@ InteractiveEvent (
 
 - For each different customType value, create a class that inherits from CustomEventView. This class is described in more detail below.
 - Then implement CustomEventViewFactory to provide instances of these classes based on customType value.
-- At last, you need to pass your custom factory to the InteractivePlayerView instance by setting ** customEventViewFactory ** field.
+- At last, you need to pass your custom factory to the InteractivePlayerView instance by setting **customEventViewFactory** field.
 
 ##### CustomEventView
 
 It is an implementation of a custom interactive type that was created in a simple way.
 Constructor receives an object of Parcelable type or null. Using this object
 you can restore the state after re-creation. Developer must provide this object himself,
-by overriding the ** open fun onSaveState (): Parcelable ** method.
-Another parameter is an object of the ** CustomEventResultCallback ** type.
+by overriding the **open fun onSaveState (): Parcelable** method.
+Another parameter is an object of the **CustomEventResultCallback** type.
 It is required for interaction with sdk. See CustomEventResultCallback section for more details.
 Optionally, the CustomEventView constructor can be called with following parameters:
 isDeatachOnTimeout - a flag indicating whether the interactive should be detached from the screen after specified time.
 By default is true. If false, developer will need to manually detach it.
 This can be done using the CustomEventResultCallback, which will be discussed later. Also, if the value of the given
-flag is false, developer may find it useful to override the ** open fun onTimeOut () ** method, which is called when
+flag is false, developer may find it useful to override the **open fun onTimeOut ()** method, which is called when
 interactive time is expired.
 isSeekable - flag indicating whether the video can be rewound during interactive.
 
@@ -98,7 +98,7 @@ Contains one method:
 The method accepts an InteractiveEvent with a description of the interactive, a CustomEventResultCallback for interacting with the sdk, and a saved state, if any.
 The necessary information for creating custom interactives, e.g. tags and name, can be obtained from an instance of the InteractiveEvent class.
 
-#### Full method (** Temporarily not supported **):
+#### Full method (**Temporarily not supported**):
 
 This method is a little more complicated to implement than the simple method, but it is more flexible and native-oriented. To use this method, you need the following:
 

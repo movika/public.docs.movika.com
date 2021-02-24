@@ -2,15 +2,15 @@
 title: Getting data for playback
 description: Getting data for playback
 keywords: Getting data for playback
-sort: 1
+sort: 1 
 ---
 
 # Getting data for playback
 
-In order to play content, you must have an instance of a ** MovieBundle ** object or a string describing the manifest in .json format.
-Also, if necessary, you can ** create ** this instance yourself without downloading from other places.
-To get the ** MovieBundle ** instance, the SDK provides a standard solution using a ** MovieBundleLoader ** interface implementation
- ** AsyncMovieBundleLoader **. You can use following methods for downloading:
+In order to play content, you must have an instance of a **MovieBundle** object or a string describing the manifest in .json format.
+Also, if necessary, you can **create** this instance yourself without downloading from other places.
+To get the **MovieBundle** instance, the SDK provides a standard solution using a **MovieBundleLoader** interface implementation
+**AsyncMovieBundleLoader**. You can use following methods for downloading:
 
 ```
 fun load(movie: Movie, listener: ((status: ProgressStatus) -> Unit)? = null)

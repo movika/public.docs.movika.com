@@ -2,14 +2,14 @@
 title: Player Events
 description: Player events
 keywords: Player events
-sort: 4
+sort: 4 
 ---
 
 # Player events
 
 In order to listen to the player's events, just add the necessary listeners. To add them, you will need to
 use special public fields of the InteractivePlayerView class. These fields are implementation of
-** AbstractObservable <T> **, where T is the listener type.
+**AbstractObservable <T>**, where T is the listener type.
 
 ```
 interface AbstractObservable <T> {
@@ -108,5 +108,5 @@ to playback. To watch for readiness of the player, refer to the field
 val readyObservable: AbstractObservable <OnReadyListener>
 ```
 
-Each time the ** run ** method is called, this field will be overwritten.
-The ** MediaOptionsControllerObservable ** interface is described in more detail in this article: [link] (/sdk/android/audio-subtitles-customization.md).
+Each time the **run** method is called, this field will be overwritten.
+The **MediaOptionsControllerObservable** interface is described in more detail in this article: [link] (/sdk/android/audio-subtitles-customization.md).

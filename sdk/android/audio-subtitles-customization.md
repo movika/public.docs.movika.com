@@ -11,19 +11,19 @@ For this customization in the player configuration you need to:
 
 - complete the necessary steps, which are described in the section on customizing the pause / play interface: [link] (/sdk/android/play-pause-customization.md)
 - implement your user interface and place it in the required place
-- implement the interaction of your interface with the player by changing the ** audio ** and ** subtitles ** fields of the instance of the class that implements
-  MediaOptionsControllerObservable, or, if necessary, changing the ** isSubtitlesEnabled ** field on the same instance
+- implement the interaction of your interface with the player by changing the **audio** and **subtitles** fields of the instance of the class that implements
+  MediaOptionsControllerObservable, or, if necessary, changing the **isSubtitlesEnabled** field on the same instance
 - to keep track of the currently used audio tracks and subtitles in order to update your interface, subscribe to
   the corresponding events in the MediaOptionsControllerObservable.
 
-An instance of the class implementing ** MediaOptionsControllerObservable ** is stored in the ** mediaOptionsControllerObservable ** field of
+An instance of the class implementing **MediaOptionsControllerObservable** is stored in the **mediaOptionsControllerObservable** field of
 the InteractivePlayerView class.
 This copy should be used only after the player is ready for playback. More information on
 player events can be found at: [link] (/sdk/android/player-events.md).
 To get a list of available audio tracks and subtitles, you need to call availableAudio () and availableSubtitles() methods of the class that implements
 MediaOptionsControllerObservable, respectively.
 
-#### List of available fields and methods of ** MediaOptionsControllerObservable **
+#### List of available fields and methods of **MediaOptionsControllerObservable**
 
 ```
 // Get and change language of the audio.

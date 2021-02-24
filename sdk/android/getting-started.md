@@ -9,8 +9,8 @@ sort: 0
 
 ## Getting access
 
-In order to get access to the SDK, you need to make an inquiry to support@movika.com. After approval, you will be given a pair of ** username ** ** password ** to get
-access to the library, ** apiKey ** and ** appName ** for the SDK to function.
+In order to get access to the SDK, you need to make an inquiry to sdk@movika.com or support@movika.com. After approval, you will be given a pair of **username** **password** to get
+access to the library, **apiKey** and **appName** for the SDK to function.
 
 ## Add dependencies to Gradle
 

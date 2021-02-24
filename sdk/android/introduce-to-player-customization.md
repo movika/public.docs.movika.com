@@ -7,7 +7,7 @@ sort: 5
 
 # Player customization
 
-Player customization is possible by changing the values ​​of the ** InteractivePlayerView ** instance.
+Player customization is possible by changing the values ​​of the **InteractivePlayerView** instance.
 These manipulations must be performed before starting the player.
 Possible values to change:
 

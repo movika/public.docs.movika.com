@@ -22,7 +22,7 @@ end
 
 ```
 
-Для получения доступа к git репозиториям напишите на email salavat@movika.com либо fanis@movika.com.
+Для получения доступа к git репозиториям напишите на email sdk@movika.com либо support@movika.com.
 
 Замените YOUR_TARGET_NAME, перейдите в папку Podfile и выполните команду:
 
@@ -32,7 +32,7 @@ $ pod install
 
 ## 2. Добавьте ваш ApiKey
 
-Для получения ключа API_KEY напишите на email salavat@movika.com либо fanis@movika.com.
+Для получения ключа API_KEY напишите на email sdk@movika.com либо support@movika.com.
 
 В классе AppDelegate в методе application didFinishLaunchingWithOptions
 
