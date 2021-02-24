@@ -10,7 +10,7 @@ sort: 0
 ## SDK
 
 ### Web
-
+ 
 Интеграция Web SDK Movika на сайт осуществляется с помощью встраивания тега iframe в HTML разметку страницы.
 
 Пример тега **iframe**, отображающего интерактивный видеопроигрыватель размером 840x560 пикселей представлен ниже:
@@ -39,19 +39,19 @@ Telegram [@MovikaSupport](https://t.me/MovikaSupport) или на почту [su
 
 #### iOS SDK
 
-1. [Начало работы](/sdk/ios/get-started.md)
-2. [Сохранение фильмов](/sdk/ios/save-state.md)
-3. [Настройка интерфейса](/sdk/ios/ui-customization.md)
-4. [Пользовательские интерактивы](/sdk/ios/custom-events.md)
+1. [Начало работы](/sdk/ios/get-started-ru.md)
+2. [Сохранение фильмов](/sdk/ios/save-state-ru.md)
+3. [Настройка интерфейса](/sdk/ios/ui-customization-ru.md)
+4. [Пользовательские интерактивы](/sdk/ios/custom-events-ru.md)
 
 #### Android SDK
 
-0. [Начало работы](/sdk/android/getting-started.md)
-1. [Получение данных для воспроизведения](/sdk/android/getting-movie-bundle.md)
-2. [Воспроизведение](/sdk/android/run-interactiveplayerview.md)
-3. [Конфигурация плеера](/sdk/android/config.md)
-4. [События плеера](/sdk/android/player-events.md)
-5. [Кастомизация плеера](/sdk/android/introduce-to-player-customization.md)
-6. [Кастомизация элементов интерфейса паузы и воспроизведение](/sdk/android/play-pause-customization.md)
-7. [Кастомизация элементов интерфейса смены аудио-дорожек и субтитров](/sdk/android/audio-subtitles-customization.md)
-8. [Кастомизация интерактивов](/sdk/android/interactive-customization.md)
+0. [Начало работы](/sdk/android/getting-started-ru.md)
+1. [Получение данных для воспроизведения](/sdk/android/getting-movie-bundle-ru.md)
+2. [Воспроизведение](/sdk/android/run-interactiveplayerview-ru.md)
+3. [Конфигурация плеера](/sdk/android/config-ru.md)
+4. [События плеера](/sdk/android/player-events-ru.md)
+5. [Кастомизация плеера](/sdk/android/introduce-to-player-customization-ru.md)
+6. [Кастомизация элементов интерфейса паузы и воспроизведение](/sdk/android/play-pause-customization-ru.md)
+7. [Кастомизация элементов интерфейса смены аудио-дорожек и субтитров](/sdk/android/audio-subtitles-customization-ru.md)
+8. [Кастомизация интерактивов](/sdk/android/interactive-customization-ru.md)

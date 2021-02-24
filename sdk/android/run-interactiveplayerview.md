@@ -1,24 +1,24 @@
 ---
-title: Воспроизведение
-description: Воспроизведение
-keywords: Воспроизведение
+title: Playback
+description: Playback
+keywords: Playback
 sort: 2
 ---
 
-## Воспроизведение
+## Playback
 
-Для воспроизведения необходимо вызвать метод run у интерактивного плеера **InteractivePlayerView**
-Сам метод выглядит так:
+In order to play interactive movies, you need to call the **run** method of the **InteractivePlayerView**
+The method itself looks like this:
 
 ```
-fun run(
-    movieBundle: MovieBundle,
-    config: Config,
-    savedInstanceState: Bundle? = null
+fun run (
+     movieBundle: MovieBundle,
+     config: Config,
+     savedInstanceState: Bundle? = null
 )
 ```
 
-- movieBundle - содержит описание интерактивного фильма.
-- config - конфигурация интерактивного плеера.
-- savedInstanceState - экземпляр класса Bundle. Данный аргумент является опциональным. Необходим для
-  восстановления состояния после пересоздания Activity/Fragment.
+- movieBundle - contains a description of an interactive movie.
+- config - configuration of the interactive player.
+- savedInstanceState is an instance of the Bundle class. This argument is optional. Used for
+  restoring state after re-creating Activity / Fragment.

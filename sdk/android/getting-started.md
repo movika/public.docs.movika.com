@@ -1,21 +1,21 @@
 ---
-title: Начало работы
-description: Начало работы
-keywords: Начало работы
+title: Getting started
+description: Getting started
+keywords: Getting started
 sort: 0
 ---
 
-# Начало работы
+# Getting started
 
-## Получите доступ
+## Getting access
 
-Для получения доступа к SDK необходимо написать на salavat@movika.com или на fanis@movika.com. После одобрения, вам будет выдана связка **username** **password** для получения
-доступа к библиотеке, **apiKey** и **appName** для функционирования SDK.
+In order to get access to the SDK, you need to make an inquiry to sdk@movika.com or support@movika.com. After approval, you will be given a pair of **username** **password** to get
+access to the library, **apiKey** and **appName** for the SDK to function.
 
-## Добавьте зависимости в Gradle
+## Add dependencies to Gradle
 
-После получения доступа, в файле build.gradle уровня модуля необходимо добавить репозиторий, заменив значения полей username и password
-на полученные
+After gaining access, in the module level build.gradle file you need to add the repository by replacing the values of the username and password fields
+with yours.
 
 ```
 allprojects {
@@ -31,13 +31,13 @@ allprojects {
 }
 ```
 
-Затем подключите зависимость
+Then add the dependency
 
 ```
 implementation("com.movika:interactive-sdk:2.0.0")
 ```
 
-## Добавьте ваш ApiKey, AppName, AppVersion в классе, который наследуется от Application()
+## Add your ApiKey, AppName, AppVersion in Application() class
 
 ```
 class App : Application() {
@@ -48,31 +48,31 @@ class App : Application() {
 }
 ```
 
-## Создайте плеер
+## Create player
 
-Вы можете создать экземпляр вручную или получить из вашей разметки
+You can create instance of the player or get from xml
 
-#### Вручную
+#### Creating instance
 
 ```
 val interactivePlayerView = InteractivePlayerView(context)
-// Добавьте плеер в вашу разметку
+// Add player view
 yourViewGroup.addView(interactivePlayerView)
 ```
 
-#### Из разметки
+#### Getting from xml
 
 ```
 val interactivePlayerView = findViewById<InteractivePlayerView>(R.id.your_id)
 ```
 
-### Далее привяжите плеер к жизненному циклу Activity/Fragment
+### Add player to Activity/Fragment lifecycle
 
 ```
 lifecycle.addObserver(interactivePlayerView)
 ```
 
-### Затем добавьте в onSaveInstanceState вашего Activity или Fragment для сохранения состояния
+### Then add following in onSaveInstanceState Activity or Fragment for state saving
 
 ```
 override fun onSaveInstanceState(outState: Bundle) {
@@ -81,11 +81,10 @@ override fun onSaveInstanceState(outState: Bundle) {
 }
 ```
 
-## Загрузка и воспроизведение
+## Loading and playing
 
-Загрузите манифест. В данном примере для загрузки воспользуемся **AsyncMovieBundleLoader**, который является
-реализацией **MovieBundleLoader**. Примечание: если имеется локально готовый манифест в формате json, то можно воспользоваться
-**DefaultStringToGameManifestConverter**, который является реализацией **StringToGameManifestConverter**
+Load manifest. This example features **AsyncMovieBundleLoader**, which is implementation of **MovieBundleLoader**. Note: you can use
+**DefaultStringToGameManifestConverter** if you have local manifest of String format, which is implementation of **StringToGameManifestConverter**
 
 ```
 val url = "TODO URL"
@@ -95,7 +94,7 @@ AsyncMovieBundleLoader().load(url) { status ->
         interactivePlayerView.run(
             movieBundle,
             Config(),
-            // Опциональный аргумент. Необходим, для востановления состояния после пересоздания Activity/Fragment
+            // Optional. Used for restoring instance state after Activity/Fragment re-creation
             savedInstanceState
         )
     }
@@ -103,4 +102,4 @@ AsyncMovieBundleLoader().load(url) { status ->
 
 ```
 
-Вы можете воспользоваться примером проекта: [ссылка](https://github.com/movika/android.sdk.sample.movika.com)
+You can check out sample app here: [link](https://github.com/movika/android.sdk.sample.movika.com)

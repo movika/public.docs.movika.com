@@ -1,13 +1,13 @@
 ---
-title: Начало работы
-description: Начало работы
-keywords: Начало работы
+title: Getting started
+description: Getting started
+keywords: Getting started
 sort: 0
 ---
 
-# Начало работы
+# Getting started
 
-## 1. Добавьте sdk через pod
+## 1. Add sdk from the pod
 
 ```
 # Podfile
@@ -22,27 +22,27 @@ end
 
 ```
 
-Для получения доступа к git репозиториям напишите на email salavat@movika.com либо fanis@movika.com.
+To get access to git repositories, make an inquiry to the sdk@movika.com or support@movika.com.
 
-Замените YOUR_TARGET_NAME, перейдите в папку Podfile и выполните команду:
+Replace YOUR_TARGET_NAME, go to the Podfile folder and run the command:
 
 ```
 $ pod install
 ```
 
-## 2. Добавьте ваш ApiKey
+## 2. Add your ApiKey
 
-Для получения ключа API_KEY напишите на email salavat@movika.com либо fanis@movika.com.
+To get an API_KEY, make an inquiry to the support@movika.com.
 
-В классе AppDelegate в методе application didFinishLaunchingWithOptions
+Put your apiKey in AppDelegate class in the application(..) method inside lambda function didFinishLaunchingWithOptions
 
-Импортируйте фреймворк
+Import the framework
 
 ```
 import MovikaSDK
 ```
 
-Добавьте Movika.shared.apiKey = API_KEY
+Add Movika.shared.apiKey = API_KEY
 
 ```
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -52,10 +52,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     }
 ```
 
-## 3. Создайте свой плеер
+## 3. Create your player
 
-1. Создайте новый класс view controller и унаследйте его от класса MovikaPlayerViewController
-2. Загрузите данные (стуктура GameManifest) необходимые для воспроизведения фильма, используя DefaultGameManifestDownloader метод load
+1. Create a new class view controller and inherit it from the MovikaPlayerViewController class
+2. Load the data (GameManifest structure) needed to play the movie using the DefaultGameManifestDownloader load(..) method
 
 ```
 let downloader = DefaultGameManifestDownloader(downloadManifestDelegate: self)
@@ -69,7 +69,7 @@ downloader.load(movie: Movie(id: movieId, manifestUrl: movieManifestLink), downl
 })
 ```
 
-3. Когда GameManifest будет загружен передайте его плееру вызвав метод класса контроллера setup. (Ссылка на тестовый манифест https://bitbucket.org/Ortyom/mobileassets/raw/HEAD/vertical/json/manifest.json)
+3. When the GameManifest is loaded, pass it to the player by calling controller class setup(..) method. (Link to test manifest https://bitbucket.org/Ortyom/mobileassets/raw/HEAD/vertical/json/manifest.json)
 
 ```
  self.setup(playerRepository: DefaultPlayerRepository(),
@@ -78,7 +78,7 @@ downloader.load(movie: Movie(id: movieId, manifestUrl: movieManifestLink), downl
                    customEventViewFactory: nil)
 ```
 
-4. Когда плеер завершит воспроизведения фильма будет вызван метод контроллера onMovieEnded, либо onMovieClose если пользователь нажмет на кнопку завершить воспроизведение
+4. When the player finishes playing the movie, controller's method onMovieEnded will be called, or onMovieClose if the user clicks on the button to end playback
 
 ```
 func onMovieClose() {

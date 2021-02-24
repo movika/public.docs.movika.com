@@ -1,112 +1,112 @@
 ---
-title: События плеера
-description: События плеера
-keywords: События плеера
-sort: 4
+title: Player Events
+description: Player events
+keywords: Player events
+sort: 4 
 ---
 
-# События плеера
+# Player events
 
-Для прослушивания событий плеера, достаточно добавить необходимые слушатели. Для добавления, необходимо
-обращаться к специальным открытым полям класса InteractivePlayerView. Данные поля являются реализацией
-**AbstractObservable<T>**, где T это тип слушателя.
+In order to listen to the player's events, just add the necessary listeners. To add them, you will need to
+use special public fields of the InteractivePlayerView class. These fields are implementation of
+**AbstractObservable <T>**, where T is the listener type.
 
 ```
-interface AbstractObservable<T> {
+interface AbstractObservable <T> {
 
-    fun addObserver(observer: T)
+    fun addObserver (observer: T)
 
-    fun removeObserver(observer: T)
+    fun removeObserver (observer: T)
 }
 ```
 
-Для события, когда SDK является незарегистрированным (неправильный ключ)
+For events when SDK is unregistered (wrong key)
 
 ```
-val invalidSdkObservable: AbstractObservable<OnInvalidSdkListener>
+val invalidSdkObservable: AbstractObservable <OnInvalidSdkListener>
 ```
 
-Для оповещения о начале интерактива
+To notify about the beginning of the interactive
 
 ```
-val interactiveStartObservable: AbstractObservable<OnInteractiveStartListener>
+val interactiveStartObservable: AbstractObservable <OnInteractiveStartListener>
 ```
 
-Для оповещения о завершении интерактива
+To notify about the end of the interactive
 
 ```
-val interactiveEndObservable: AbstractObservable<OnInteractiveEndListener>
+val interactiveEndObservable: AbstractObservable <OnInteractiveEndListener>
 ```
 
-Для события изменения текущей главы
+For the current chapter change event
 
 ```
-val currentChapterUpdateObservable: AbstractObservable<OnCurrentChapterUpdateListener>
+val currentChapterUpdateObservable: AbstractObservable <OnCurrentChapterUpdateListener>
 ```
 
-Для события изменения списка глав
+For chapter list change event
 
 ```
-val chapterListChangeObservable: AbstractObservable<OnChapterListChangeListener>
+val chapterListChangeObservable: AbstractObservable <OnChapterListChangeListener>
 ```
 
-Для события обновления истории воспроизведения и данных взаимодействия пользователя с текущим интерактивным роликом
+For the event of updating the playback history and data about user interaction with the current interactive video
 
 ```
-val walkthroughHistoryChangeObservable: AbstractObservable<OnWalkthroughHistoryChangeListener>
+val walkthroughHistoryChangeObservable: AbstractObservable <OnWalkthroughHistoryChangeListener>
 ```
 
-Для оповещения готовности плеера к воспроизведению
+To notify the player's readiness for playback
 
 ```
-val readyObservable: AbstractObservable<OnReadyListener>
+val readyObservable: AbstractObservable <OnReadyListener>
 ```
 
-Для оповещения об ошибке воспроизведения плеера. Может быть полезен, если в конфигурации плеера
-isUseDefaultPlaybackErrorUi принимает значение false
+To notify about a player playback error. It can be useful if in the player's configuration
+isUseDefaultPlaybackErrorUi is false
 
 ```
-val playbackErrorObservable: AbstractObservable<OnPlaybackErrorListener>
+val playbackErrorObservable: AbstractObservable <OnPlaybackErrorListener>
 ```
 
-Для оповещения об изменении состояния воспроизведения плеера (воспроизведение/пауза)
+To notify about a change in the player's playback status (play / pause)
 
 ```
-val playPauseObservable: AbstractObservable<PlayPauseListener>
+val playPauseObservable: AbstractObservable <PlayPauseListener>
 ```
 
-Для оповещения конца интерактивного ролика
+To notify about the end of an interactive video
 
 ```
-val gameEndObservable: AbstractObservable<OnGameEndListener>
+val gameEndObservable: AbstractObservable <OnGameEndListener>
 ```
 
-Для оповещения о достижении конца тупиковой главы
+To notify about reaching of the end of a last chapter
 
 ```
-val endChapterEndObservable: AbstractObservable<OnEndChapterEndListener>
+val endChapterEndObservable: AbstractObservable <OnEndChapterEndListener>
 ```
 
-Для оповещения начала воспроизведения интерактивного ролика
+To notify about the start of playback of an interactive video
 
 ```
-val startObservable: AbstractObservable<OnStartListener>
+val startObservable: AbstractObservable <OnStartListener>
 ```
 
-### События изменения аудиодорожек и субтитров
+### Audio track and subtitle change events
 
-Для отслеживания таких событий необходимо обратиться к полю
+To track such events, you need to refer to the field
 
 ```
 val mediaOptionsControllerObservable: MediaOptionsControllerObservable?
 ```
 
-Внимание! Значение этого поля доступно только после того, как плеер готов
-к воспроизведению. Для отслеживания готовности плеера обратитесь к полю
+Attention! The value of this field is available only after the player is ready
+to playback. To watch for readiness of the player, refer to the field
 
 ```
-val readyObservable: AbstractObservable<OnReadyListener>
+val readyObservable: AbstractObservable <OnReadyListener>
 ```
 
-При каждом вызова вызове метода **run** данное поле будет перезаписываться.
-Более подробно интерфейс **MediaOptionsControllerObservable** описан в этой статье: [ссылка](/sdk/android/audio-subtitles-customization.md)
+Each time the **run** method is called, this field will be overwritten.
+The **MediaOptionsControllerObservable** interface is described in more detail in this article: [link] (/sdk/android/audio-subtitles-customization.md).

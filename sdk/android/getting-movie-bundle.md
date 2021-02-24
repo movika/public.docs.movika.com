@@ -1,16 +1,16 @@
 ---
-title: Получение данных для воспроизведения
-description: Получение данных для воспроизведения
-keywords: Получение данных для воспроизведения
-sort: 1
+title: Getting data for playback
+description: Getting data for playback
+keywords: Getting data for playback
+sort: 1 
 ---
 
-# Получение данных для воспроизведения
+# Getting data for playback
 
-Для воспроизведения необходимо иметь экземпляр объекта **MovieBundle** или строку, описывающую манифест в формате json.
-Также, при необходимости можно **создать** данный экземпляры самому не прибегая к загрузке.
-Для получения **MovieBundle** в SDK предусмотрено стандартное решение в виде реализации интерфейса
-**MovieBundleLoader** **AsyncMovieBundleLoader**. Для загрузки можно воспользоваться следующими методами:
+In order to play content, you must have an instance of a **MovieBundle** object or a string describing the manifest in .json format.
+Also, if necessary, you can **create** this instance yourself without downloading from other places.
+To get the **MovieBundle** instance, the SDK provides a standard solution using a **MovieBundleLoader** interface implementation
+**AsyncMovieBundleLoader**. You can use following methods for downloading:
 
 ```
 fun load(movie: Movie, listener: ((status: ProgressStatus) -> Unit)? = null)
@@ -18,7 +18,7 @@ fun load(movie: Movie, listener: ((status: ProgressStatus) -> Unit)? = null)
 fun load(manifestUrl: String, listener: ((status: ProgressStatus) -> Unit)? = null)
 ```
 
-где Movie и ProgressStatus имеют следующий вид:
+where Movie and ProgressStatus look like this:
 
 ```
 @Parcelize
@@ -36,15 +36,15 @@ data class ProgressStatus(
 )
 ```
 
-Если имеется уже готовая строка с манифестом, то можно воспользоваться **DefaultStringToGameManifestConverter**
+If you have manifest in String format you can use **DefaultStringToGameManifestConverter**
 
 ```
-val jsonManifes = ... // some game manifest
+val jsonManifest = ... // some game manifest
 val gameId = "1"
 
 val gameManifest: GameManifest = DefaultStringToGameManifestConverter().convert(jsonManifest, gameId)
 
-// Затем необходимо создать MovieBundle. Он необходим для воспроизведения интерактивного контента InteractivePlayerView
+// Then you should create MovieBundle. It is required for playing content in InteractivePlayerView
 
 val movieBundle = MovieBundle(Movie(gameId, ""), gameManifest)
 

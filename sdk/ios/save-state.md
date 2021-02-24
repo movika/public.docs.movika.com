@@ -1,17 +1,17 @@
 ---
-title: Сохранение фильмов
-description: Сохранение фильмов
-keywords: Сохранение фильмов
+title: Saving movie state
+description: Saving movie state
+keywords: Saving movie state
 sort: 1
 ---
 
-# Сохранение фильмов
+# Saving movie state
 
-В процессе воспроизведения фильма происходит автоматическое сохранение состояния фильма в текущий момент. Такого рода сохранения происходят перед наступлением событий меняющих сюжет фильма (пользователю предоставляется кнопочный выбор варианта сюжета).
+During movie playback, the state of the movie is automatically saved at the current moment. This kind of saving occurs before the events that change the plot of the film (the user is given a push-button choice of the plot option).
 
-Если пользователь вышел из фильма не досмотрев его, вы можете предоставить ему возможность продолжить воспроизведения с точки сохранения. Для этого при вызове метода self.setup в параметре startFromSavePoint пeредейте true
+If the user left the movie without watching it, you can give him the opportunity to continue playing from the savepoint. To do this, when calling the self.setup method pass "true" value as startFromSavePoint parameter.
 
-Наличие точек сохранения можно проверить используя класс PlayerRepository:
+The presence of savepoints can be checked using PlayerRepository class:
 
 ```
 PlayerRepository.isMoveSaved(movieId: String)

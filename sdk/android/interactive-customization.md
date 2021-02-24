@@ -1,20 +1,20 @@
 ---
-title: Кастомизация интерактивов
-description: Кастомизация интерактивов
-keywords: Кастомизация интерактивов
+title: Interactive customization
+description: Interactive customization
+keywords: Interactive customization
 sort: 8
 ---
 
-# Кастомизация интерактивов
+# Interactive customization
 
-Разработчик может захотеть создавать свои интерактивы. Сделать это можно либо простым, либо полным способом.
+Developer may want to create their own interactive types. This can be done either in a simple or complete way.
 
-#### Простой способ
+#### The simple way
 
-Простой способ предназначен для обработки интерактивов в которых тип (type) принимает значение custom, а
-customType принимает ваше значение. Пример:
+The simple way is designed for processing custom interactives. The type variable should be declared with value "custom", and
+customType field takes your custom value. E.g.:
 
-Исходного манифеста:
+Original manifest:
 
 ```
 {
@@ -33,11 +33,11 @@ customType принимает ваше значение. Пример:
 }
 ```
 
-Если описание манифеста в формате json не используется, а создается MovieBundle вручную в коде,
-то ваш пользовательский InteractiveEvent, который хранится в манифесте что в MovieBundle, имеет примерно следующий вид:
+If the manifest file in .json format is not used, but the MovieBundle is created manually in code,
+then your custom InteractiveEvent will look like this:
 
 ```
-InteractiveEvent(
+InteractiveEvent (
 ...
     type = InteractiveType.CUSTOM,
     customType = "your_type"
@@ -45,71 +45,67 @@ InteractiveEvent(
 )
 ```
 
-- Под каждое различное значение customType создать класс, который наследуется от CustomEventView. Данный класс более подробно описан далее
-- Далее, реализовать фабрику CustomEventViewFactory для предоставления экземпляров данных классов опираясь на значение поля
-  customType
-- Затем, необходимо передать вашу пользовательскую фабрику в экземпляр InteractivePlayerView посредством изменения поля
-  **customEventViewFactory**
+- For each different customType value, create a class that inherits from CustomEventView. This class is described in more detail below.
+- Then implement CustomEventViewFactory to provide instances of these classes based on customType value.
+- At last, you need to pass your custom factory to the InteractivePlayerView instance by setting **customEventViewFactory** field.
 
 ##### CustomEventView
 
-Является олицетворением кастомного интерактива, который был создан простым путем.
-Конструктор принимает объект типа Parcelable, либо null. На основе данного объекта
-можно восстановить состояние после пересоздания. Данный объект разработчику необходимо предоставить самому,
-переопределив метод **open fun onSaveState(): Parcelable**.
-Другим параметром является объект типа **CustomEventResultCallback**.
-Он необходим для взаимодействия с sdk. Более подробная информация представлена в разделе CustomEventResultCallback.
-Опционально конструктор CustomEventView может принимать следующие параметры:
-isDeatachOnTimeout - флаг, означающий нужно ли открепить с экрана интерактив после истечения отведенного времени.
-По умолчанию принимает значение true. При значении false разработчику необходимо будет открепить его вручную.
-Сделать это можно с помощью CustomEventResultCallback, который будет рассмотрен позднее. Так же, если значение данного
-флага false, разработчику может пригодится переопределение метода **open fun onTimeOut()**, который вызывается при
-истечении времени интерактива.
-isSeekable - флаг, означающий можно ли перематывать видео во время интерактива.
+It is an implementation of a custom interactive type that was created in a simple way.
+Constructor receives an object of Parcelable type or null. Using this object
+you can restore the state after re-creation. Developer must provide this object himself,
+by overriding the **open fun onSaveState (): Parcelable** method.
+Another parameter is an object of the **CustomEventResultCallback** type.
+It is required for interaction with sdk. See CustomEventResultCallback section for more details.
+Optionally, the CustomEventView constructor can be called with following parameters:
+isDeatachOnTimeout - a flag indicating whether the interactive should be detached from the screen after specified time.
+By default is true. If false, developer will need to manually detach it.
+This can be done using the CustomEventResultCallback, which will be discussed later. Also, if the value of the given
+flag is false, developer may find it useful to override the **open fun onTimeOut ()** method, which is called when
+interactive time is expired.
+isSeekable - flag indicating whether the video can be rewound during interactive.
 
-Также в данном классе необходимо переопределить поле
+Also in this class, you need to override the field
 
 `abstract val view: View`
 
-В данном поле содержится экземпляр класса View, который представляет собой отображение интерактива. Данное View будет
-отображаться как интерактив.
+This field contains an instance of the View class, which serves as visual part of the interactive.
 
 #### CustomEventResultCallback
 
-С помощью данного класса производится взаимодействие с sdk. Классу CustomEventView передается в конструкторе объект
-данного типа. Посредством обращения к данному объекту необходимо взаимодействовать с sdk. Данный интерфейс
-предусматривает 2 метода:
+This class is used to interact with the SDK. An object of this type is passed in the constructor of CustomEventView class. This interface
+provides 2 methods:
 
-`fun onResult(chapterId: String, switchStrategy: SwitchStrategy = SwitchStrategy.DEFAULT)` - определяет следующую главу.
-Является сигналом к тому, что пользователь совершил взаимодействие с интерактивом и дальнейший исход событий теперь
-определен. Необходимо вызывать только 1 раз.
-Опциональным параметром в данном методе является switchStrategy. Возможные значения:
+`fun onResult (chapterId: String, switchStrategy: SwitchStrategy = SwitchStrategy.DEFAULT)` - defines the next chapter.
+It serves as a signal that the user has made an interaction with the interactive and the further outcome of events is now
+defined. It should be called only once.
+The optional parameter in this method is switchStrategy. Possible values:
 
-- DEFAULT - тип переключения определяется манифестом
-- AWAIT - текущее видео будет воспроизведено до конца, после которого начнется выбранная глава
-- IMMEDIATELY - переключить видео незамедлительно не дожидаясь конца текущего видео.
+- DEFAULT - video switch strategy is determined in the manifest file
+- AWAIT - the current video will be played till the end, then the selected chapter will begin
+- IMMEDIATELY - switch videos immediately without waiting for the current video to end.
 
-`fun onComplete()`- оповещает о завершении интерактива. При вызове интерактив будет удален с экрана
+`fun onComplete ()` - notifies about the completion of the interactive. When called, the interactive will be removed from the screen.
 
 #### CustomEventViewFactory
 
-Фабрика, для создания CustomEventView. То есть предоставляет кастомные интерактивы, которые были реализованы
-простым способом.
-Содержит один метод:
+Factory for creating 'CustomEventView's. It provides custom interactives that have been implemented
+in a simple way.
+Contains one method:
 
-`fun create(event: InteractiveEvent, customEventResultCallback: CustomEventResultCallback, savedState: Parcelable?): CustomEventView`
+`fun create (event: InteractiveEvent, customEventResultCallback: CustomEventResultCallback, savedState: Parcelable?): CustomEventView`
 
-Метод принимает на вход InteractiveEvent с описанием интерактива, CustomEventResultCallback для взаимодействия с sdk и сохраненное состояние, если такое имеется.
-Необходимую информацию о кастомном интерактиве, а именно теги и название, можно получить из экземпляра класса InteractiveEvent
+The method accepts an InteractiveEvent with a description of the interactive, a CustomEventResultCallback for interacting with the sdk, and a saved state, if any.
+The necessary information for creating custom interactives, e.g. tags and name, can be obtained from an instance of the InteractiveEvent class.
 
-#### Полный способ (**Временно не поддерживается**):
+#### Full method (**Temporarily not supported**):
 
-Данный способ в реализации немного сложнее чем простой способ, но является более гибким и нативным. Для следования данным способом необходимо следующее:
+This method is a little more complicated to implement than the simple method, but it is more flexible and native-oriented. To use this method, you need the following:
 
-- Создать класс, который наследует InteractiveView
+- Create a class that inherits InteractiveView
 
-- Создать класс, который наследует InteractivePresenter
+- Create a class that inherits InteractivePresenter
 
-- Создать класс, который реализует InteractiveFactory
+- Create a class that implements InteractiveFactory
 
-- Предоставить класс, который реализует InteractiveFactory, путем изменения значения переменной interactiveFactory в InteractivePlayerView
+- Provide a class that implements InteractiveFactory by setting the value of the interactiveFactory variable in the InteractivePlayerView

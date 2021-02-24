@@ -1,20 +1,20 @@
 ---
-title: Кастомизация элементов интерфейса паузы и воспроизведение
-description: Кастомизация элементов интерфейса паузы и воспроизведение
-keywords: Кастомизация элементов интерфейса паузы и воспроизведение
+title: Customize pause and play
+description: Customize pause and play
+keywords: Customize pause and play
 sort: 6
 ---
 
-# Кастомизация элементов интерфейса паузы и воспроизведение
+# Customize pause and play
 
-Внимание! Стандартная реализация интерфейса паузы содержит меню выбора аудио-дорожек и субтитров при наличии таковых.
-При изменении интерфейса на пользовательский, вам опционально будет необходимо реализовать пользовательский интерфейс
-для выбора аудиодорожек и субтитров. В этой статье содержится описание кастомизации аудиодорожек и субтитров:
-[ссылка](/sdk/android/audio-subtitles-customization.md).  
-Для кастомизации в конфигурации плеера необходимо:
+Attention! The standard implementation of the pause interface contains a menu for selecting audio tracks and subtitles, if any exist.
+When changing the interface to a custom one, you will optionally need to implement the user interface
+for audio tracks and subtitles selection. This article contains a description of customizing audio tracks and subtitles:
+[link] (/sdk/android/audio-subtitles-customization.md).
+For customization using player configuration you need to:
 
-- установить значение **isUseDefaultPlayPauseController** равным **false**.
-- реализовать свой пользовательский интерфейс управления и разместить в необходимом месте
-- осуществить взаимодействие вашего интерфейса с плеером посредством вызова методов play() и pause() у последнего
-- для отслеживания состояний воспроизведения плеера с целью актуализации вашего интерфейса, подписаться на
-  соответствующие события, обратившись к полю **playPauseObservable** класса **InteractivePlayerView**
+- set **isUseDefaultPlayPauseController** value to **false**.
+- implement your user interface and place it in the required place
+- implement the interaction of your interface with the player by calling the play() and pause() methods
+- to track the states of the player's playback in order to update your interface, subscribe to
+  relevant events by accessing the **playPauseObservable** field of the **InteractivePlayerView** class

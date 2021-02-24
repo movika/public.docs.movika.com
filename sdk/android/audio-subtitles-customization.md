@@ -1,63 +1,63 @@
 ---
-title: Кастомизация элементов интерфейса смены аудио-дорожек и субтитров
-description: Кастомизация элементов интерфейса смены аудио-дорожек и субтитров
-keywords: Кастомизация элементов интерфейса смены аудио-дорожек и субтитров
+title: Customization of interface elements for switching audio tracks and subtitles
+description: Customization of interface elements for switching audio tracks and subtitles
+keywords: Customization of interface elements for switching audio tracks and subtitles
 sort: 7
 ---
 
-# Кастомизация элементов интерфейса смены аудиодорожек и субтитров
+# Customization of interface elements for switching audio tracks and subtitles
 
-Для кастомизации в конфигурации плеера необходимо:
+For this customization in the player configuration you need to:
 
-- выполнить необходимые шаги, которые описаны в разделе кастомизации интерфейса паузы/воспроизведения: [ссылка](/sdk/android/play-pause-customization.md)
-- реализовать свой пользовательский интерфейс управления и разместить в необходимом месте
-- осуществить взаимодействие вашего интерфейса с плеером посредством изменения полей **audio** и **subtitles** экземпляра класса, реализующего
-  MediaOptionsControllerObservable, или, при необходимости, изменения поля **isSubtitlesEnabled** у того же экземпляра
-- для отслеживания текущих установленных аудио-дорожки и субтитров с целью актуализации вашего интерфейса, подписаться на
-  соответствующие события в MediaOptionsControllerObservable.
+- complete the necessary steps, which are described in the section on customizing the pause / play interface: [link] (/sdk/android/play-pause-customization.md)
+- implement your user interface and place it in the required place
+- implement the interaction of your interface with the player by changing the **audio** and **subtitles** fields of the instance of the class that implements
+  MediaOptionsControllerObservable, or, if necessary, changing the **isSubtitlesEnabled** field on the same instance
+- to keep track of the currently used audio tracks and subtitles in order to update your interface, subscribe to
+  the corresponding events in the MediaOptionsControllerObservable.
 
-Экземпляр класса реализующий **MediaOptionsControllerObservable** хранится в поле **mediaOptionsControllerObservable**
-класса InteractivePlayerView.
-Данный экземпляр следует использовать только после готовности плеера к воспроизведению. Более подробную информацию о
-событиях плеера можно найти по ссылке: [ссылка](/sdk/android/player-events.md).  
-Для получения списка доступных аудиодорожек и субтитров необходимо у экземпляра класса, реализующего
-MediaOptionsControllerObservable, вызвать методы availableAudio() и availableSubtitles() соответственно.
+An instance of the class implementing **MediaOptionsControllerObservable** is stored in the **mediaOptionsControllerObservable** field of
+the InteractivePlayerView class.
+This copy should be used only after the player is ready for playback. More information on
+player events can be found at: [link] (/sdk/android/player-events.md).
+To get a list of available audio tracks and subtitles, you need to call availableAudio () and availableSubtitles() methods of the class that implements
+MediaOptionsControllerObservable, respectively.
 
-#### Список доступных полей и методов **MediaOptionsControllerObservable**
+#### List of available fields and methods of **MediaOptionsControllerObservable**
 
 ```
-// Получение и изменение текущего языка аудиодорожки.
+// Get and change language of the audio.
 var audio: Locale
 
-// Получение и изменение текущего языка субтитров.
+// Get and change language of the subtitles.
 var subtitles: Locale
 
-// Получение и изменение текущего состояния отображения субтитров.
+// Get and change current display state of the subtitles.
 var isSubtitlesEnabled: Boolean
 
-// Возвращает список доступных языков аудиодорожки.
+// Returns a list of available languages for an audio.
 fun availableAudio(): List<Locale>
 
-// Возвращает список доступных языков субтитров.
+// Returns a list of available subtitle languages.
 fun availableSubtitles(): List<Locale>
 
-// Отслеживание изменений языка аудиодорожки.
+// Tracking changes in the language of an audio.
 fun addOnAudioChangeListener(listener: OnAudioChangeListener)
 fun removeOnAudioChangeListener(listener: OnAudioChangeListener)
 
-// Отслеживание изменений языка субтитров.
+// Tracking subtitle language changes.
 fun addOnSubtitlesChangeListener(listener: OnSubtitlesChangeListener)
 fun removeOnSubtitlesChangeListener(listener: OnSubtitlesChangeListener)
 
-// Отслеживание изменений списка доступных языков аудиодорожки.
+// Track changes in the list of available audio track languages.
 fun addOnAvailableAudioChangeListener(listener: OnAvailableAudioChangeListener)
 fun removeOnAvailableAudioChangeListener(listener: OnAvailableAudioChangeListener)
 
-// Отслеживание изменений списка доступных языков субтитров.
+// Tracking changes in the list of available subtitle languages.
 fun addOnAvailableSubtitlesChangeListener(listener: OnAvailableSubtitlesChangeListener)
 fun removeOnAvailableSubtitlesChangeListener(listener: OnAvailableSubtitlesChangeListener)
 
-// Отслеживание изменений состояния отображения субтитров.
+// Tracking subtitle display state changes.
 fun addOnSubtitlesEnabledChangeListener(listener: OnSubtitlesEnabledChangeListener)
 fun removeOnSubtitlesEnabledChangeListener(listener: OnSubtitlesEnabledChangeListener)
 ```

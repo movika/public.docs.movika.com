@@ -1,18 +1,18 @@
 ---
-title: Кастомизация плеера
-description: Кастомизация плеера
-keywords: Кастомизация плеера
+title: Player customization
+description: Player customization
+keywords: Player customization
 sort: 5
 ---
 
-# Кастомизация плеера
+# Player customization
 
-Кастомизация плеера производится посредством изменения значения полей экземпляра **InteractivePlayerView**.
-Данные манипуляции необходимо выполнять до запуска плеера, который был описан ранее.
-Поля для изменения:
+Player customization is possible by changing the values ​​of the **InteractivePlayerView** instance.
+These manipulations must be performed before starting the player.
+Possible values to change:
 
-- timeMarginSeekToEventSec: Float - минимальный интервал времени перед началом интерактива до которого можно
-  пользователю совершать перемотку.
-- customEventViewFactory: CustomEventViewFactory? - фабрика пользовательский интерактивов
-- interactiveFactory: InteractiveFactory? - фабрика стандартных интерактивов
-- customEventContainer: ViewGroup? - пользовательский контейнер в котором будут отображаться интерактивы
+- timeMarginSeekToEventSec: Float - the minimum time interval before the start of the interactive up to which
+  the user is allowed fast-forward to.
+- customEventViewFactory: CustomEventViewFactory? - custom interactive factory
+- interactiveFactory: InteractiveFactory? - factory of standard interactives
+- customEventContainer: ViewGroup? - custom container in which interactives will be displayed
