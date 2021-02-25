@@ -7,8 +7,6 @@ sort: 0
 
 # Movika Documentation
 
-Language: [English](README.md), [Русский](README.ru.md)
-
 ## SDK
 
 ### Web
