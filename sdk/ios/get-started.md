@@ -1,10 +1,3 @@
----
-title: Getting started
-description: Getting started
-keywords: Getting started
-sort: 0
----
-
 # Getting started
 
 ## 1. Add sdk from the pod
@@ -16,8 +9,6 @@ use_frameworks!
 target 'YOUR_TARGET_NAME' do
   use_frameworks!
   pod 'MovikaSDK', :git => 'https://bitbucket.org/interactiveplatform/ios.sdk.movika.com.git'
-  pod 'MKAnalytics', :git => 'https://bitbucket.org/interactiveplatform/ios.metrics.movika.com.git'
-  pod 'MKLogger', :git => 'https://bitbucket.org/lenar-gilyazov/mklogger.git'
 end
 
 ```
@@ -32,7 +23,7 @@ $ pod install
 
 ## 2. Add your ApiKey
 
-To get an API_KEY, make an inquiry to the support@movika.com.
+Register your app in the [Movika Developer] (https://developer.movika.com) and copy the resulting API key.
 
 Put your apiKey in AppDelegate class in the application(..) method inside lambda function didFinishLaunchingWithOptions
 
@@ -76,6 +67,7 @@ downloader.load(movie: Movie(id: movieId, manifestUrl: movieManifestLink), downl
                    manifest: manifest,
                    startFromSavePoint: false,
                    customEventViewFactory: nil)
+ self.mkplayer.play()
 ```
 
 4. When the player finishes playing the movie, controller's method onMovieEnded will be called, or onMovieClose if the user clicks on the button to end playback
@@ -89,3 +81,8 @@ func onMovieEnded(history: InteractionHistory) {
     self.dismiss(animated: true, completion:nil)
 }
 ```
+
+
+## 4. Adding an interactive player to your ViewController
+
+If you want to add a player without inheriting from MovikaPlayerViewController. Just use the UIView MKEasyPlayer component. For more control over the player, use MKPlayer. In both of these UIView's, use methods setup() and subsequent play() similar to MovikaPlayerViewController to start the playback.

@@ -16,13 +16,12 @@ use_frameworks!
 target 'YOUR_TARGET_NAME' do
   use_frameworks!
   pod 'MovikaSDK', :git => 'https://bitbucket.org/interactiveplatform/ios.sdk.movika.com.git'
-  pod 'MKAnalytics', :git => 'https://bitbucket.org/interactiveplatform/ios.metrics.movika.com.git'
-  pod 'MKLogger', :git => 'https://bitbucket.org/lenar-gilyazov/mklogger.git'
 end
 
 ```
 
-Для получения доступа к git репозиториям напишите на email sdk@movika.com либо support@movika.com.
+
+Зарегистрируйте свое приложение в [Movika Developer] (https://developer.movika.com) и используйте полученный ключ API. Для всех платформ (iOS, Android и Web) ключи создаются отдельно.
 
 Замените YOUR_TARGET_NAME, перейдите в папку Podfile и выполните команду:
 
@@ -76,6 +75,7 @@ downloader.load(movie: Movie(id: movieId, manifestUrl: movieManifestLink), downl
                    manifest: manifest,
                    startFromSavePoint: false,
                    customEventViewFactory: nil)
+ self.mkplayer.play()
 ```
 
 4. Когда плеер завершит воспроизведения фильма будет вызван метод контроллера onMovieEnded, либо onMovieClose если пользователь нажмет на кнопку завершить воспроизведение
@@ -89,3 +89,5 @@ func onMovieEnded(history: InteractionHistory) {
     self.dismiss(animated: true, completion:nil)
 }
 ```
+
+Если вы хотите добавить плеер без наслеодования от MovikaPlayerViewController. Просто используйте UIView компонент MKEasyPlayer.  Для большего котроля над плеером используйте MKPlayer. В обоих UIView для запуска проекта используйте методы setup() и последующий play()

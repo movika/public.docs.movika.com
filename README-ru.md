@@ -32,17 +32,21 @@ sort: 0
 Для добавления интерактивного плеера в свое мобильное приложение, воспользуйстель данной инструкцией
 для платформы Android или iOS.
 
-Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. Напишите нам в
-Telegram [@MovikaSupport](https://t.me/MovikaSupport) или на почту [support@movika.com](mailto:support@movika.com),
-[sdk@movika.com](mailto:sdk@movika.com),
-чтобы получить API key.
+Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. 
+
+Зарегистрируйте свое приложение в [Movika Developer] (https://developer.movika.com) и используйте полученный ключ API. Для всех платформ (iOS, Android и Web) ключи создаются отдельно.
+
+*Для iframe API Key не требуется*
 
 #### iOS SDK
+Version 2.1.1
 
 1. [Начало работы](/sdk/ios/get-started-ru.md)
 2. [Сохранение фильмов](/sdk/ios/save-state-ru.md)
 3. [Настройка интерфейса](/sdk/ios/ui-customization-ru.md)
 4. [Пользовательские интерактивы](/sdk/ios/custom-events-ru.md)
+5. [Готовый к использованию плеер](/sdk/ios/mk-easy-player-ru.md)
+6. [Пользовательский плеер](/sdk/ios/mkplayer-ru.md)
 
 #### Android SDK
 

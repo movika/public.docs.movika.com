@@ -32,26 +32,30 @@ Parameters (attributes) of the iframe:
 To add an interactive player to your mobile application, use the following instructions
 for Android or iOS platform.
 
-To use the sdk you also need to get an API Key for your applications. Write to
-Telegram [@MovikaSupport](https://t.me/MovikaSupport) or e-mail [support@movika.com](mailto:support@movika.com),
-[sdk@movika.com](mailto:sdk@movika.com),
-to get your unique API key.
+To use the sdk you also need to get an API Key for your applications. 
+
+Register your App in the [Movika Developer] (https://developer.movika.com) and copy the resulting API key. Keys are generated separately for all platforms (iOS, Android and Web).
+
+*For iframe API Key not required*
 
 #### iOS SDK
+Version 2.1.1
 
-1. [Getting started](/en/sdk/ios/get-started.md)
-2. [Saving movie state](/en/sdk/ios/save-state.md)
-3. [Interface customization](/en/sdk/ios/ui-customization.md)
-4. [Custom interactives](/en/sdk/ios/custom-events.md)
+1. [Getting started](/sdk/ios/get-started.md)
+2. [Saving movie state](/sdk/ios/save-state.md)
+3. [Interface customization](/sdk/ios/ui-customization.md)
+4. [Custom interactives](/sdk/ios/custom-events.md)
+5. [Ready-to-use player] (/sdk/ios/mk-easy-player.md)
+6. [Custom player] (/sdk/ios/mkplayer.md)
 
 #### Android SDK
 
-0. [Getting started](/en/sdk/android/getting-started.md)
-1. [Getting data for playback](/en/sdk/android/getting-movie-bundle.md)
-2. [Playback](/en/sdk/android/run-interactiveplayerview.md)
-3. [Player configuration](/en/sdk/android/config.md)
-4. [Player events](/en/sdk/android/player-events.md)
-5. [Player customization](/en/sdk/android/introduce-to-player-customization.md)
+0. [Getting started](/sdk/android/getting-started.md)
+1. [Getting data for playback](/sdk/android/getting-movie-bundle.md)
+2. [Playback](/sdk/android/run-interactiveplayerview.md)
+3. [Player configuration](/sdk/android/config.md)
+4. [Player events](/sdk/android/player-events.md)
+5. [Player customization](/sdk/android/introduce-to-player-customization.md)
 6. [Customize pause and play](/sdk/android/play-pause-customization.md)
-7. [Customization of interface elements for switching audio tracks and subtitles](/en/sdk/android/audio-subtitles-customization.md)
-8. [Interactive customization](/en/sdk/android/interactive-customization.md)
+7. [Customization of interface elements for switching audio tracks and subtitles](/sdk/android/audio-subtitles-customization.md)
+8. [Interactive customization](/sdk/android/interactive-customization.md)
