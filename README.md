@@ -34,7 +34,7 @@ for Android or iOS platform.
 
 To use the sdk you also need to get an API Key for your applications. 
 
-Register your App in the [Movika Developer] (https://developer.movika.com) and copy the resulting API key. Keys are generated separately for all platforms (iOS, Android and Web).
+Register your App in the [Movika Developer](https://developer.movika.com) and copy the resulting API key. Keys are generated separately for all platforms (iOS, Android and Web).
 
 *For iframe API Key not required*
 
