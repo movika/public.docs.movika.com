@@ -40,6 +40,7 @@ Register your App in the [Movika Developer](https://developer.movika.com) and co
 
 #### iOS SDK
 Version 2.1.1
+Sdk integration sample https://github.com/movika/ios.sdk.sample.movika.com
 
 1. [Getting started](/sdk/ios/get-started.md)
 2. [Saving movie state](/sdk/ios/save-state.md)
