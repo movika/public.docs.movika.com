@@ -41,6 +41,7 @@ sort: 0
 #### iOS SDK
 Version 2.1.1
 
+Пример интеграции sdk https://github.com/movika/ios.sdk.sample.movika.com
 1. [Начало работы](/sdk/ios/get-started-ru.md)
 2. [Сохранение фильмов](/sdk/ios/save-state-ru.md)
 3. [Настройка интерфейса](/sdk/ios/ui-customization-ru.md)
