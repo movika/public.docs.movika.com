@@ -45,8 +45,8 @@ Version 2.1.1
 2. [Saving movie state](/sdk/ios/save-state.md)
 3. [Interface customization](/sdk/ios/ui-customization.md)
 4. [Custom interactives](/sdk/ios/custom-events.md)
-5. [Ready-to-use player] (/sdk/ios/mk-easy-player.md)
-6. [Custom player] (/sdk/ios/mkplayer.md)
+5. [Ready-to-use player](/sdk/ios/mk-easy-player.md)
+6. [Custom player](/sdk/ios/mkplayer.md)
 
 #### Android SDK
 
