@@ -30,7 +30,7 @@ $ pod install
 
 ## 2. Add your ApiKey
 
-Register your app in the [Movika Developer] (https://developer.movika.com) and copy the resulting API key.
+Register your app in the [Movika Developer](https://developer.movika.com) and copy the resulting API key.
 
 Put your apiKey in AppDelegate class in the application(..) method inside lambda function didFinishLaunchingWithOptions
 
