@@ -1,3 +1,10 @@
+---
+title: Getting started
+description: Getting started
+keywords: Getting started
+sort: 0
+---
+
 # Getting started
 
 ## 1. Add sdk from the pod
