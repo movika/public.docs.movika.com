@@ -67,7 +67,7 @@ downloader.load(movie: Movie(id: movieId, manifestUrl: movieManifestLink), downl
 })
 ```
 
-3. When the GameManifest is loaded, pass it to the player by calling controller class setup(..) method. (Link to test manifest https://bitbucket.org/Ortyom/mobileassets/raw/HEAD/vertical/json/manifest.json)
+3. When the GameManifest is loaded, pass it to the player by calling controller class setup(..) method. (Link to test manifest https://asazin-cache.cdnvideo.ru/asazin/tutorial/json/manifest.json)
 
 ```
  self.setup(playerRepository: DefaultPlayerRepository(),
