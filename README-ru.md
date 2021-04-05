@@ -36,7 +36,7 @@ sort: 0
 
 Зарегистрируйте свое приложение в [Movika Developer] (https://developer.movika.com) и используйте полученный ключ API. Для всех платформ (iOS, Android и Web) ключи создаются отдельно.
 
-*Для iframe API Key не требуется*
+*Для iframe API Key не требуются*
 
 #### iOS SDK
 Version 2.1.1
