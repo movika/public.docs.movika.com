@@ -13,10 +13,13 @@ sort: 0
  
 Интеграция Web SDK Movika на сайт осуществляется с помощью встраивания тега iframe в HTML разметку страницы.
 
+ <iframe allowFullScreen src="https://movika.com/ru/player/movika-sdk-sample" allowFullScreen scrolling="no" frameborder="0">
+ </iframe>
+
 Пример тега **iframe**, отображающего интерактивный видеопроигрыватель размером 840x560 пикселей представлен ниже:
 
 ```
- <iframe style="width:840px; height:560px" allowFullScreen src="https://movika.com/player/123Sd">
+ <iframe style="width:840px; height:560px" allowFullScreen src="https://movika.com/ru/player/movika-sdk-sample">
  </iframe>
 ```
 
