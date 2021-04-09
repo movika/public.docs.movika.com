@@ -13,10 +13,13 @@ sort: 0
 
 Integration of the Movika Web SDK to your site can be done by embedding iframe in the HTML markup of the page.
 
+ <iframe allowFullScreen src="https://movika.com/ru/player/movika-sdk-sample" allowFullScreen scrolling="no" frameborder="0">
+ </iframe>
+
 Example of the tag **iframe**, displaying an interactive video player with a size of 840x560 pixels is shown below:
 
 ```
- <iframe style="width:840px; height:560px" allowFullScreen src="https://movika.com/player/123Sd">
+ <iframe style="width:840px; height:560px" allowFullScreen src="https://movika.com/ru/player/movika-sdk-sample">
  </iframe>
 ```
 
