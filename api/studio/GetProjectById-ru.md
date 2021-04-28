@@ -13,20 +13,18 @@ GET /{projectId}
 
 Получить проект возможно по идентификатору, либо автору, либо пользователю с расширенными правами.
 
-## Параметры запроса
-Request Parameters
 
+## Параметры запроса
 
 ## 1 Параметр пути
-1 Path Parameter
 
-|  | type | format |
+| header | type | format |
 |---|---|---|
 | projectId | integer | int64 |
 
 ## 12 Headers
 
-|  | type | default | description |
+| header | type | default | description |
 |---|---|---|---|
 | Authorization | string | Bearer {{accessToken}} | Токен пользователя с приставкой “Bearer |
 | Accept-Charset | string | UTF-8 | Передача кодировки клиента | 
@@ -39,9 +37,10 @@ Request Parameters
 | Session-Id | string | {{sessionId}} | Идентификатор сессии, формируется при запуске на устройстве клиента | 
 | Api-Key | string | {{apikey}} | 
 
-|  | type | enum |
+| header | type | enum |
 |---|---|---|
 | App-Environment | integer | ["0 - prod, 1 - dev, 2 - test/stage"] |
+
 
 ## Ответы сервера
 
@@ -216,7 +215,6 @@ Schema
 
 ## Ответ 404
 The 404 response.
-
 
 ## Ответ 500
 The 500 response.
