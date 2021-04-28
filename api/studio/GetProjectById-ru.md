@@ -38,7 +38,7 @@ GET /{projectId}
 Schema
 
 Object
-Cover, manifestUrl и Screens обязательные поля дял проектов со статусом DONE, в остальных случаях нет.
+Cover, manifestUrl и Screens обязательные поля для проектов со статусом DONE, в остальных случаях нет.
 ```
 {
   "type": "object",
