@@ -5,9 +5,9 @@ keywords: Получить проект
 sort: 0
 ---
  
-# GetProjectById
+# Получить проект 
 
-## Получить проект 
+## GetProjectById
 
 GET /{projectId}
 
@@ -18,7 +18,7 @@ GET /{projectId}
 
 ## 1 Параметр пути
 
-| header | type | format |
+| Path param | type | format |
 |---|---|---|
 | projectId | integer | int64 |
 
@@ -27,19 +27,8 @@ GET /{projectId}
 | header | type | default | description |
 |---|---|---|---|
 | Authorization | string | Bearer {{accessToken}} | Токен пользователя с приставкой “Bearer |
-| Accept-Charset | string | UTF-8 | Передача кодировки клиента | 
 | Api-Version | string | {{apiVersion}} | Версия API | 
-| App-Version | string | {{appVersion}} | Версия приложения клиента | 
-| App-Name | string | {{appName}} | Наименование (Bundle ID) приложения | 
-| Content-Type | string | application/json; charset=utf-8 | Тип содержимого | 
-| Device-Id | string | {{deviceId}} | Идентификатор устройства, если имеется | 
-| Accept-Language | string | {{acceptLanguage}} | Передача языка интерфейса клиента по стандарту 639-1 | 
-| Session-Id | string | {{sessionId}} | Идентификатор сессии, формируется при запуске на устройстве клиента | 
 | Api-Key | string | {{apikey}} | 
-
-| header | type | enum |
-|---|---|---|
-| App-Environment | integer | ["0 - prod, 1 - dev, 2 - test/stage"] |
 
 
 ## Ответы сервера
@@ -149,6 +138,17 @@ Cover, manifestUrl и Screens обязательные поля дял прое�
 
 ## Ответ 400
 The 400 response.
+```
+{
+    "timestamp": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+    "path": "/error/some/path",
+    "message": "exception message",
+    "service": "exception_service_name",
+    "code": unique_code (int),
+    "status": 400
+    "error": "error_name"
+}
+```
 
 ## Ответ 401
 Для доступа к запрашиваемому ресурсу требуется аутентификация.
@@ -157,14 +157,13 @@ The 400 response.
 
 ```
 {
-  "code": "sunt consequat proident",
-  "status": -90024489,
-  "timestamp": "1957-09-23T19:25:14.144Z",
-  "error": "",
-  "exception": "ut anim veniam dolor id",
-  "message": "anim",
-  "path": "ut dolore anim ",
-  "stackTrace": "dol"
+    "timestamp": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+    "path": "/error/some/path",
+    "message": "exception message",
+    "service": "studio",
+    "code": unique_code (int),
+    "status": 401
+    "error": "error_name"
 }
 ```
 Schema
@@ -213,8 +212,29 @@ Schema
 }
 ```
 
-## Ответ 404
-The 404 response.
+## Ответ 403
+```
+{    
+  "timestamp": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+    "path": "/error/some/path",
+    "message": "exception message",
+    "service": "studio",
+    "code": unique_code (int),
+    "status": 403
+    "error": "error_name"
+  }
+```
 
-## Ответ 500
-The 500 response.
+
+## Ответ 404
+```
+{
+    "timestamp": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+    "path": "/error/some/path",
+    "message": "exception message",
+    "service": "studio",
+    "code": unique_code (int),
+    "status": 404
+    "error": "error_name"
+  }
+```
