@@ -1,10 +1,10 @@
 ---
-title: GetProjectById
-description: GetProjectById
-keywords: GetProjectById
+title: Получить проект
+description: Получить проект
+keywords: Получить проект
 sort: 0
 ---
-
+ 
 # GetProjectById
 
 ## Получить проект 
