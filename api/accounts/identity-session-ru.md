@@ -13,10 +13,9 @@ POST **https://api.movika.com/accounts/identity/session**
 
 ## Тело запроса
 | Параметр | Тип | Описание |
-|---|---|---|---|
+|---|---|---|
 | sessionId | string | Идентификатор сессии |
 
-<---- ## Параметры запроса
 
 ## Headers
 
@@ -35,7 +34,7 @@ POST **https://api.movika.com/accounts/identity/session**
 Модель данных 
 
 | Наименование | Тип | Описание |
-|---|---|---|---|
+|---|---|---|
 | accessToken | string | Access Token |
 | refreshToken | string | Refresh Token для получения следующего accessToken токена, после завершения срока действия последнего |
 | uid | integer | ID пользователя |
