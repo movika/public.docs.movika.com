@@ -31,7 +31,7 @@ GET **https://api.movika.com/studio/{projectId}**
 
 ## Ответы сервера
 
-## Ответ 200 Successful
+## Ответ 200 - Successful
 
 Ответ 200 Successful возвращается в случае успешного запроса на получение проекта интерактивного фильма
 
@@ -58,16 +58,15 @@ GET **https://api.movika.com/studio/{projectId}**
 | Наименование | Тип | Формат | Описание |
 |---|---|---|---|
 | id | integer | int64 | ID пользователя |
-| firstName | string || Имя автора|
 | avatarUri | string | uri | Ссылка на аватар автора |
 | login | string || Логин автора |
 
 Пример
 
 ```
-
+{
   "id": 94851261,
-  "title": "movika sdk sample",
+  "title": "Title movika sdk sample",
   "duration": 60367587,
   "author": {
     "id": 40743843,
