@@ -4,7 +4,7 @@ description: Обновить Access Token по Session ID
 keywords: Обновить Access Token по Session ID
 sort: 1
 ---
- 
+
 # Обновить Access Token по Session ID
 
 POST https://api.movika.com/accounts/token
