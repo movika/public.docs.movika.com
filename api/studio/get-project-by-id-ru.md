@@ -9,227 +9,151 @@ sort: 0
 
 ## GetProjectById
 
-GET /{projectId}
+GET **https://api.movika.com/studio/{projectId}**
 
-Получить проект возможно по идентификатору, либо автору, либо пользователю с расширенными правами.
+Получить проектинтерактивного фильма по идентификатору Project Id.
 
 
 ## Параметры запроса
 
-## 1 Параметр пути
+### Параметр пути
 
-| Path param | type | format |
+| Параметр пути | Тип | Формат | Описание |
 |---|---|---|
-| projectId | integer | int64 |
+| projectId | integer | int64 | ID проекта |
 
-## 12 Headers
+## Headers
 
-| header | type | default | description |
+| Заголовок | Тип  | Пример | Описание |
 |---|---|---|---|
-| Authorization | string | Bearer {{accessToken}} | Токен пользователя с приставкой “Bearer |
-| Api-Version | string | {{apiVersion}} | Версия API | 
-| Api-Key | string | {{apikey}} | 
+| Authorization | string | Bearer {{accessToken}} | Токен пользователя с приставкой Bearer |
+| Api-Version | string | 2.0 | Версия API | 
+| Api-Key | string | {{apikey}} | Уникальный ключ API |
 
 
 ## Ответы сервера
 
-## Ответ 200
+## Ответ 200 Successful
 
-Schema
+Ответ 200 Successful возвращается в случае успешного запроса на получение проекта интерактивного фильма
+
+Модель данных Project 
+
+| Наименование | Тип | Формат | Описание |
+|---|---|---|---|
+| id | integer | int64| ID проекта |
+| title | string| | Заголовок проекта |
+| cover | string | uri| Обложка проекта |
+| duration | integer | int64| Длительность проекта в секундах |
+| manifestUrl | string | uri| Ссылка на манифест проекта интерактивного видео |
+| projectName | string| | Наименование проекта |
+| status | integer | | Текущий статус проекта. Возможные значения: ["0": "IN_PROCCESS","1":"DONE","2":"ERROR","3":"TO_DEPLOY"] |
+| projectType | integer | | | Типо проекта. Возможные значения: [ "1":"Pro", "2":"LiteEditor"] |
+| keywords | string| | Ключевые слова, описывающие содержание проекта |
+| linkOnly | boolean | | Проект доступен только по ссылке (Да/Нет) |
+| createTime | string | yyyy-MM-dd'T'HH:mm:ss'Z' | Время создания проекта |
+| author | Author | | Информация об авторе проекта |
+| updateTime | string | yyyy-MM-dd'T'HH:mm:ss'Z'| Время последнего редактирования проекта |
+
+Модель данных Author
+
+| Наименование | Тип | Формат | Описание |
+|---|---|---|---|
+| id | integer | int64 | ID пользователя |
+| firstName | string || Имя автора|
+| avatarUri | string | uri | Ссылка на аватар автора |
+| login | string || Логин автора |
+
+Пример
 
 ```
-{
-    "id": {
-      "type": "integer",
-      "format": "int64"
-    },
-    "title": {
-      "type": "string"
-    },
-    "cover": {
-      "type": "string",
-      "format": "uri"
-    },
-    "duration": {
-      "type": "integer",
-      "format": "int64"
-    },
-    "manifestUrl": {
-      "type": "string",
-      "format": "uri"
-    },
-    "author": {
-      "type": "object",
-      "required": [
-        "id",
-        "login"
-      ],
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "firstName": {
-          "type": "string"
-        },
-        "lastName": {
-          "type": "string"
-        },
-        "avatarUri": {
-          "type": "string",
-          "format": "uri"
-        },
-        "login": {
-          "type": "string"
-        }
-      }
-    },
-    "projectName": {
-      "type": "string"
-    },
-    "status": {
-      "type": "integer",
-      "enum": [
-        "0: IN_PROCCESS",
-        "1:DONE",
-        "2:ERROR",
-        "3:TO_DEPLOY"
-      ]
-    },
-    "projectType": {
-      "type": "integer",
-      "enum": [
-        "1:Pro",
-        "2:LiteEditor"
-      ]
-    },
-    "keywords": {
-      "type": "string"
-    },
-    "linkOnly": {
-      "type": "boolean",
-      "default": false
-    },
-    "createTime": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "updateTime": {
-      "type": "string",
-      "format": "date-time"
-    }
+
+  "id": 94851261,
+  "title": "movika sdk sample",
+  "duration": 60367587,
+  "author": {
+    "id": 40743843,
+    "login": "Vadim",
+    "firstName": "Vadim",
+    "lastName": "Pupkov",
+    "avatarUri": "https://movika.com/img/avatar.jpg"
   },
-  "required": [
-    "id",
-    "title",
-    "duration",
-    "author",
-    "projectName",
-    "createTime",
-    "updateTime"
-  ]
+  "projectName": "movika-sdk-sample",
+  "createTime": "2003-11-12T22:00:57.285Z",
+  "updateTime": "2013-01-16T20:07:41.607Z",
+  "cover": "https://movika.com/img/cover.jpg",
+  "manifestUrl": "https://movika.com/ru/player/movika-sdk-sample",
+  "status": 3,
+  "projectType": 1,
+  "keywords": "movika, sample",
+  "linkOnly": false
 }
 ```
 
-## Ответ 400
-The 400 response.
+
+
+## Ответ 400 - Bad Request
+
+Пример ответа
+
 ```
 {
-    "timestamp": "yyyy-MM-dd'T'HH:mm:ss'Z'",
-    "path": "/error/some/path",
-    "message": "exception message",
-    "service": "exception_service_name",
-    "code": unique_code (int),
-    "status": 400
-    "error": "error_name"
+  "error": "Error name",
+  "message": "Exception message",
+  "path": "request/path/with/exception",
+  "status": 400,
+  "timestamp": "2015-01-22T03:41:02.000Z",
+  "code": 8000,
+  "service": "studio"
 }
 ```
 
-## Ответ 401
-Для доступа к запрашиваемому ресурсу требуется аутентификация.
 
-1 Example
+## Ответ 401 - Unauthorized
+
+Пример ответа
 
 ```
 {
-    "timestamp": "yyyy-MM-dd'T'HH:mm:ss'Z'",
-    "path": "/error/some/path",
-    "message": "exception message",
-    "service": "studio",
-    "code": unique_code (int),
-    "status": 401
-    "error": "error_name"
-}
-```
-Schema
-```
-{
-  "type": "object",
-  "properties": {
-    "code": {
-      "type": "string",
-      "description": "Код ошибки"
-    },
-    "error": {
-      "type": "string",
-      "description": "Расшифровка кода ошибки (code)"
-    },
-    "exception": {
-      "type": "string",
-      "description": "Название исключения"
-    },
-    "message": {
-      "type": "string",
-      "description": "Сообщение для пользователя"
-    },
-    "path": {
-      "type": "string",
-      "description": "Путь до ошибки"
-    },
-    "status": {
-      "type": "integer",
-      "description": "Статус код"
-    },
-    "timestamp": {
-      "type": "string",
-      "description": "Время исключения",
-      "format": "date-time"
-    },
-    "stackTrace": {
-      "type": "string"
-    }
-  },
-  "required": [
-    "code",
-    "status",
-    "timestamp"
-  ]
+  "error": "Error name",
+  "message": "Exception message",
+  "path": "request/path/with/exception",
+  "status": 401,
+  "timestamp": "2015-01-22T03:41:02.000Z",
+  "code": 8000,
+  "service": "studio"
 }
 ```
 
-## Ответ 403
-```
-{    
-  "timestamp": "yyyy-MM-dd'T'HH:mm:ss'Z'",
-    "path": "/error/some/path",
-    "message": "exception message",
-    "service": "studio",
-    "code": unique_code (int),
-    "status": 403
-    "error": "error_name"
-  }
-```
+## Ответ 403 - Forbidden
 
+Пример ответа
 
-## Ответ 404
 ```
 {
-    "timestamp": "yyyy-MM-dd'T'HH:mm:ss'Z'",
-    "path": "/error/some/path",
-    "message": "exception message",
-    "service": "studio",
-    "code": unique_code (int),
-    "status": 404
-    "error": "error_name"
-  }
+  "error": "Error name",
+  "message": "Exception message",
+  "path": "request/path/with/exception",
+  "status": 403,
+  "timestamp": "2015-01-22T03:41:02.000Z",
+  "code": 8000,
+  "service": "studio"
+}
+```
+
+
+## Ответ 404 - Not found
+
+Пример ответа
+
+```
+{
+  "error": "Error name",
+  "message": "Exception message",
+  "path": "request/path/with/exception",
+  "status": 404,
+  "timestamp": "2015-01-22T03:41:02.000Z",
+  "code": 8000,
+  "service": "studio"
+}
 ```
