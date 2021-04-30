@@ -12,6 +12,7 @@ POST **https://api.movika.com/accounts/identity/session**
 Возвращает Access Token по Session ID.
 
 ## Тело запроса
+
 | Параметр | Тип | Описание |
 |---|---|---|
 | sessionId | string | Идентификатор сессии |
