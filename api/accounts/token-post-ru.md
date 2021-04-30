@@ -1,22 +1,22 @@
 ---
-title: Получить Access Token по Session ID
-description: Получить Access Token по Session ID
-keywords: Получить Access Token по Session ID
+title: Обновить Access Token по Session ID
+description: Обновить Access Token по Session ID
+keywords: Обновить Access Token по Session ID
 sort: 1
 ---
  
-# Получить Access Token по Session ID
+# Обновить Access Token по Session ID
 
-POST https://api.movika.com/accounts/identity/session
+POST https://api.movika.com/accounts/token
 
-Возвращает Access Token по Session ID.
+Возвращает новый Access Token.
 
 ## Тело запроса
 
-| Параметр | Тип | Описание |
-|---|---|---|
-| grantType | string | Grant type |
-| refreshToken | string | Refresh Token |
+| Параметр | Тип | Описание | Пример |
+|---|---|---|---| 
+| grantType | string | Grant type | session |
+| refreshToken | string | Refresh Token | |
 
 
 ## Headers
@@ -31,7 +31,7 @@ POST https://api.movika.com/accounts/identity/session
 
 ## Ответ 200 - Successful
 
-Ответ 200 Successful возвращается в случае успешного запроса на получение Access Token
+Ответ 200 Successful возвращается в случае успешного запроса на обновление Access Token
 
 Модель данных 
 
