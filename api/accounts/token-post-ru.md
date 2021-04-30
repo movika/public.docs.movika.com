@@ -45,12 +45,13 @@ POST https://api.movika.com/accounts/token
 
 Пример
 
+```
 {
   "accessToken": "pffkvi,voirmvdfkmskdfls",
   "refreshToken": "dksmflksdmvlsmvofomvfvo",
   "uid": 83315380
 }
-
+```
 
 ## Ответ 400 - Bad Request
 
