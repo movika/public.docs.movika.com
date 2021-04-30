@@ -56,7 +56,7 @@ POST https://api.movika.com/accounts/token
 ## Ответ 400 - Bad Request
 
 Пример ответа
-
+```
 {
   "error": "Error name",
   "message": "Exception message",
@@ -66,12 +66,12 @@ POST https://api.movika.com/accounts/token
   "code": 1000,
   "service": "accounts"
 }
-
+```
 
 ## Ответ 401 - Unauthorized
 
 Пример ответа
-
+```
 {
   "error": "Error name",
   "message": "Exception message",
@@ -81,11 +81,11 @@ POST https://api.movika.com/accounts/token
   "code": 1000,
   "service": "accounts"
 }
-
+```
 ## Ответ 403 - Forbidden
 
 Пример ответа
-
+```
 {
   "error": "Error name",
   "message": "Exception message",
@@ -95,3 +95,4 @@ POST https://api.movika.com/accounts/token
   "code": 1000,
   "service": "accounts"
 }
+```
