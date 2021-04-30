@@ -46,7 +46,7 @@ GET **https://api.movika.com/studio/{projectId}**
 | manifestUrl | string | uri| Ссылка на манифест проекта интерактивного видео |
 | projectName | string| | Наименование проекта |
 | status | integer | | Текущий статус проекта. Возможные значения: ["0": "IN_PROCCESS","1":"DONE","2":"ERROR","3":"TO_DEPLOY"] |
-| projectType | integer | | | Типо проекта. Возможные значения: [ "1":"Pro", "2":"LiteEditor"] |
+| projectType | integer | | Типо проекта. Возможные значения: [ "1":"Pro", "2":"LiteEditor"] |
 | keywords | string| | Ключевые слова, описывающие содержание проекта |
 | linkOnly | boolean | | Проект доступен только по ссылке (Да/Нет) |
 | createTime | string | yyyy-MM-dd'T'HH:mm:ss'Z' | Время создания проекта |
