@@ -4,8 +4,8 @@ description: Получить проект
 keywords: Получить проект
 sort: 0
 ---
- 
-# Получить проект 
+
+# Получить проект
 
 GET **https://api.movika.com/studio/{projectId}**
 
@@ -35,23 +35,30 @@ GET **https://api.movika.com/studio/{projectId}**
 
 Ответ 200 Successful возвращается в случае успешного запроса на получение проекта интерактивного фильма
 
-Модель данных Project 
+Модель данных Project
 
 | Наименование | Тип | Формат | Описание |
 |---|---|---|---|
 | id | integer | int64| ID проекта |
 | title | string| | Заголовок проекта |
 | cover | string | uri| Обложка проекта |
-| duration | integer | int64| Длительность проекта в секундах |
-| manifestUrl | string | uri| Ссылка на манифест проекта интерактивного видео |
-| projectName | string| | Наименование проекта |
-| status | integer | | Текущий статус проекта. Возможные значения: ["0": "IN_PROCCESS","1":"DONE","2":"ERROR","3":"TO_DEPLOY"] |
-| projectType | integer | | Типо проекта. Возможные значения: [ "1":"Pro", "2":"LiteEditor"] |
-| keywords | string| | Ключевые слова, описывающие содержание проекта |
-| linkOnly | boolean | | Проект доступен только по ссылке (Да/Нет) |
-| createTime | string | yyyy-MM-dd'T'HH:mm:ss'Z' | Время создания проекта |
+| manifestChanges | string | | Изменения с последней сборки проекта |
+| lastBuiltManifestUrl | string | uri | Ссылка на последний собранный манифест проекта интерактивного видео |
+| currentManifestUrl | string | uri | Ссылка на текущий манифест проекта интерактивного видео |
 | author | Author | | Информация об авторе проекта |
-| updateTime | string | yyyy-MM-dd'T'HH:mm:ss'Z'| Время последнего редактирования проекта |
+| projectName | string| | Наименование проекта |
+| buildStatus | integer | | Текущий статус сборки проекта. Возможные значения: [0:NOT_BUILT, 1:BUILDING, 2:BUILT, 3:ERROR] |
+| lastBuildStatus | integer | | Последний статус сборки проекта. Возможные значения: [0:NOT_BUILT, 1:BUILDING, 2:BUILT, 3:ERROR] |
+| keywords | string| | Ключевые слова, описывающие содержание проекта |
+| deployStatus | integer| | Статус публикации проекта. Возможные значения: [0:NOT_DEPLOYED, 1:DEPLOYING, 2:DEPLOYED, 3:ERROR] |
+| lastDeployType | integer| | Последний используемый тип публикации проекта. Возможные значения: [0:UNKNOWN, 1:TV, 2:URL] |
+| deployedTo | array[integer]| | Используемые типы публикации проекта. Возможные значения: [0:UNKNOWN, 1:TV, 2:URL] |
+| modified | boolean | | Проект модифицировался с момента последней сборки (Да/Нет) |
+| blocked | boolean | | Проект заблокирован (Да/Нет) |
+| hidden | boolean | | Проект скрыт (Да/Нет) |
+| created | string | yyyy-MM-dd'T'HH:mm:ss'Z' | Время создания проекта |
+| updatedBy | string | email | Информация о последнем вносившем изменения в проект пользователе |
+| updated | string | yyyy-MM-dd'T'HH:mm:ss'Z'| Время последнего редактирования проекта |
 
 Модель данных Author
 
@@ -65,25 +72,35 @@ GET **https://api.movika.com/studio/{projectId}**
 
 ```
 {
-  "id": 94851261,
-  "title": "Title movika sdk sample",
-  "duration": 60367587,
+  "id": 90280470,
+  "title": "Excepteur in dolor",
+  "cover": "http://BGHzcKuudfOLjUePkBUtyyVIoVR.cizaogwQLrTo.-hcCeEpqa.MKGzG+2fNhnz6OqWgr0OLgFae8tZp",
+  "manifestChanges": "pariatur velit irure",
+  "lastBuiltManifestUrl": "http://RgBIyxAPoxUsDRNNMwEUqhHvnsKaxerD.kmgyh1ypoFWmFoq86XFZ7RAceC2wYKBDYv+fjVZVEXYL61spd6NTPSrPh4",
+  "currentManifestUrl": "https://bKGXVmHs.djN",
   "author": {
-    "id": 40743843,
-    "login": "Vadim",
-    "firstName": "Vadim",
-    "lastName": "Pupkov",
-    "avatarUri": "https://movika.com/img/avatar.jpg"
+    "id": 29396578,
+    "avatarUri": "https://xQDCFiinfapoXThcqKnNCi.dcgT6uL+EfF-xinSaSRM+qo9IAMlwKyNm8T8lVHlzy+M+8.",
+    "login": "Ut dolore",
+    "firstName": "in exercitation",
+    "lastName": "aliquip ea proident incididunt magna"
   },
-  "projectName": "movika-sdk-sample",
-  "createTime": "2003-11-12T22:00:57.285Z",
-  "updateTime": "2013-01-16T20:07:41.607Z",
-  "cover": "https://movika.com/img/cover.jpg",
-  "manifestUrl": "https://movika.com/ru/player/movika-sdk-sample",
-  "status": 3,
-  "projectType": 1,
-  "keywords": "movika, sample",
-  "linkOnly": false
+  "projectName": "suq1ZiyKk3UEMXYla0AP",
+  "buildStatus": 0,
+  "lastBuildStatus": 0,
+  "keywords": "consectetur commodo laborum eu",
+  "deployStatus": 3,
+  "lastDeployType": 0,
+  "deployedTo": [
+    1,
+    2
+  ],
+  "modified": false,
+  "blocked": true,
+  "hidden": true,
+  "created": "1954-04-22T23:00:04.371Z",
+  "updatedBy": "hJmjMh@pFk.opye",
+  "updated": "1983-03-12T04:50:40.438Z"
 }
 ```
 
@@ -100,8 +117,8 @@ GET **https://api.movika.com/studio/{projectId}**
   "path": "request/path/with/exception",
   "status": 400,
   "timestamp": "2015-01-22T03:41:02.000Z",
-  "code": 8000,
-  "service": "studio"
+  "code": 16000,
+  "service": "studio-pro"
 }
 ```
 
@@ -117,8 +134,8 @@ GET **https://api.movika.com/studio/{projectId}**
   "path": "request/path/with/exception",
   "status": 401,
   "timestamp": "2015-01-22T03:41:02.000Z",
-  "code": 8000,
-  "service": "studio"
+  "code": 16000,
+  "service": "studio-pro"
 }
 ```
 
@@ -133,8 +150,8 @@ GET **https://api.movika.com/studio/{projectId}**
   "path": "request/path/with/exception",
   "status": 403,
   "timestamp": "2015-01-22T03:41:02.000Z",
-  "code": 8000,
-  "service": "studio"
+  "code": 16000,
+  "service": "studio-pro"
 }
 ```
 
@@ -150,7 +167,7 @@ GET **https://api.movika.com/studio/{projectId}**
   "path": "request/path/with/exception",
   "status": 404,
   "timestamp": "2015-01-22T03:41:02.000Z",
-  "code": 8000,
-  "service": "studio"
+  "code": 16000,
+  "service": "studio-pro"
 }
 ```
