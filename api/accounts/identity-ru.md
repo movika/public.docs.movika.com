@@ -5,11 +5,11 @@ keywords: Получить Access Token
 sort: 0
 ---
  
-# Получить Access Token по Session ID
+# Получить Access Token 
 
 POST **https://api.movika.com/accounts/identity/**
 
-Возвращает Access Token по Session ID.
+Возвращает Access Token.
 
 ## Тело запроса
 
