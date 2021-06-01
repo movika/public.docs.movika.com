@@ -1,24 +1,18 @@
 ---
-title: Получить проект
-description: Получить проект
-keywords: Получить проект
-sort: 0
+title: Получить все проекты текущего пользователя
+description: Получить все проекты текущего пользователя
+keywords: Получить все проекты текущего пользователя
+sort: 1
 ---
+ 
+# Получить все проекты текущего пользователя
 
-# Получить проект
+GET **https://api.movika.com/studio/pro/my**
 
-GET **https://api.movika.com/studio/pro/{projectId}**
-
-Возвращает проект интерактивного фильма по идентификатору **{projectId}**.
+Возвращает список проектов интерактивных фильмов текущего пользователя с пагинацией.
 
 
 ## Параметры запроса
-
-### Параметр пути
-
-| Параметр | Тип | Формат | Описание |
-|---|---|---|
-| projectId | integer | int64 | ID проекта |
 
 ## Headers
 
@@ -33,9 +27,9 @@ GET **https://api.movika.com/studio/pro/{projectId}**
 
 ## Ответ 200 - Successful
 
-Ответ 200 Successful возвращается в случае успешного запроса на получение проекта интерактивного фильма
+Ответ 200 Successful возвращается в случае успешного запроса на получение списка проектов интерактивных фильмов
 
-Модель данных Project
+Модель данных Project 
 
 | Наименование | Тип | Формат | Описание |
 |---|---|---|---|
@@ -74,53 +68,43 @@ GET **https://api.movika.com/studio/pro/{projectId}**
 
 ```
 {
-  "id": 90280470,
-  "title": "Excepteur in dolor",
-  "cover": "http://BGHzcKuudfOLjUePkBUtyyVIoVR.cizaogwQLrTo.-hcCeEpqa.MKGzG+2fNhnz6OqWgr0OLgFae8tZp",
-  "manifestChanges": "pariatur velit irure",
-  "lastBuiltManifestUrl": "http://RgBIyxAPoxUsDRNNMwEUqhHvnsKaxerD.kmgyh1ypoFWmFoq86XFZ7RAceC2wYKBDYv+fjVZVEXYL61spd6NTPSrPh4",
-  "currentManifestUrl": "https://bKGXVmHs.djN",
-  "author": {
-    "id": 29396578,
-    "avatarUri": "https://xQDCFiinfapoXThcqKnNCi.dcgT6uL+EfF-xinSaSRM+qo9IAMlwKyNm8T8lVHlzy+M+8.",
-    "login": "Ut dolore",
-    "firstName": "in exercitation",
-    "lastName": "aliquip ea proident incididunt magna"
-  },
-  "projectName": "suq1ZiyKk3UEMXYla0AP",
-  "buildStatus": 0,
-  "lastBuildStatus": 0,
-  "keywords": "consectetur commodo laborum eu",
-  "deployStatus": 3,
-  "lastDeployType": 0,
-  "deployedTo": [
-    1,
-    2
+  "data": [
+    {
+      "id": 90280470,
+      "title": "Excepteur in dolor",
+      "cover": "http://BGHzcKuudfOLjUePkBUtyyVIoVR.cizaogwQLrTo.-hcCeEpqa.MKGzG+2fNhnz6OqWgr0OLgFae8tZp",
+      "manifestChanges": "pariatur velit irure",
+      "lastBuiltManifestUrl": "http://RgBIyxAPoxUsDRNNMwEUqhHvnsKaxerD.kmgyh1ypoFWmFoq86XFZ7RAceC2wYKBDYv+fjVZVEXYL61spd6NTPSrPh4",
+      "currentManifestUrl": "https://bKGXVmHs.djN",
+      "author": {
+        "id": 29396578,
+        "avatarUri": "https://xQDCFiinfapoXThcqKnNCi.dcgT6uL+EfF-xinSaSRM+qo9IAMlwKyNm8T8lVHlzy+M+8.",
+        "login": "Ut dolore",
+        "firstName": "in exercitation",
+        "lastName": "aliquip ea proident incididunt magna"
+      },
+      "projectName": "suq1ZiyKk3UEMXYla0AP",
+      "buildStatus": 0,
+      "lastBuildStatus": 0,
+      "keywords": "consectetur commodo laborum eu",
+      "deployStatus": 3,
+      "lastDeployType": 0,
+      "deployedTo": [
+        1,
+        2
+      ],
+      "modified": false,
+      "blocked": true,
+      "hidden": true,
+      "created": "1954-04-22T23:00:04.371Z",
+      "updatedBy": "hJmjMh@pFk.opye",
+      "updated": "1983-03-12T04:50:40.438Z"
+    }
   ],
-  "modified": false,
-  "blocked": true,
-  "hidden": true,
-  "created": "1954-04-22T23:00:04.371Z",
-  "updatedBy": "hJmjMh@pFk.opye",
-  "updated": "1983-03-12T04:50:40.438Z"
-}
-```
-
-
-
-## Ответ 400 - Bad Request
-
-Пример ответа
-
-```
-{
-  "error": "Error name",
-  "message": "Exception message",
-  "path": "request/path/with/exception",
-  "status": 400,
-  "timestamp": "2015-01-22T03:41:02.000Z",
-  "code": 16000,
-  "service": "studio-pro"
+  "paging": {
+    "after": "2",
+    "before": "0"
+  }
 }
 ```
 
@@ -135,39 +119,6 @@ GET **https://api.movika.com/studio/pro/{projectId}**
   "message": "Exception message",
   "path": "request/path/with/exception",
   "status": 401,
-  "timestamp": "2015-01-22T03:41:02.000Z",
-  "code": 16000,
-  "service": "studio-pro"
-}
-```
-
-## Ответ 403 - Forbidden
-
-Пример ответа
-
-```
-{
-  "error": "Error name",
-  "message": "Exception message",
-  "path": "request/path/with/exception",
-  "status": 403,
-  "timestamp": "2015-01-22T03:41:02.000Z",
-  "code": 16000,
-  "service": "studio-pro"
-}
-```
-
-
-## Ответ 404 - Not found
-
-Пример ответа
-
-```
-{
-  "error": "Error name",
-  "message": "Exception message",
-  "path": "request/path/with/exception",
-  "status": 404,
   "timestamp": "2015-01-22T03:41:02.000Z",
   "code": 16000,
   "service": "studio-pro"
