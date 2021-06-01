@@ -67,6 +67,8 @@ GET **https://api.movika.com/studio/pro/{projectId}**
 | id | integer | int64 | ID пользователя |
 | avatarUri | string | uri | Ссылка на аватар автора |
 | login | string || Логин автора |
+| firstName | string || Имя автора (если указано) |
+| lastName | string || Фамилия автора (если указано) |
 
 Пример
 
