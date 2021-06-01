@@ -1,11 +1,11 @@
 ---
-title: Обновить Access Token по Session ID
-description: Обновить Access Token по Session ID
-keywords: Обновить Access Token по Session ID
+title: Обновить Access Token 
+description: Обновить Access Token 
+keywords: Обновить Access Token
 sort: 1
 ---
 
-# Обновить Access Token по Session ID
+# Обновить Access Token 
 
 POST https://api.movika.com/accounts/token
 
