@@ -1,13 +1,13 @@
 ---
-title: Получить Access Token по Session ID
-description: Получить Access Token по Session ID
-keywords: Получить Access Token по Session ID
+title: Получить Access Token 
+description: Получить Access Token 
+keywords: Получить Access Token 
 sort: 0
 ---
  
 # Получить Access Token по Session ID
 
-POST **https://api.movika.com/accounts/identity/session**
+POST **https://api.movika.com/accounts/identity/**
 
 Возвращает Access Token по Session ID.
 
@@ -15,7 +15,7 @@ POST **https://api.movika.com/accounts/identity/session**
 
 | Параметр | Тип | Описание |
 |---|---|---|
-| sessionId | string | Идентификатор сессии |
+| auth_code | string | Код авторизации |
 
 
 ## Headers
