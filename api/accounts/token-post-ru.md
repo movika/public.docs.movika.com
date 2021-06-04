@@ -7,7 +7,7 @@ sort: 1
 
 # Обновить Access Token 
 
-POST https://api.movika.com/accounts/token
+POST **https://api.movika.com/accounts/token**
 
 Возвращает новый Access Token.
 

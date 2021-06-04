@@ -54,8 +54,6 @@ GET **https://api.movika.com/studio/pro/{projectId}**
 | lastDeployType | integer| | Последний используемый тип публикации проекта. Возможные значения: [0:UNKNOWN, 1:TV, 2:URL] |
 | deployedTo | array[integer]| | Используемые типы публикации проекта. Возможные значения: [0:UNKNOWN, 1:TV, 2:URL] |
 | modified | boolean | | Проект модифицировался с момента последней сборки (Да/Нет) |
-| blocked | boolean | | Проект заблокирован (Да/Нет) |
-| hidden | boolean | | Проект скрыт (Да/Нет) |
 | created | string | yyyy-MM-dd'T'HH:mm:ss'Z' | Время создания проекта |
 | updatedBy | string | email | Информация о последнем вносившем изменения в проект пользователе |
 | updated | string | yyyy-MM-dd'T'HH:mm:ss'Z'| Время последнего редактирования проекта |
@@ -98,8 +96,6 @@ GET **https://api.movika.com/studio/pro/{projectId}**
     2
   ],
   "modified": false,
-  "blocked": true,
-  "hidden": true,
   "created": "1954-04-22T23:00:04.371Z",
   "updatedBy": "hJmjMh@pFk.opye",
   "updated": "1983-03-12T04:50:40.438Z"
