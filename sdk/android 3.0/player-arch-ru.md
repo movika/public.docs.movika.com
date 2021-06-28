@@ -19,24 +19,7 @@ sort: 1
 
 ### Пример использования основных компонентов плеера без применения SimpleInteractivePlayer
 ```
-package com.example.sdktest
-
-import android.os.Bundle
-import android.util.Log
-import android.widget.FrameLayout
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
-import com.movika.player.sdk.android.defaultplayer.interactive.DefaultEventController
-import com.movika.player.sdk.android.defaultplayer.utils.getDefaultEventControllerState
-import com.movika.player.sdk.android.defaultplayer.utils.putDefaultEventControllerState
-import com.movika.player.sdk.android.defaultplayer.utils.restoreDefaultVideoPlayerState
-import com.movika.player.sdk.android.defaultplayer.utils.saveDefaultVideoPlayerState
-import com.movika.player.sdk.android.defaultplayer.videoplayer.DefaultVideoPlayer
-import com.movika.player.sdk.android.utils.getPlayerState
-import com.movika.player.sdk.android.utils.putPlayerState
-import com.movika.player.sdk.base.data.DefaultManifestDownloader
-import com.movika.player.sdk.base.ui.CoreInteractivePlayer
-import kotlinx.coroutines.*
+...
 
 class MainActivity : AppCompatActivity() {
 
