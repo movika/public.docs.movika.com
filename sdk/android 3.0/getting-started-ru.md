@@ -82,7 +82,7 @@ override fun onSaveInstanceState(outState: Bundle) {
 
 ## Загрузка и воспроизведение
 
-### По ссылке
+### Воспроизведение по ссылке
 ```
 val manifestUrl = "https://YOUR_MANIFEST_URL"
 interactivePlayer.runByUrl(
@@ -92,7 +92,7 @@ interactivePlayer.runByUrl(
 )
 
 ```
-### Либо использование готового объекта
+### Воспроизведение с использованием готового объекта
 ```
 val manifest: Manifest = getYourSomeManifest()
 interactivePlayer.run(manifest)
