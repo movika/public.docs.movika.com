@@ -58,10 +58,11 @@ class App : Application() {
 val interactivePlayer = SimpleInteractivePlayer(
 	context = context,
 	config = Config(),
-	initState = savedInstanceState?.getBundle(bundleKey)
+	scope = lifecycleScope, // опционально
+	initState = savedInstanceState?.getBundle(bundleKey), // опционально
 )
 // Добавьте плеер в вашу разметку
-yourViewGroup.addView(interactivePlayerView)
+yourViewGroup.addView(interactivePlayer.view)
 ```
 
 ### Далее привяжите плеер к жизненному циклу Activity/Fragment
