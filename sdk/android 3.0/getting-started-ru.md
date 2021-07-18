@@ -59,7 +59,7 @@ val interactivePlayer = SimpleInteractivePlayer(
 	context = context,
 	config = Config(),
 	scope = lifecycleScope, // опционально
-	initState = savedInstanceState?.getBundle(bundleKey), // опционально
+	initBundleState = savedInstanceState?.getBundle(bundleKey), // опционально
 )
 // Добавьте плеер в вашу разметку
 yourViewGroup.addView(interactivePlayer.view)
