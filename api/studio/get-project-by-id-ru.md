@@ -7,7 +7,7 @@ sort: 0
 
 # Получить проект
 
-GET **https://api.movika.com/studio/pro/{projectId}**
+GET **https://api.movika.com/studio-pro/{projectId}**
 
 Возвращает проект интерактивного фильма по идентификатору **{projectId}**.
 
