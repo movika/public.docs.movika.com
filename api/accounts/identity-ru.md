@@ -7,7 +7,7 @@ sort: 0
  
 # Получить Access Token 
 
-POST **https://api.movika.com/accounts/identity/**
+POST **https://api.movika.com/accounts/identity/session**
 
 Возвращает Access Token.
 
