@@ -77,7 +77,8 @@ func onMovieEnded(history: InteractionHistory) {
 ## 4. Adding an interactive player to your ViewController
 
 If you want to add a player without inheriting from MovikaPlayerViewController. Just use the UIView MKEasyPlayer component. For more control over the player, use MKPlayer. In both of these UIView's, use methods setup() and subsequent play() similar to MovikaPlayerViewController to start the playback.
-````
+
+```
 let mkplayer = MKEasyPlayer(frame: view.frame)
 mkplayer.delegate = self
 self.view.addSubview(mkplayer)

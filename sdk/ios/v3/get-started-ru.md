@@ -76,7 +76,8 @@ func onMovieEnded(history: InteractionHistory) {
 ## 4. Добавьте плеер в свой ViewController
 
 Если вы хотите добавить плеер без наслеодования от MovikaPlayerViewController. Просто используйте UIView компонент MKEasyPlayer.  Для большего котроля над плеером используйте MKPlayer. В обоих UIView для запуска проекта используйте методы setup() и последующий play()
-````
+
+```
 let mkplayer = MKEasyPlayer(frame: view.frame)
 mkplayer.delegate = self
 self.view.addSubview(mkplayer)
