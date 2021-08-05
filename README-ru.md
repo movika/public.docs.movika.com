@@ -42,6 +42,12 @@ sort: 0
 *Для iframe API Key не требуется*
 
 #### iOS SDK
+
+Version 3.0.0-beta
+
+Пример интеграции sdk https://github.com/movika/ios.sdk.sample.movika.com
+1. [Начало работы](/sdk/ios/v3/get-started-ru.md)
+
 Version 2.1.1
 
 Пример интеграции sdk https://github.com/movika/ios.sdk.sample.movika.com

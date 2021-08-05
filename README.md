@@ -42,6 +42,11 @@ Register your App in the [Movika Developer](https://developer.movika.com) and co
 *For iframe API Key not required*
 
 #### iOS SDK
+Version 3.0.0-beta
+
+Пример интеграции sdk https://github.com/movika/ios.sdk.sample.movika.com
+1. [Getting started](/sdk/ios/v3/get-started.md)
+
 Version 2.1.1
 
 Sdk integration sample https://github.com/movika/ios.sdk.sample.movika.com
