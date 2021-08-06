@@ -52,7 +52,7 @@ Version 2.1.1
 5. [Готовый к использованию плеер](/sdk/ios/mk-easy-player-ru.md)
 6. [Пользовательский плеер](/sdk/ios/mkplayer-ru.md)
 
-#### Android SDK
+#### Android SDK версия 2
 
 0. [Начало работы](/sdk/android/getting-started-ru.md)
 1. [Получение данных для воспроизведения](/sdk/android/getting-movie-bundle-ru.md)
@@ -63,3 +63,11 @@ Version 2.1.1
 6. [Кастомизация элементов интерфейса паузы и воспроизведение](/sdk/android/play-pause-customization-ru.md)
 7. [Кастомизация элементов интерфейса смены аудио-дорожек и субтитров](/sdk/android/audio-subtitles-customization-ru.md)
 8. [Кастомизация интерактивов](/sdk/android/interactive-customization-ru.md)
+
+#### Android SDK версия 3 beta
+
+0. [Начало работы](/sdk/android 3.0/getting-started-ru.md)
+1. [Архитектура плеера](/sdk/android 3.0/player-arch-ru.md)
+2. [События плеера](/sdk/android 3.0/player-events-ru.md)
+3. [Конфигурация](/sdk/android 3.0/config-ru.md)
+4. [Аудио-дорожки и субтитры](/sdk/android 3.0/audio-subtitles-ru.md)
