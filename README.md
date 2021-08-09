@@ -9,7 +9,7 @@ sort: 0
 
 ## SDK
 
-### Web
+### Web Iframe
 
 Integration of the Movika Web SDK to your site can be done by embedding iframe in the HTML markup of the page.
 
@@ -29,6 +29,58 @@ Parameters (attributes) of the iframe:
 - **width** - sets the width of the video player ;
 - **height** - sets the height of the video player ;
 - **allowFullScreen** - enables or disables full-screen video playback.
+
+### Web SDK
+Version 2.5
+
+# Начало работы
+
+## 1. Register your App in the Movika Developer
+Register your App in the [Movika Developer](https://developer.movika.com) and copy the resulting API key. Keys are generated separately for all platforms (iOS, Android and Web).
+
+## 2. Add your NPM-KEY
+Add the .npmrc file to your project root and replace $ {NPM-KEY} with yours
+
+```
+ _authToken=${NPM-KEY}
+```
+
+## 3. Download SDK
+
+```
+ npm i @interactiveplatform/movika-player
+```
+
+## 4. Create your player
+
+```
+ import React from 'react';
+ import { movika } from '@interactiveplatform/movika-player'
+
+ function App() {
+ const videoRef = React.useRef(null)
+ const videoContainerRef = React.useRef(null)
+
+ React.useEffect(() => {
+  const options = {
+    ApiKey: &{ApiKey},
+    manifest: 'url to manifest',
+  }
+
+  const mp = new movika.Player(videoRef.current, options)
+  const co = new movika.ControlsOverlay(mp, videoContainerRef.current, videoRef.current)
+  const interactive = new movika.Interactives(mp, options, videoRef.current)
+ }, []);
+
+ return (
+      <div>
+        <div ref={videoContainerRef}>
+          <video ref={videoRef}/>
+        </div>
+      </div>
+ )
+ export default App
+```
 
 ### Mobile SDK
 
