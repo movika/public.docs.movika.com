@@ -118,8 +118,8 @@ Version 2.1.1
 
 #### Android SDK версия 3 beta
 
-0. [Начало работы](/sdk/android 3.0/getting-started-ru.md)
-1. [Архитектура плеера](/sdk/android 3.0/player-arch-ru.md)
-2. [События плеера](/sdk/android 3.0/player-events-ru.md)
-3. [Конфигурация](/sdk/android 3.0/config-ru.md)
-4. [Аудио-дорожки и субтитры](/sdk/android 3.0/audio-subtitles-ru.md)
+0. [Начало работы](/sdk/android-3.0/getting-started-ru.md)
+1. [Архитектура плеера](/sdk/android-3.0/player-arch-ru.md)
+2. [События плеера](/sdk/android-3.0/player-events-ru.md)
+3. [Конфигурация](/sdk/android-3.0/config-ru.md)
+4. [Аудио-дорожки и субтитры](/sdk/android-3.0/audio-subtitles-ru.md)
