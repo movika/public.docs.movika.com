@@ -36,7 +36,7 @@ Version 2.5
 # Начало работы
 
 ## 1. Зарегистрируйте свое приложение в Movika Developer
-Зарегистрируйте свое приложение в [Movika Developer] (https://developer.movika.com) и используйте полученный ключ API. Для всех платформ (iOS, Android и Web) ключи создаются отдельно.
+Зарегистрируйте свое приложение в [Movika Developer](https://developer.movika.com) и используйте полученный ключ API. Для всех платформ (iOS, Android и Web) ключи создаются отдельно.
 
 ## 2. Добавьте ваш NPM-KEY
 Добавьте файл .npmrc в корень проекта и замените ${NPM-KEY} на ваш
@@ -89,7 +89,7 @@ Version 2.5
 
 Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. 
 
-Зарегистрируйте свое приложение в [Movika Developer] (https://developer.movika.com) и используйте полученный ключ API. Для всех платформ (iOS, Android и Web) ключи создаются отдельно.
+Зарегистрируйте свое приложение в [Movika Developer](https://developer.movika.com) и используйте полученный ключ API. Для всех платформ (iOS, Android и Web) ключи создаются отдельно.
 
 *Для iframe API Key не требуется*
 
