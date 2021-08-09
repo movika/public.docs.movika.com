@@ -54,7 +54,7 @@ Version 2.5
 ## 4. Создайте плеер
 
 ```
- import React, { useRef, useEffect } from 'react';
+ import React from 'react';
  import { movika } from '@interactiveplatform/movika-player'
 
  function App() {

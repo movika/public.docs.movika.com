@@ -54,7 +54,7 @@ Add the .npmrc file to your project root and replace $ {NPM-KEY} with yours
 ## 4. Create your player
 
 ```
- import React, { useRef, useEffect } from 'react';
+ import React from 'react';
  import { movika } from '@interactiveplatform/movika-player'
 
  function App() {
