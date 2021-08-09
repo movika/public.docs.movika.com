@@ -7,7 +7,7 @@ sort: 1
 
 # Структура плеера
 
-![схема структуры плеера](player-arch.png)
+![схема структуры плеера](https://raw.githubusercontent.com/movika/public.docs.movika.com/develop/images/player-arch.png)
 
 **SimpleInteractivePlayer** является фасадом над основными компонентами плеера. Для более тонкой настройки плеера следует использовать основные компоненты плеера напрямую без применения **SimpleInteractivePlayer**.
 
