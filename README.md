@@ -112,6 +112,8 @@ Sdk integration sample https://github.com/movika/ios.sdk.sample.movika.com
 
 #### Android SDK version 2
 
+Version 2.0.10
+
 0. [Getting started](/sdk/android/getting-started.md)
 1. [Getting data for playback](/sdk/android/getting-movie-bundle.md)
 2. [Playback](/sdk/android/run-interactiveplayerview.md)
@@ -122,10 +124,10 @@ Sdk integration sample https://github.com/movika/ios.sdk.sample.movika.com
 7. [Customization of interface elements for switching audio tracks and subtitles](/sdk/android/audio-subtitles-customization.md)
 8. [Interactive customization](/sdk/android/interactive-customization.md)
 
-#### Android SDK version 3 beta
+Version 3.0.0-beta23
 
-0. [Getting started](/sdk/android 3.0/getting-started-ru.md)
-1. [Player architecture](/sdk/android 3.0/player-arch-ru.md)
-2. [Player Events](/sdk/android 3.0/player-events-ru.md)
-3. [Configuration](/sdk/android 3.0/config-ru.md)
-4. [Audio and subtitles](/sdk/android 3.0/audio-subtitles-ru.md)
+0. [Getting started](/sdk/android-3.0/getting-started-ru.md)
+1. [Player architecture](/sdk/android-3.0/player-arch-ru.md)
+2. [Player Events](/sdk/android-3.0/player-events-ru.md)
+3. [Configuration](/sdk/android-3.0/config-ru.md)
+4. [Audio and subtitles](/sdk/android-3.0/audio-subtitles-ru.md)

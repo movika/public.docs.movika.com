@@ -112,6 +112,8 @@ Version 2.1.1
 
 #### Android SDK версия 2
 
+Version 2.0.10
+
 0. [Начало работы](/sdk/android/getting-started-ru.md)
 1. [Получение данных для воспроизведения](/sdk/android/getting-movie-bundle-ru.md)
 2. [Воспроизведение](/sdk/android/run-interactiveplayerview-ru.md)
@@ -122,7 +124,7 @@ Version 2.1.1
 7. [Кастомизация элементов интерфейса смены аудио-дорожек и субтитров](/sdk/android/audio-subtitles-customization-ru.md)
 8. [Кастомизация интерактивов](/sdk/android/interactive-customization-ru.md)
 
-#### Android SDK версия 3 beta
+Version 3.0.0-beta23
 
 0. [Начало работы](/sdk/android-3.0/getting-started-ru.md)
 1. [Архитектура плеера](/sdk/android-3.0/player-arch-ru.md)
