@@ -31,12 +31,27 @@ allprojects {
 }
 ```
 
-Затем подключите зависимость
+Затем подключите зависимости
 
 ```
-implementation("com.movika.android:interactive-sdk:3.0.0-beta23")
+implementation "com.movika.android:interactive-sdk:3.0.0-beta23"
+implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
+implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
 ```
-
+Убедитесь, что минимальная версия Android SDK не ниже 23
+```
+...
+android {
+    ...
+    defaultConfig {
+        ...
+        minSdkVersion 23
+        ...
+    }
+    ...
+}
+...
+```
 ## Добавьте ваш ApiKey, AppName, AppVersion в классе, который наследуется от Application()
 
 ```
@@ -48,6 +63,18 @@ class App : Application() {
     }
     ...
 }
+```
+## Добавьте необходимые разрешения в манифест приложения
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    ...>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    ...
+
+</manifest>
 ```
 
 ## Создайте плеер
