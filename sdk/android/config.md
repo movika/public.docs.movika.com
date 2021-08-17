@@ -1,7 +1,7 @@
 ---
-title: Конфигурация SimpleInteractivePlayer
-description: Конфигурация SimpleInteractivePlayer
-keywords: Конфигурация SimpleInteractivePlayer
+title: SimpleInteractivePlayer configuration 
+description: SimpleInteractivePlayer configuration
+keywords: SimpleInteractivePlayer configuration
 sort: 3 
 ---
 

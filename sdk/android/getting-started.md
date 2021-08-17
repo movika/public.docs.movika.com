@@ -1,7 +1,7 @@
 ---
-title: Начало работы
-description: Начало работы
-keywords: Начало работы
+title: Getting started
+description: Getting started
+keywords: Getting started
 sort: 0
 ---
 

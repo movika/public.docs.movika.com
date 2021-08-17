@@ -1,7 +1,7 @@
 ---
-title: Структура плеера
-description: Структура плеера
-keywords: Структура плеера
+title: Player structure
+description: Player structure
+keywords: Player structure
 sort: 1 
 ---
 
