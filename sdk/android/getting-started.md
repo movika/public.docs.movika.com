@@ -7,9 +7,11 @@ sort: 0
 
 # Начало работы
 
+###  Пример проекта на [GitHub](https://github.com/movika/android.sdk.sample.movika.com)
+
 ## Получите доступ
 
-Для получения доступа к SDK необходимо написать на sdk@movika.com. После одобрения, вам будет выданы **apiKey** и **appName** для функционирования SDK.
+Чтобы получить Android **ApiKey** и задать **AppName** для SDK перейдите на https://developer.movika.com/ и создайте приложение Android
 
 ## Добавьте зависимости в Gradle
 
@@ -119,6 +121,3 @@ interactivePlayer.runByUrl(
 val manifest: Manifest = getYourSomeManifest()
 interactivePlayer.run(manifest)
 ```
-
-Вы можете воспользоваться примером проекта: [ссылка](https://github.com/movika/android.sdk.sample.movika.com)
-
