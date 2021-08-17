@@ -101,8 +101,8 @@ Sdk integration [sample](https://github.com/movika/ios.sdk.sample.movika.com)
 
 #### Android SDK
 
-0. [Getting started](/sdk/android/getting-started-ru.md)
-1. [Player architecture](/sdk/android/player-arch-ru.md)
-2. [Player Events](/sdk/android/player-events-ru.md)
-3. [Configuration](/sdk/android/config-ru.md)
-4. [Audio and subtitles](/sdk/android/audio-subtitles-ru.md)
+0. [Getting started](/sdk/android/getting-started.md)
+1. [Player architecture](/sdk/android/player-arch.md)
+2. [Player Events](/sdk/android/player-events.md)
+3. [Configuration](/sdk/android/config.md)
+4. [Audio and subtitles](/sdk/android/audio-subtitles.md)
