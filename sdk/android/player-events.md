@@ -1,7 +1,7 @@
 ---
-title: События плеера
-description: События плеера
-keywords: События плеера
+title: Player events
+description: Player Events
+keywords: Player Events
 sort: 2 
 ---
 

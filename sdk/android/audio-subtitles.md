@@ -1,7 +1,7 @@
 ---
-title: Аудиодорожки и субтитры
-description: Аудиодорожки и субтитры
-keywords: Аудиодорожки и субтитры
+title: Audio tracks and subtitles
+description: Audio tracks and subtitles
+keywords: Audio tracks and subtitles
 sort: 4
 ---
 
