@@ -43,20 +43,10 @@ sort: 0
 
 #### iOS SDK
 
-Version 3.0.0-beta
+##### Version 3.0.0-beta
 
-Пример интеграции sdk https://github.com/movika/ios.sdk.sample.movika.com
-1. [Начало работы](/sdk/ios/v3/get-started-ru.md)
-
-Version 2.1.1
-
-Пример интеграции sdk https://github.com/movika/ios.sdk.sample.movika.com
-1. [Начало работы](/sdk/ios/get-started-ru.md)
-2. [Сохранение фильмов](/sdk/ios/save-state-ru.md)
-3. [Настройка интерфейса](/sdk/ios/ui-customization-ru.md)
-4. [Пользовательские интерактивы](/sdk/ios/custom-events-ru.md)
-5. [Готовый к использованию плеер](/sdk/ios/mk-easy-player-ru.md)
-6. [Пользовательский плеер](/sdk/ios/mkplayer-ru.md)
+Sdk integration [sample](https://github.com/movika/ios.sdk.sample.movika.com)
+1. [Getting started](/sdk/ios-v3/get-started-ru.md)
 
 #### Android SDK
 
