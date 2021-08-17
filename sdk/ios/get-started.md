@@ -50,14 +50,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## 3. Create your player
 
-1. Create a UIView MKInteractivePlayer component
+1. Create UIView component MKInteractivePlayer
 
 ```
 let player = MKInteractivePlayer (frame: view.frame)
 self.view.addSubview (player)
 ```
    
-2. Insert a link to the data (MKManifest structure) needed to play the movie using MKManifestAsset.
+2. Set the URL to the MKManifest JSON data. Use MKManifestAsset
 
 ```
 player.setManifestAsset (MKURLManifestAsset (URL: URL))
@@ -69,7 +69,7 @@ player.setManifestAsset (MKURLManifestAsset (URL: URL))
 player.play ()
 ```
 
-4. Serve the player state with MKPlayerDelegate
+4. Track player status using MKPlayerDelegate
 ```
 let player = MKInteractivePlayer (frame: view.frame)
 player.delegate = self
