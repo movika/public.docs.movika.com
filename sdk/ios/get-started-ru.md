@@ -53,7 +53,7 @@ let player = MKInteractivePlayer(frame: view.frame)
 self.view.addSubview(player)
 ```
    
-2. Вставьте ссылку на данные (структура MKManifest) необходимые для воспроизведения фильма, используя MKManifestAsset
+2. Вставьте ссылку на данные (структура MKManifest) необходимые для воспроизведения фильма. Используйте MKURLManifestAsset
 
 ```
 player.setManifestAsset(MKURLManifestAsset(url: URL))
@@ -65,7 +65,7 @@ player.setManifestAsset(MKURLManifestAsset(url: URL))
 player.play()
 ```
 
-4. Отслуживайте состояние плеера используя MKPlayerDelegate
+4. Отслеживайте состояние плеера используя MKPlayerDelegate
 ```
 let player = MKInteractivePlayer(frame: view.frame)
 player.delegate = self
