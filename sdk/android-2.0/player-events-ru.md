@@ -2,13 +2,13 @@
 title: События плеера
 description: События плеера
 keywords: События плеера
-sort: 2 
+sort: 4 
 ---
 
 # События плеера
 
 Для прослушивания событий плеера, достаточно добавить необходимые слушатели. Для добавления, необходимо
-обращаться к специальным открытым полям  интерфейса InteractivePlayer, который реализуют SimpleInteractivePlayer и CoreInteractivePlayer. Данные поля являются реализацией
+обращаться к специальным открытым полям класса InteractivePlayerView. Данные поля являются реализацией
 **AbstractObservable<T>**, где T это тип слушателя.
 
 ```
@@ -56,6 +56,19 @@ val chapterListChangeObservable: AbstractObservable<OnChapterListChangeListener>
 val walkthroughHistoryChangeObservable: AbstractObservable<OnWalkthroughHistoryChangeListener>
 ```
 
+Для оповещения готовности плеера к воспроизведению
+
+```
+val readyObservable: AbstractObservable<OnReadyListener>
+```
+
+Для оповещения об ошибке воспроизведения плеера. Может быть полезен, если в конфигурации плеера
+isUseDefaultPlaybackErrorUi принимает значение false
+
+```
+val playbackErrorObservable: AbstractObservable<OnPlaybackErrorListener>
+```
+
 Для оповещения об изменении состояния воспроизведения плеера (воспроизведение/пауза)
 
 ```
@@ -71,7 +84,7 @@ val gameEndObservable: AbstractObservable<OnGameEndListener>
 Для оповещения о достижении конца тупиковой главы
 
 ```
-val lastChapterEndObservable: AbstractObservable<OnEndChapterEndListener>
+val endChapterEndObservable: AbstractObservable<OnEndChapterEndListener>
 ```
 
 Для оповещения начала воспроизведения интерактивного ролика
@@ -80,23 +93,20 @@ val lastChapterEndObservable: AbstractObservable<OnEndChapterEndListener>
 val startObservable: AbstractObservable<OnStartListener>
 ```
 
-## 	Обработка ошибок видеоплеера
-Для обработки ошибок видеоплеера понадобится реализация интерфейса **PlayerErrorController**.
-**PlayerErrorController** имеет следующие методы:
+### События изменения аудиодорожек и субтитров
+
+Для отслеживания таких событий необходимо обратиться к полю
 
 ```
-/* Попробовать возобновить воспроизведение после возникшей ошибки */
-fun retryOnError()
+val mediaOptionsControllerObservable: MediaOptionsControllerObservable?
+```
 
-/* Добавить колбек для ошибок */
-fun addPlayerErrorListener(listener: PlayerErrorListener)
-
-/* Убрать колбек для ошибок */
-fun removePlayerErrorListener(listener: PlayerErrorListener)
+Внимание! Значение этого поля доступно только после того, как плеер готов
+к воспроизведению. Для отслеживания готовности плеера обратитесь к полю
 
 ```
-Если в вашем проекте используется **SimpleInteractivePlayer** или **DefaultVideoPlayer**, то для получения **PlayerErrorController** необходимо:
+val readyObservable: AbstractObservable<OnReadyListener>
+```
 
-- При использовании **SimpleInteractivePlayer**, он уже является реализвацией **PlayerErrorController**
-- При использовании **DefaultVideoPlayer** необходимо обратиться к набору **PlayerComponents**
-``` videoPlayer.playerComponents.playerErrorController```
+При каждом вызова вызове метода **run** данное поле будет перезаписываться.
+Более подробно интерфейс **MediaOptionsControllerObservable** описан в этой статье: [ссылка](/sdk/android-2.0/audio-subtitles-customization-ru.md)
