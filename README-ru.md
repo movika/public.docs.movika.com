@@ -110,24 +110,10 @@ Version 2.1.1
 5. [Готовый к использованию плеер](/sdk/ios/mk-easy-player-ru.md)
 6. [Пользовательский плеер](/sdk/ios/mkplayer-ru.md)
 
-#### Android SDK версия 2
-
-Version 2.0.10
+#### Android SDK
 
 0. [Начало работы](/sdk/android/getting-started-ru.md)
-1. [Получение данных для воспроизведения](/sdk/android/getting-movie-bundle-ru.md)
-2. [Воспроизведение](/sdk/android/run-interactiveplayerview-ru.md)
-3. [Конфигурация плеера](/sdk/android/config-ru.md)
-4. [События плеера](/sdk/android/player-events-ru.md)
-5. [Кастомизация плеера](/sdk/android/introduce-to-player-customization-ru.md)
-6. [Кастомизация элементов интерфейса паузы и воспроизведение](/sdk/android/play-pause-customization-ru.md)
-7. [Кастомизация элементов интерфейса смены аудио-дорожек и субтитров](/sdk/android/audio-subtitles-customization-ru.md)
-8. [Кастомизация интерактивов](/sdk/android/interactive-customization-ru.md)
-
-Version 3.0.0-beta23
-
-0. [Начало работы](/sdk/android-3.0/getting-started-ru.md)
-1. [Архитектура плеера](/sdk/android-3.0/player-arch-ru.md)
-2. [События плеера](/sdk/android-3.0/player-events-ru.md)
-3. [Конфигурация](/sdk/android-3.0/config-ru.md)
-4. [Аудио-дорожки и субтитры](/sdk/android-3.0/audio-subtitles-ru.md)
+1. [Архитектура плеера](/sdk/android/player-arch-ru.md)
+2. [События плеера](/sdk/android/player-events-ru.md)
+3. [Конфигурация](/sdk/android/config-ru.md)
+4. [Аудио-дорожки и субтитры](/sdk/android/audio-subtitles-ru.md)
