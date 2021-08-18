@@ -9,6 +9,8 @@ sort: 0
 
 ## SDK
 
+Register your App in the [Movika Developer](https://developer.movika.com) and copy the resulting API key. Keys are generated separately for all platforms (iOS, Android and Web).
+
 ### Web SDK
 
 #### Integration with iframe:
@@ -28,12 +30,6 @@ Version 2.5
 
 To add an interactive player to your mobile application, use the following instructions
 for Android or iOS platform.
-
-To use the sdk you also need to get an API Key for your applications.
-
-Register your App in the [Movika Developer](https://developer.movika.com) and copy the resulting API key. Keys are generated separately for all platforms (iOS, Android and Web).
-
-_For iframe API Key not required_
 
 #### iOS SDK
 
