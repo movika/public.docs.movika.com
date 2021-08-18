@@ -53,11 +53,11 @@ export default App
 
 All events currently available are listed below:
 
-| Name                                      | Description                                                                                        |
-| ----------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| movika.Events.END_VIDEO                   | Fires when the movie ends                                                                          |
-| movika.Events.REPLAY_CHAPTER              | Fires when you click on the revision buttons for the current chapter of the movie                  |
-| movika.Events.SEEK_TO_CHAPTER_INTERACTIVE | Fires when you press the chapter rewind button to the beginning of the appearance of game elements |
-| movika.Events.CHANGE_VIDEO_VOLUME         | Fires when the sound changes                                                                       |
-| movika.Events.TOGGLE_VIDEO_FULLSCREEN     | Fires when entering full screen mode and exiting full screen mode                                  |
-| movika.Events.ATTACH_MANIFEST             | Fires when a new manifest is connected to the player                                               |
+| Name                                         | Description                                                                                        |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| movika.Events.END\_VIDEO                     | Fires when the movie ends                                                                          |
+| movika.Events.REPLAY\_CHAPTER                | Fires when you click on the revision buttons for the current chapter of the movie                  |
+| movika.Events.SEEK\_TO\_CHAPTER\_INTERACTIVE | Fires when you press the chapter rewind button to the beginning of the appearance of game elements |
+| movika.Events.CHANGE\_VIDEO\_VOLUME          | Fires when the sound changes                                                                       |
+| movika.Events.TOGGLE\_VIDEO\_FULLSCREEN      | Fires when entering full screen mode and exiting full screen mode                                  |
+| movika.Events.ATTACH\_MANIFEST               | Fires when a new manifest is connected to the player                                               |
