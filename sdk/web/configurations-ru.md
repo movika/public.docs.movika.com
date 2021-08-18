@@ -1,7 +1,7 @@
 ---
-title: Конфигруации
-description: Конфигруации
-keywords: Конфигруации
+title: Конфигурации
+description: Конфигурации
+keywords: Конфигурации
 sort: 1
 ---
 
