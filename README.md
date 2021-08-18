@@ -37,7 +37,7 @@ for Android or iOS platform.
 
 Sdk integration [sample](https://github.com/movika/ios.sdk.sample.movika.com)
 
-1. [Getting started](/sdk/ios-v3/get-started.md)
+1. [Getting started](/sdk/ios/get-started.md)
 
 #### Android SDK
 
