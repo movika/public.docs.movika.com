@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(rootView)
 
         /* 
-         * Далее, чтобы плеер начал воспроизведение, нужно предоставить манифест */
+         * Далее, чтобы плеер начал воспроизведение, нужно предоставить манифест
          * Замените ссылку демонстрационного манифеста на свою 
          */
         val url = "https://asazin-cache.cdnvideo.ru/asazin/movika/stage/users/00/movie/2/manifest-v3.json"
