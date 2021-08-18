@@ -20,8 +20,6 @@ end
 
 ```
 
-To get access to git repositories, make an inquiry to the sdk@movika.com or support@movika.com.
-
 Replace YOUR_TARGET_NAME, go to the Podfile folder and run the command:
 
 ```
@@ -52,44 +50,27 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## 3. Create your player
 
-1. Create a new class view controller and inherit it from the MovikaPlayerViewController class
-2. Load the data (GameManifest structure) needed to play the movie using the DefaultGameManifestDownloader load(..) method
+1. Create UIView component MKInteractivePlayer
 
 ```
-let downloader = DefaultGameManifestDownloader(downloadManifestDelegate: self)
-downloader.load(movie: Movie(id: movieId, manifestUrl: movieManifestLink), downloadWasEnded: { manifest, error  in
-    if let error = error {
-        print("Error loading manifeist \(error.localizedDescription)")
-    } else {
-        self.manifest = manifest
-        print("Manifest ready for playing")
-    }
-})
+let player = MKInteractivePlayer (frame: view.frame)
+self.view.addSubview (player)
 ```
-
-3. When the GameManifest is loaded, pass it to the player by calling controller class setup(..) method. (Link to test manifest https://asazin-cache.cdnvideo.ru/asazin/tutorial/json/manifest.json)
+   
+2. Set the URL to the MKManifest JSON data. Use MKManifestAsset
 
 ```
- self.setup(playerRepository: DefaultPlayerRepository(),
-                   manifest: manifest,
-                   startFromSavePoint: false,
-                   customEventViewFactory: nil)
- self.mkplayer.play()
+player.setManifestAsset (MKURLManifestAsset (URL: URL))
 ```
 
-4. When the player finishes playing the movie, controller's method onMovieEnded will be called, or onMovieClose if the user clicks on the button to end playback
+3. To start playback, call the player's play method
 
 ```
-func onMovieClose() {
-    self.dismiss(animated: true, completion:nil)
-}
-
-func onMovieEnded(history: InteractionHistory) {
-    self.dismiss(animated: true, completion:nil)
-}
+player.play ()
 ```
 
-
-## 4. Adding an interactive player to your ViewController
-
-If you want to add a player without inheriting from MovikaPlayerViewController. Just use the UIView MKEasyPlayer component. For more control over the player, use MKPlayer. In both of these UIView's, use methods setup() and subsequent play() similar to MovikaPlayerViewController to start the playback.
+4. Track player status using MKPlayerDelegate
+```
+let player = MKInteractivePlayer (frame: view.frame)
+player.delegate = self
+```

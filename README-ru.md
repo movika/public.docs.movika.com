@@ -9,96 +9,35 @@ sort: 0
 
 ## SDK
 
-### Web Iframe
- 
-Интеграция Web SDK Movika на сайт осуществляется с помощью встраивания тега iframe в HTML разметку страницы.
-
- <iframe allowFullScreen src="https://movika.com/ru/player/movika-sdk-sample" allowFullScreen scrolling="no" frameborder="0">
- </iframe>
-
-Пример тега **iframe**, отображающего интерактивный видеопроигрыватель размером 840x560 пикселей представлен ниже:
-
-```
- <iframe style="width:840px; height:560px" allowFullScreen src="https://movika.com/ru/player/movika-sdk-sample">
- </iframe>
-```
-
-Параметры (атрибуты) iframe:
-
-- **src** - содержит URL, указывающий на путь, содержащий интерактивный видеоконтент;
-- **width** - задает ширину плеера проигрываемого видеоконтента;
-- **height** - задает высоту плеера проигрываемого видеоконтента;
-- **allowFullScreen** - разрешает или запрещает полноэкранное воспроизведение видео.
-
-### Web SDK
-Version 2.5
-
-# Начало работы
-
-## 1. Зарегистрируйте свое приложение в Movika Developer
 Зарегистрируйте свое приложение в [Movika Developer](https://developer.movika.com) и используйте полученный ключ API. Для всех платформ (iOS, Android и Web) ключи создаются отдельно.
 
-## 2. Добавьте ваш NPM-KEY
-Добавьте файл .npmrc в корень проекта и замените ${NPM-KEY} на ваш
+### Web SDK
 
-```
- _authToken=${NPM-KEY}
-```
+#### Интеграция с помощью iframe:
 
-## 3. Скачайте SDK
+[Встраивание Movika](/sdk/web/iframe-ru.md)
 
-```
- npm i @interactiveplatform/movika-player
-```
+#### Интеграция с помощью npm:
 
-## 4. Создайте плеер
+Версия 2.5
 
-```
- import React from 'react';
- import { movika } from '@interactiveplatform/movika-player'
-
- function App() {
- const videoRef = React.useRef(null)
- const videoContainerRef = React.useRef(null)
-
- React.useEffect(() => {
-  const options = {
-    ApiKey: &{ApiKey},
-    manifest: 'url to manifest',
-  }
-
-  const mp = new movika.Player(videoRef.current, options)
-  const co = new movika.ControlsOverlay(mp, videoContainerRef.current, videoRef.current)
-  const interactive = new movika.Interactives(mp, options, videoRef.current)
- }, []);
-
- return (
-      <div>
-        <div ref={videoContainerRef}>
-          <video ref={videoRef}/>
-        </div>
-      </div>
- )
- export default App
-```
+1. [Начало работы](/sdk/web/get-started-ru.md)
+2. [Конфигурация](/sdk/web/configurations-ru.md)
+3. [События](/sdk/web/events-ru.md)
+4. [Ошибки](/sdk/web/errors-ru.md)
 
 ### Mobile SDK
 
-Для добавления интерактивного плеера в свое мобильное приложение, воспользуйстель данной инструкцией
+Для добавления интерактивного плеера в свое мобильное приложение, воспользуйтесь данной инструкцией
 для платформы Android или iOS.
-
-Чтобы использовать sdk вам так же понадобится получить API Key для ваших приложений. 
-
-Зарегистрируйте свое приложение в [Movika Developer](https://developer.movika.com) и используйте полученный ключ API. Для всех платформ (iOS, Android и Web) ключи создаются отдельно.
-
-*Для iframe API Key не требуется*
 
 #### iOS SDK
 
 ##### Version 3.0.0-beta
 
-Sdk integration [sample](https://github.com/movika/ios.sdk.sample.movika.com)
-1. [Getting started](/sdk/ios-v3/get-started-ru.md)
+Интеграция SDK [пример](https://github.com/movika/ios.sdk.sample.movika.com)
+https://docs.movika.com/ru/sdk/ios/get-started
+1. [Начало работы](/sdk/ios/get-started-ru.md)
 
 #### Android SDK
 
