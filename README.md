@@ -9,94 +9,34 @@ sort: 0
 
 ## SDK
 
-### Web Iframe
-
-Integration of the Movika Web SDK to your site can be done by embedding iframe in the HTML markup of the page.
-
- <iframe allowFullScreen src="https://movika.com/ru/player/movika-sdk-sample" allowFullScreen scrolling="no" frameborder="0">
- </iframe>
-
-Example of the tag **iframe**, displaying an interactive video player with a size of 840x560 pixels is shown below:
-
-```
- <iframe style="width:840px; height:560px" allowFullScreen src="https://movika.com/ru/player/movika-sdk-sample">
- </iframe>
-```
-
-Parameters (attributes) of the iframe:
-
-- **src** - URL path of the interactive video content ;
-- **width** - sets the width of the video player ;
-- **height** - sets the height of the video player ;
-- **allowFullScreen** - enables or disables full-screen video playback.
-
-### Web SDK
-Version 2.5
-
-# Начало работы
-
-## 1. Register your App in the Movika Developer
 Register your App in the [Movika Developer](https://developer.movika.com) and copy the resulting API key. Keys are generated separately for all platforms (iOS, Android and Web).
 
-## 2. Add your NPM-KEY
-Add the .npmrc file to your project root and replace $ {NPM-KEY} with yours
+### Web SDK
 
-```
- _authToken=${NPM-KEY}
-```
+#### Integration with iframe:
 
-## 3. Download SDK
+[Embedding Movika](/sdk/web/iframe.md)
 
-```
- npm i @interactiveplatform/movika-player
-```
+#### Integration with npm:
 
-## 4. Create your player
+Version 2.5
 
-```
- import React from 'react';
- import { movika } from '@interactiveplatform/movika-player'
-
- function App() {
- const videoRef = React.useRef(null)
- const videoContainerRef = React.useRef(null)
-
- React.useEffect(() => {
-  const options = {
-    ApiKey: &{ApiKey},
-    manifest: 'url to manifest',
-  }
-
-  const mp = new movika.Player(videoRef.current, options)
-  const co = new movika.ControlsOverlay(mp, videoContainerRef.current, videoRef.current)
-  const interactive = new movika.Interactives(mp, options, videoRef.current)
- }, []);
-
- return (
-      <div>
-        <div ref={videoContainerRef}>
-          <video ref={videoRef}/>
-        </div>
-      </div>
- )
- export default App
-```
+1. [Get started](/sdk/web/get-started.md)
+2. [Configurations](/sdk/web/configurations.md)
+3. [Events](/sdk/web/events.md)
+4. [Errors](/sdk/web/errors.md)
 
 ### Mobile SDK
 
 To add an interactive player to your mobile application, use the following instructions
 for Android or iOS platform.
 
-To use the sdk you also need to get an API Key for your applications. 
-
-Register your App in the [Movika Developer](https://developer.movika.com) and copy the resulting API key. Keys are generated separately for all platforms (iOS, Android and Web).
-
-*For iframe API Key not required*
-
 #### iOS SDK
+
 ##### Version 3.0.0-beta
 
 Sdk integration [sample](https://github.com/movika/ios.sdk.sample.movika.com)
+
 1. [Getting started](/sdk/ios/get-started.md)
 
 #### Android SDK
