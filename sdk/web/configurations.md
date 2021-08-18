@@ -53,8 +53,8 @@ sort: 1
 
 | Name             | Required | Type    | Default | Description               |
 | ---------------- | -------- | ------- | ------- | ------------------------- |
-| width            | No       | String  | "100%"  | Container width           |
-| height           | No       | String  | "100%"  | Container height          |
+| width            | No       | String  | 100%    | Container width           |
+| height           | No       | String  | 100%    | Container height          |
 | endOfVideoSсreen | No       | Boolean | true    | Show video ending element |
 
 ## Interactives
