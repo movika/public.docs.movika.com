@@ -108,7 +108,8 @@ override fun onSaveInstanceState(outState: Bundle) {
 
 ### Воспроизведение по ссылке
 ```
-val manifestUrl = "https://YOUR_MANIFEST_URL"
+/* Замените ссылку демонстрационного манифеста на свою */
+val manifestUrl = "https://asazin-cache.cdnvideo.ru/asazin/movika/stage/users/00/movie/2/manifest-v3.json"
 interactivePlayer.runByUrl(
 	url = manifestUrl,
 	onSuccess = { /* Handle success load */ },
