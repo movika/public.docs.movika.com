@@ -77,3 +77,7 @@ sort: 0
 
  export default App
 ```
+
+После правильного выполнения всех шагов (1-4), у вас должен отобразиться плеер Movika.
+
+![Веб плеер movika](https://raw.githubusercontent.com/movika/public.docs.movika.com/feature/web-sdk-doc-2.5/images/web-player-screen.png)

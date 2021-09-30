@@ -77,3 +77,7 @@ To gain access to download the SDK, you will need to obtain an access key. To ob
 
  export default App
 ```
+
+After all the steps (1-4) have been completed correctly, your Movika player should be displayed.
+
+![web player movika](https://raw.githubusercontent.com/movika/public.docs.movika.com/feature/web-sdk-doc-2.5/images/web-player-screen.png)
