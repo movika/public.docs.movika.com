@@ -15,3 +15,4 @@ Below are the error codes of the player:
 | 10002       | HTMLVideoElement is not passed to the player |
 | 10003       | This video format is not supported           |
 | 10004       | Not valid apiKey or appName                  |
+| 10005       | The file is not available at this link       |

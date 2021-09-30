@@ -40,20 +40,30 @@ To gain access to download the SDK, you will need to obtain an access key. To ob
   const videoContainerRef = React.useRef(null)
 
   React.useEffect(() => {
-    const options = {
+    const playerOptions = {
       apiKey: <YOUR_API_KEY>,
       appName: <YOUR_APP_NAME>,
       manifest: '<URL_TO_MANIFEST>',
     }
 
+    const controlsOverlayOptions = {
+      endOfMovieScreen: true,
+    }
+
     const mp = new movika.Player(videoRef.current, options)
-    const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, videoRef.current)
-    const mi = new movika.Interactives(mp, options, videoRef.current)
+    const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, controlsOverlayOptions)
+    const mi = new movika.Interactives(mp)
+
+    return () => {
+			mp.destroy()
+			co.destroy()
+			int.destroy()
+		}
  }, []);
 
 	const style = {
-		height: 'calc((9 / 16) * 100vw)',
 		width: '100vw',
+		height: 'calc((9 / 16) * 100vw)',
   }
 
   return (
