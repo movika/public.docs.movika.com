@@ -28,7 +28,7 @@ To listen to player events, you just need to add the necessary listeners. All cu
       endOfMovieScreen: true,
     }
 
-    const mp = new movika.Player(videoRef.current, options)
+    const mp = new movika.Player(videoRef.current, playerOptions)
     const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, controlsOverlayOptions)
     const mi = new movika.Interactives(mp)
 
@@ -39,8 +39,8 @@ To listen to player events, you just need to add the necessary listeners. All cu
 
     return () => {
 			mp.destroy()
-			co.destroy()
-			int.destroy()
+			mco.destroy()
+			mi.destroy()
 		}
  }, []);
 

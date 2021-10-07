@@ -17,7 +17,7 @@ Register your application with [Movika Developer] (https://developer.movika.com)
 
 ## 2. Add your NPM-KEY
 
-To gain access to download the SDK, you will need to obtain an access key. To obtain it, please contact support@movika.com. After obtaining the access token, add the .npmrc file to the project root and replace $ {NPM-KEY} with the obtained access token.
+To gain access to download the SDK, you will need to obtain an access key. To obtain it, please contact sdk@movik.com. After obtaining the access token, add the .npmrc file to the project root and replace ${NPM-KEY} with the obtained access token.
 
 ```
  _authToken=${NPM-KEY}
@@ -50,14 +50,14 @@ To gain access to download the SDK, you will need to obtain an access key. To ob
       endOfMovieScreen: true,
     }
 
-    const mp = new movika.Player(videoRef.current, options)
+    const mp = new movika.Player(videoRef.current, playerOptions)
     const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, controlsOverlayOptions)
     const mi = new movika.Interactives(mp)
 
     return () => {
 			mp.destroy()
-			co.destroy()
-			int.destroy()
+			mco.destroy()
+			mi.destroy()
 		}
  }, []);
 

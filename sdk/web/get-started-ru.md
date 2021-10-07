@@ -17,7 +17,7 @@ sort: 0
 
 ## 2. Добавьте ваш NPM-KEY
 
-Для получения доступа на скачивание SDK вам потребуется получить ключ доступа. Для его получения обратитесь к support@movika.com. После получения ключа доступа добавьте файл .npmrc в корень проекта и замените ${NPM-KEY} на полученный ключ доступа.
+Для получения доступа на скачивание SDK вам потребуется получить ключ доступа. Для его получения обратитесь к sdk@movik.com. После получения ключа доступа добавьте файл .npmrc в корень проекта и замените ${NPM-KEY} на полученный ключ доступа.
 
 ```
  _authToken=${NPM-KEY}
@@ -50,14 +50,14 @@ sort: 0
       endOfMovieScreen: true,
     }
 
-    const mp = new movika.Player(videoRef.current, options)
+    const mp = new movika.Player(videoRef.current, playerOptions)
     const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, controlsOverlayOptions)
     const mi = new movika.Interactives(mp)
 
     return () => {
 			mp.destroy()
-			co.destroy()
-			int.destroy()
+			mco.destroy()
+			mi.destroy()
 		}
  }, []);
 
