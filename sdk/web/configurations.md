@@ -16,6 +16,8 @@ sort: 1
 
 ## Player
 
+### Constructor:
+
 ```
   new Player(mediaElement, playerOptions)
 ```
@@ -29,13 +31,29 @@ sort: 1
 
 ### **PlayerOptions parameters:**
 
-| Name     | Required | Type   | Default | Description                                                                                              |
-| -------- | -------- | ------ | ------- | -------------------------------------------------------------------------------------------------------- |
-| manifest | Yes      | String | -       | Interactive film manifest                                                                                |
-| apiKey   | Yes      | String | -       | apiKey obtained after registering the application with [Movika Developer](https://developer.movika.com)  |
-| appName  | Yes      | String | -       | appName obtained after registering the application with [Movika Developer](https://developer.movika.com) |
+| Name            | Required | Type   | Default | Description                                                                                              |
+| --------------- | -------- | ------ | ------- | -------------------------------------------------------------------------------------------------------- |
+| manifest        | Yes      | String | -       | Interactive film manifest                                                                                |
+| apiKey          | Yes      | String | -       | apiKey obtained after registering the application with [Movika Developer](https://developer.movika.com)  |
+| appName         | Yes      | String | -       | appName obtained after registering the application with [Movika Developer](https://developer.movika.com) |
+| preferredFormat | No       | String | HLS     | Preferred playback format. Available values: MP4 and HLS                                                 |
+
+### Methods:
+
+#### destroy()
+
+Removes all listeners and clears all properties of the Player instance.
+
+```
+  const mp = new Player(mediaElement, playerOptions)
+
+  // destroy method
+  mp.destroy()
+```
 
 ## ControlsOverlay
+
+### Constructor:
 
 ```
   new ControlsOverlay(playerInstance, containerElement, controlsOverlayOptions)
@@ -55,9 +73,24 @@ sort: 1
 | ---------------- | -------- | ------- | ------- | ------------------------- |
 | width            | No       | String  | 100%    | Container width           |
 | height           | No       | String  | 100%    | Container height          |
-| endOfVideoSсreen | No       | Boolean | true    | Show video ending element |
+| endOfVideoScreen | No       | Boolean | true    | Show video ending element |
+
+### Methods:
+
+#### destroy()
+
+Removes all listeners and clears all properties of the ControlsOverlay instance.
+
+```
+  const co = new ControlsOverlay(playerInstance, containerElement, controlsOverlayOptions)
+
+  // destroy method
+  co.destroy()
+```
 
 ## Interactives
+
+### Constructor:
 
 ```
   new Interactives(playerInstance)
@@ -68,3 +101,16 @@ sort: 1
 | Name           | Required | Type           | Default | Description                     |
 | -------------- | -------- | -------------- | ------- | ------------------------------- |
 | playerInstance | Yes      | playerInstance | -       | An instance of the Player class |
+
+### Methods:
+
+#### destroy()
+
+Removes all listeners and clears all properties of the Player instance.
+
+```
+  const mi = new Interactives(playerInstance)
+
+  // destroy method
+  mi.destroy()
+```
