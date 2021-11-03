@@ -15,7 +15,7 @@ use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
   use_frameworks!
-  pod 'MovikaSDK', :git => 'https://bitbucket.org/interactiveplatform/ios.sdk.movika.com.git'
+  pod 'MovikaSDK'
 end
 
 ```
