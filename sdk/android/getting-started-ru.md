@@ -30,7 +30,7 @@ allprojects {
 Затем подключите зависимости
 
 ```
-implementation "com.movika.android:interactive-sdk:3.0.0-rc03"
+implementation "com.movika.android:interactive-sdk:3.0.0-rc06"
 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
 ```
