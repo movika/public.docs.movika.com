@@ -48,6 +48,10 @@ android {
 }
 ...
 ```
+## Добавьте правила в ProGuard
+```
+-keep class com.movika.player.sdk** { *; }
+```
 ## Добавьте ваш ApiKey, AppName, AppVersion в классе, который наследуется от Application()
 
 ```
