@@ -35,7 +35,7 @@ sort: 0
 
 ##### Version 3.0.0-beta
 
-Интеграция SDK [пример](https://github.com/movika/ios.sdk.sample.movika.com)
+Интеграция SDK [пример](https://github.com/movika/movika-sdk-ios/tree/master/Example)
 https://docs.movika.com/ru/sdk/ios/get-started
 1. [Начало работы](/sdk/ios/get-started-ru.md)
 

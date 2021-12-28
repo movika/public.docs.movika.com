@@ -30,7 +30,7 @@ allprojects {
 Затем подключите зависимости
 
 ```
-implementation "com.movika.android:interactive-sdk:3.0.0-beta24"
+implementation "com.movika.android:interactive-sdk:3.0.0-rc07"
 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
 ```
@@ -47,6 +47,10 @@ android {
     ...
 }
 ...
+```
+## Добавьте правила в ProGuard
+```
+-keep class com.movika.player.sdk** { *; }
 ```
 ## Добавьте ваш ApiKey, AppName, AppVersion в классе, который наследуется от Application()
 

@@ -17,7 +17,7 @@ sort: 0
 
 ## 2. Добавьте ваш NPM-KEY
 
-Для получения доступа на скачивание SDK вам потребуется получить ключ доступа. Для его получения обратитесь к support@movika.com. После получения ключа доступа добавьте файл .npmrc в корень проекта и замените ${NPM-KEY} на полученный ключ доступа.
+Для получения доступа на скачивание SDK вам потребуется получить ключ доступа. Для его получения обратитесь к [sdk@movika.com](mailto:sdk@movika.com). После получения ключа доступа добавьте файл .npmrc в корень проекта и замените ${NPM-KEY} на полученный ключ доступа.
 
 ```
  _authToken=${NPM-KEY}
@@ -40,20 +40,30 @@ sort: 0
   const videoContainerRef = React.useRef(null)
 
   React.useEffect(() => {
-    const options = {
+    const playerOptions = {
       apiKey: <YOUR_API_KEY>,
       appName: <YOUR_APP_NAME>,
       manifest: '<URL_TO_MANIFEST>',
     }
 
-    const mp = new movika.Player(videoRef.current, options)
-    const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, videoRef.current)
-    const mi = new movika.Interactives(mp, options, videoRef.current)
+    const controlsOverlayOptions = {
+      endOfMovieScreen: true,
+    }
+
+    const mp = new movika.Player(videoRef.current, playerOptions)
+    const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, controlsOverlayOptions)
+    const mi = new movika.Interactives(mp)
+
+    return () => {
+			mp.destroy()
+			mco.destroy()
+			mi.destroy()
+		}
  }, []);
 
 	const style = {
-		height: 'calc((9 / 16) * 100vw)',
 		width: '100vw',
+		height: 'calc((9 / 16) * 100vw)',
   }
 
   return (
@@ -67,3 +77,7 @@ sort: 0
 
  export default App
 ```
+
+После правильного выполнения всех шагов (1-4), у вас должен отобразиться плеер Movika.
+
+![Веб плеер movika](https://raw.githubusercontent.com/movika/public.docs.movika.com/feature/web-sdk-doc-2.5/images/web-player-screen.png)

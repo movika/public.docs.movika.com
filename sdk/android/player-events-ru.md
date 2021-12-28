@@ -100,3 +100,18 @@ fun removePlayerErrorListener(listener: PlayerErrorListener)
 - При использовании **SimpleInteractivePlayer**, он уже является реализвацией **PlayerErrorController**
 - При использовании **DefaultVideoPlayer** необходимо обратиться к набору **PlayerComponents**
 ``` videoPlayer.playerComponents.playerErrorController```
+
+## Обработка состояния воспроизведения видео
+Для обработки состояния воспроизведения видео необходимо получить реализацию PlaybackObservable.
+Если в вашем проекте используется **SimpleInteractivePlayer** или **DefaultVideoPlayer**, то для получения **PlayerErrorController** необходимо:
+- При использовании **SimpleInteractivePlayer**, обратиться к полю **playbackObservable**
+- При использовании **DefaultVideoPlayer** необходимо обратиться к набору **PlayerComponents**
+  ``` videoPlayer.playerComponents.playbackController```
+
+### Состояния воспроизведения видео:
+| Тип | Описание |
+|---|---|
+|IDLE|Плеер простаивает. Нет видео в очереди|
+|READY|Плеер готов к воспроизведению. Фактическое воспроизведение в данном случае зависит от того, находится ли плеер сейчас на паузе|
+|BUFFERING|Происходит буфферизация/подгрузка видео. В данный момент плеер не готов к воспроизведению|
+|ENDED|Текущее видео закончилось. После этого состояния начинает воспроизводиться следующее видео/глава при наличии|
