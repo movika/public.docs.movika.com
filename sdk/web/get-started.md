@@ -17,7 +17,7 @@ Register your application with [Movika Developer] (https://developer.movika.com)
 
 ## 2. Add your NPM-KEY
 
-To gain access to download the SDK, you will need to obtain an access key. To obtain it, please contact support@movika.com. After obtaining the access token, add the .npmrc file to the project root and replace $ {NPM-KEY} with the obtained access token.
+To gain access to download the SDK, you will need to obtain an access key. To obtain it, please contact [sdk@movika.com](mailto:sdk@movika.com). After obtaining the access token, add the .npmrc file to the project root and replace ${NPM-KEY} with the obtained access token.
 
 ```
  _authToken=${NPM-KEY}
@@ -40,20 +40,30 @@ To gain access to download the SDK, you will need to obtain an access key. To ob
   const videoContainerRef = React.useRef(null)
 
   React.useEffect(() => {
-    const options = {
+    const playerOptions = {
       apiKey: <YOUR_API_KEY>,
       appName: <YOUR_APP_NAME>,
       manifest: '<URL_TO_MANIFEST>',
     }
 
-    const mp = new movika.Player(videoRef.current, options)
-    const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, videoRef.current)
-    const mi = new movika.Interactives(mp, options, videoRef.current)
+    const controlsOverlayOptions = {
+      endOfMovieScreen: true,
+    }
+
+    const mp = new movika.Player(videoRef.current, playerOptions)
+    const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, controlsOverlayOptions)
+    const mi = new movika.Interactives(mp)
+
+    return () => {
+			mp.destroy()
+			mco.destroy()
+			mi.destroy()
+		}
  }, []);
 
 	const style = {
-		height: 'calc((9 / 16) * 100vw)',
 		width: '100vw',
+		height: 'calc((9 / 16) * 100vw)',
   }
 
   return (
@@ -67,3 +77,7 @@ To gain access to download the SDK, you will need to obtain an access key. To ob
 
  export default App
 ```
+
+After all the steps (1-4) have been completed correctly, your Movika player should be displayed.
+
+![web player movika](https://raw.githubusercontent.com/movika/public.docs.movika.com/feature/web-sdk-doc-2.5/images/web-player-screen.png)

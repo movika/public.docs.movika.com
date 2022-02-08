@@ -35,7 +35,7 @@ for Android or iOS platform.
 
 ##### Version 3.0.0-beta
 
-Sdk integration [sample](https://github.com/movika/ios.sdk.sample.movika.com)
+Sdk integration [sample](https://github.com/movika/movika-sdk-ios/tree/master/Example)
 
 1. [Getting started](/sdk/ios/get-started.md)
 
