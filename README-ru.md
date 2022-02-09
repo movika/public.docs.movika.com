@@ -19,7 +19,7 @@ sort: 0
 
 #### Интеграция с помощью npm:
 
-Версия 2.5
+Версия 3.1.0
 
 1. [Начало работы](/sdk/web/get-started-ru.md)
 2. [Конфигурация](/sdk/web/configurations-ru.md)
@@ -37,6 +37,7 @@ sort: 0
 
 Интеграция SDK [пример](https://github.com/movika/movika-sdk-ios/tree/master/Example)
 https://docs.movika.com/ru/sdk/ios/get-started
+
 1. [Начало работы](/sdk/ios/get-started-ru.md)
 
 #### Android SDK
