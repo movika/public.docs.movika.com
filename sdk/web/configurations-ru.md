@@ -37,6 +37,7 @@ sort: 1
 | apiKey          | Да           | String | -            | apiKey, полученный после регистрации приложения в [Movika Developer](https://developer.movika.com)  |
 | appName         | Да           | String | -            | appName, полученный после регистрации приложения в [Movika Developer](https://developer.movika.com) |
 | preferredFormat | Нет          | String | HLS          | Предпочтительный формат для воспроизведения. Доступные значения: MP4 и HLS                          |
+| initialChapter  | Нет          | String | -            | Идентификатор главы, указывающий из какой главы нужно начать воспроизведение                        |
 
 ### Методы Player:
 
@@ -73,7 +74,7 @@ sort: 1
 | ---------------- | ------------ | ------- | ------------ | -------------------------------- |
 | width            | Нет          | String  | 100%         | Ширина контейнера                |
 | height           | Нет          | String  | 100%         | Высота контейнера                |
-| endOfVideoScreen | Нет          | Boolean | true         | Показать элемент окончания видео |
+| endOfVideoScreen | Нет          | Boolean | false        | Показать элемент окончания видео |
 
 ### Методы ControlsOverlay:
 
