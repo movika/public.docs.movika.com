@@ -7,7 +7,8 @@ sort: 2
 
 # События плеера
 
-Для отслеживания событий плеера требуется реализовать протокол **MKPlayerDelegate**, перед этим указав .delegate = self.
+Для отслеживания событий плеера требуется реализовать протокол **MKPlayerDelegate**
+---
 
 Отслеживания результата интеракции через структуру **InteractionResult**
 ```
@@ -24,7 +25,7 @@ func mkplayer(_ player: MKPlayer, isPause: Bool)
 func mkplayer(_ player: MKPlayer, didUpdate state: MKPlayState)
 ```
 
-Отслеживать через **URL** в случае если интерактив ведет на другое видео
+Отслеживать через **URL** в случае если интерактив ведет на другую ссылку
 ```
 func mkplayer(_ player: MKPlayer, didRequestOpen uri: URL)
 ```
@@ -48,12 +49,6 @@ func mkplayer(_ player: MKPlayer, showChapter chapter: Chapter)
 ```
 func mkplayer(_ player: MKPlayer, didAppearEventWithChapter chapter: Chapter)
 ```
----
-_Устаревший делегат, не следует использовать_
-```
-func mkplayer(_ player: MKPlayer, showEventForChapter chapter: Chapter, with progress: Double)
-```
----
 
 ## 	Обработка ошибок видеоплеера
 Для обработки ошибок видеоплеера требуется реализовать следующий метод
