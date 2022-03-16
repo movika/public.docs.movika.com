@@ -10,27 +10,27 @@ sort: 2
 Для отслеживания событий плеера требуется реализовать протокол **MKPlayerDelegate**
 ---
 
-Результата взаимодействия содержится в структуре **InteractionResult**
+Метод вызывается при взаимодействии с плеером, результат находится в структуре **InteractionResult**
 ```
 func mkplayer(_ player: MKPlayer, result: InteractionResult)
 ```
 
-Отслеживание, находится ли видео на паузе
+Метод вызывается при паузе/возобновлении видео, результат находится в переменной **isPause**
 ```
 func mkplayer(_ player: MKPlayer, isPause: Bool)
 ```
 
-Отслеживание состояния видео через структуру **MKPlayState**
+Метод вызывается при отслеживании состояния видео, результат находится в структуре **MKPlayState**
 ```
 func mkplayer(_ player: MKPlayer, didUpdate state: MKPlayState)
 ```
 
-Отслеживать через **URL** в случае если интерактив ведет на эту ссылку
+Метод вызывается в случае если интерактив ведет на эту ссылку, результат отслеживать через **URL**
 ```
 func mkplayer(_ player: MKPlayer, didRequestOpen uri: URL)
 ```
 
-Отслеживать если закончилось видео
+Метод вызывается в конце видео, результат отслеживать через **MKManifest**
 ```
 func mkplayer(_ player: MKPlayer, didEndPlaying manifest: MKManifest)
 ```
