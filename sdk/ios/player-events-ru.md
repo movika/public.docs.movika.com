@@ -10,7 +10,7 @@ sort: 2
 Для отслеживания событий плеера требуется реализовать протокол **MKPlayerDelegate**
 ---
 
-Отслеживания результата интеракции через структуру **InteractionResult**
+Результата взаимодействия содержится в структуре **InteractionResult**
 ```
 func mkplayer(_ player: MKPlayer, result: InteractionResult)
 ```
@@ -25,7 +25,7 @@ func mkplayer(_ player: MKPlayer, isPause: Bool)
 func mkplayer(_ player: MKPlayer, didUpdate state: MKPlayState)
 ```
 
-Отслеживать через **URL** в случае если интерактив ведет на другую ссылку
+Отслеживать через **URL** в случае если интерактив ведет на эту ссылку
 ```
 func mkplayer(_ player: MKPlayer, didRequestOpen uri: URL)
 ```
@@ -35,17 +35,17 @@ func mkplayer(_ player: MKPlayer, didRequestOpen uri: URL)
 func mkplayer(_ player: MKPlayer, didEndPlaying manifest: MKManifest)
 ```
 
-Отслеживание состояния интерактива главы через структуру **Chapter**
+Метод вызывается перед началом показа интерактива в текущей главе **Chapter**
 ```
 func mkplayer(_ player: MKPlayer, willShowEventForChapter chapter: Chapter)
 ```
 
-Отслеживание состояние главы через структуру **Chapter**
+Метод вызывается при начале воспроизведения новой главы **Chapter**
 ```
 func mkplayer(_ player: MKPlayer, showChapter chapter: Chapter)
 ```
 
-Отслеживания результата интерактива через структуру **Chapter**
+Метод вызывается при появлении интерактива в главе **Chapter**
 ```
 func mkplayer(_ player: MKPlayer, didAppearEventWithChapter chapter: Chapter)
 ```

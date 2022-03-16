@@ -39,6 +39,8 @@ sort: 0
 https://docs.movika.com/ru/sdk/ios/get-started
 
 1. [Начало работы](/sdk/ios/get-started-ru.md)
+2. [Структура плеера](/sdk/ios/player-arch-ru.md)
+3. [События плеера](/sdk/ios/player-events-ru.md)
 
 #### Android SDK
 
