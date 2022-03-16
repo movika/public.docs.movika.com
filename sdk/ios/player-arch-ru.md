@@ -5,7 +5,7 @@ keywords: Структура плеера
 sort: 1 
 ---
 
-![Image](image.png "image")
+![Image](https://raw.githubusercontent.com/movika/public.docs.movika.com/develop/images/ios_player-arch.png)
 # Структура плеера
 **MKInteractivePlayer** является основным классом для работы с плеером, созданным на основе **MKPlayer**. Если требуется более детальная настройка, следует использовать **MKPlayer**, в остальных случаях следует пользоваться **MKInteractivePlayer**.
 
