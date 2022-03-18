@@ -38,6 +38,8 @@ for Android or iOS platform.
 Sdk integration [sample](https://github.com/movika/movika-sdk-ios/tree/master/Example)
 
 1. [Getting started](/sdk/ios/get-started.md)
+2. [Player Structure](/sdk/ios/player-arch.md)
+3. [Player Events](/sdk/ios/player-events.md)
 
 #### Android SDK
 
