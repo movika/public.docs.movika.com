@@ -2,22 +2,28 @@
 title: Структура плеера
 description: Структура плеера
 keywords: Структура плеера
-sort: 1 
+sort: 1
 ---
 
 # Структура плеера
 
 ![схема структуры плеера](https://raw.githubusercontent.com/movika/public.docs.movika.com/develop/images/player-arch.png)
 
-**SimpleInteractivePlayer** является фасадом над основными компонентами плеера. Для более тонкой настройки плеера следует использовать основные компоненты плеера напрямую без применения **SimpleInteractivePlayer**.
+**SimpleInteractivePlayer** является фасадом над основными компонентами плеера. Для более тонкой настройки плеера
+следует использовать основные компоненты плеера напрямую без применения **SimpleInteractivePlayer**.
 
 ### Основные компоненты плеера:
 
- - **CoreInteractivePlayer** - ядро плеера, отвечающее за основную логику и абстрагированное от отображения. Для его работы необходимо предоставить реализацию интерфейса **EventController** и набор интерфейсов **PlayerComponents**.
- - **EventController** - программный интерфейс отвечающий за отображение интерактивов. В SDK присутствует реализация **EventController** по-умолчанию **DefaultEventController**, которая также предоставляет некоторый набор базовых интерактивов.
- - **PlayerComponents** - класс dto содержащий набор интерфейсов для работы с видеоплеером. В SDK присутствует стандартный видеоплеер **DefaultVideoPlayer**, который может предоставить данный набор.
+- **CoreInteractivePlayer** - ядро плеера, отвечающее за основную логику и абстрагированное от отображения. Для его
+  работы необходимо предоставить реализацию интерфейса **EventController** и набор интерфейсов **PlayerComponents**.
+- **EventController** - программный интерфейс отвечающий за отображение интерактивов. В SDK присутствует реализация **
+  EventController** по-умолчанию **DefaultEventController**, которая также предоставляет некоторый набор базовых
+  интерактивов.
+- **PlayerComponents** - класс dto содержащий набор интерфейсов для работы с видеоплеером. В SDK присутствует
+  стандартный видеоплеер **ExoVideoPlayer**, который может предоставить данный набор.
 
 ### Пример использования основных компонентов плеера без применения SimpleInteractivePlayer
+
 ```
 ...
 
@@ -33,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         val rootView = FrameLayout(this)
 
         /* Создаём видеоплеер */
-        videoPlayer = DefaultVideoPlayer(this)
+        videoPlayer = ExoVideoPlayer(this)
         /* Восстановливаем сохранненоё состояния видеоплеера */
         savedInstanceState?.restoreDefaultVideoPlayerState(
             BUNDLE_KEY_VIDEO_PLAYER_STATE,
@@ -45,7 +51,6 @@ class MainActivity : AppCompatActivity() {
         /* Создаем реализацию EventController по-умолчанию - DefaultEventController */
         eventController = DefaultEventController(
             context = this,
-            scope = lifecycleScope,
             /* Опционально передаем сохраненное состояние */
             initState = savedInstanceState?.getDefaultEventControllerState(
                 BUNDLE_KEY_EVENT_CONTROLLER_STATE
@@ -59,8 +64,7 @@ class MainActivity : AppCompatActivity() {
             /* Передаем набор PlayerComponents, который предоставляет DefaultVideoPlayer */
             playerComponents = videoPlayer.playerComponents,
             /* Передаем ранее созданный DefaultEventController */
-            eventController = eventController,
-            scope = lifecycleScope
+            eventController = eventController
         )
 
         setContentView(rootView)
@@ -70,33 +74,20 @@ class MainActivity : AppCompatActivity() {
          * Замените ссылку демонстрационного манифеста на свою 
          */
         val url = "https://asazin-cache.cdnvideo.ru/asazin/movika/stage/users/00/movie/2/manifest-v3.json"
-        /* 
-         * Создаем загрузчик по-умолчанию. Для разовой загрузки он вполне подойдет, другие более
-         * оптимальные методы описаны в разделе "Оптимизация"
-         */
-        val loader = DefaultManifestDownloader()
-        lifecycleScope.launch {
-            runCatching {
-                val manifest = loader.load(url)
-                withContext(Dispatchers.Main) {
-                    /* Передаем полученный манифест ядру плеера */
-                    corePlayer.run(
-                        manifest, 
-                        /* опционально передаем сохраненное состояние */
-                        savedInstanceState?.getPlayerState(BUNDLE_KEY_CORE_PLAYER_STATE)
-                    )
-                    /* Запускаем воспроизведение */
-                    corePlayer.play()
-                    /* Так как экземпляр DefaultManifestDownloader больше не нужен, утилизируем его */
-                    loader.release()
-                }
-            }.onFailure {
-                /* Обрабатываем ошибку загрузки */
-                Log.e(LOG_TAG, "Error! $it", it)
+
+        corePlayer.run(
+            ManifestURLAssets(url), 
+            /* опционально передаем сохраненное состояние */
+            savedInstanceState?.getPlayerState(BUNDLE_KEY_CORE_PLAYER_STATE)
+        )
+        corePlayer.play()
+        
+        /* Обрабатываем ошибку загрузки */
+        corePlayer.errorObservable.addObserver {
+            if (it is AssetsLoadError) {
+                Toast.makeText(this, "Load error!", Toast.LENGTH_LONG).show()
             }
         }
-
-
     }
     
     override fun onPause() {
@@ -113,8 +104,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        /* Оповещаем плеер о достижении жизненого цикала onResume */
+        /* Оповещаем плеер о достижении жизненого цикала onDestroy */
         corePlayer.onDestroy()
+        /* Оповещаем EventController о достижении жизненого цикала onDestroy */
+        eventController.onDestroy()
         /* Уничтожаем наш экземпляр DefaultVideoPlayer */
         videoPlayer.destroy()
     }
