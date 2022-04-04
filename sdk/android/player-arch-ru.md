@@ -16,10 +16,10 @@ sort: 1
 
 - **CoreInteractivePlayer** - ядро плеера, отвечающее за основную логику и абстрагированное от отображения. Для его
   работы необходимо предоставить реализацию интерфейса **EventController** и набор интерфейсов **PlayerComponents**.
-- **EventController** - программный интерфейс отвечающий за отображение интерактивов. В SDK присутствует реализация **
-  EventController** по-умолчанию **DefaultEventController**, которая также предоставляет некоторый набор базовых
+- **EventController** - программный интерфейс, отвечающий за отображение интерактивов. В SDK присутствует реализация **
+  EventController** по умолчанию – **DefaultEventController**, которая также предоставляет набор нескольких базовых
   интерактивов.
-- **PlayerComponents** - класс dto содержащий набор интерфейсов для работы с видеоплеером. В SDK присутствует
+- **PlayerComponents** - класс dto, содержащий набор интерфейсов для работы с видеоплеером. В SDK присутствует
   стандартный видеоплеер **ExoVideoPlayer**, который может предоставить данный набор.
 
 ### Пример использования основных компонентов плеера без применения SimpleInteractivePlayer
@@ -104,9 +104,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        /* Оповещаем плеер о достижении жизненого цикала onDestroy */
+        /* Оповещаем плеер о достижении метода жизненного цикла onDestroy */
         corePlayer.onDestroy()
-        /* Оповещаем EventController о достижении жизненого цикала onDestroy */
+       /* Оповещаем EventController о достижении метода жизненного цикла onDestroy */
         eventController.onDestroy()
         /* Уничтожаем наш экземпляр DefaultVideoPlayer */
         videoPlayer.destroy()

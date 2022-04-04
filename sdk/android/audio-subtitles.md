@@ -6,7 +6,7 @@ sort: 4
 ---
 
 # Аудиодорожки и субтитры
-В стандартном видеоплеере ExoVideoPlayer и SimpleInteractivePlayer предусмотреный аудиодорожки и субтитры.
+В стандартном видеоплеере ExoVideoPlayer и SimpleInteractivePlayer предусмотрены аудиодорожки и субтитры.
 Для взаимодействия с аудиодорожками и субтитрами необходимо получить экземпляр MediaOptionsController
 
 Если используется SimpleInteractivePlayer:

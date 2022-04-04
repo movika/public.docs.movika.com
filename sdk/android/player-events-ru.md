@@ -7,8 +7,8 @@ sort: 2
 
 # События плеера
 
-Для прослушивания событий плеера, достаточно добавить необходимые слушатели. Для добавления, необходимо
-обращаться к специальным открытым полям интерфейса InteractivePlayer, который реализуют SimpleInteractivePlayer и CoreInteractivePlayer. Данные поля являются реализацией
+Для прослушивания событий плеера достаточно добавить необходимые слушатели. Для добавления необходимо
+обратиться к специальным открытым полям интерфейса InteractivePlayer, который реализуют SimpleInteractivePlayer и CoreInteractivePlayer. Данные поля являются реализацией
 **AbstractObservable<T>**, где T это тип слушателя.
 
 ```
@@ -85,13 +85,13 @@ fun removePlayerErrorListener(listener: PlayerErrorListener)
 ```
 Если в вашем проекте используется **SimpleInteractivePlayer** или **ExoVideoPlayer**, то для получения **PlayerErrorController** необходимо:
 
-- При использовании **SimpleInteractivePlayer**, он уже является реализвацией **PlayerErrorController**
+- При использовании **SimpleInteractivePlayer**, он уже является реализацией **PlayerErrorController**
 - При использовании **ExoVideoPlayer** необходимо обратиться к набору **PlayerComponents**
 ``` videoPlayer.playerComponents.playerErrorController```
 
 ## Обработка состояния воспроизведения видео
 Для обработки состояния воспроизведения видео необходимо получить реализацию PlaybackObservable.
-Если в вашем проекте используется **SimpleInteractivePlayer** или **ExoVideoPlayer**, то для получения **PlayerErrorController** необходимо:
+Если в вашем проекте используется **SimpleInteractivePlayer** или **ExoVideoPlayer**, то для получения **PlaybackObservable** необходимо:
 - При использовании **SimpleInteractivePlayer**, обратиться к полю **playbackObservable**
 - При использовании **ExoVideoPlayer** необходимо обратиться к набору **PlayerComponents**
   ``` videoPlayer.playerComponents.playbackController```

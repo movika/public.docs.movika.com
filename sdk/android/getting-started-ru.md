@@ -123,7 +123,7 @@ interactivePlayer.run(VideoURLAssets(url))
 
 ### Воспроизведение с использованием готового объекта интерактивного видео (манифеста)
 ```
-val manifest: Manifest = getYourSomeManifest()
+val manifest: Manifest = fetchYourManifest()
 interactivePlayer.run(PreparedManifestAssets(manifest))
 ```
 
