@@ -21,7 +21,7 @@ sort: 2
     const playerOptions = {
       apiKey: <YOUR_API_KEY>,
       appName: <YOUR_APP_NAME>,
-      manifest: '<URL_TO_MANIFEST>',
+      src: '<URL_TO_MANIFEST>',
     }
 
     const controlsOverlayOptions = {
@@ -71,4 +71,7 @@ sort: 2
 | movika.Events.CHANGE_VIDEO_VOLUME         | Срабатывает при изменении звука                                                        |
 | movika.Events.TOGGLE_VIDEO_FULLSCREEN     | Срабатывает при входе в полноэкранного режима и выходе из полноэкранного режима        |
 | movika.Events.ATTACH_MANIFEST             | Срабатывает при подключении в плеер нового манифеста                                   |
-| movika.Events.SDK_LOADED                  | Срабатывает при готовности плеера в воспроизведению                                    |
+| movika.Events.SDK_LOADED                  | Срабатывает при готовности плеера к воспроизведению                                    |
+| movika.Events.HISTORY_CHANGED             | Срабатывает при изменении объекта истории                                              |
+| movika.Events.ERROR                       | Срабатывает при возникновении ошибки в плеере                                          |
+| movika.Events.MUTED                       | Срабатывает при включении или выключении звука в плеере                                |
