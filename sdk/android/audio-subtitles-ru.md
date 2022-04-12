@@ -6,16 +6,16 @@ sort: 4
 ---
 
 # Аудиодорожки и субтитры
-В стандартном видеоплеере DefaultVideoPlayer и SimpleInteractivePlayer предусмотреный аудиодорожки и субтитры.
+В стандартном видеоплеере ExoVideoPlayer и SimpleInteractivePlayer предусмотрены аудиодорожки и субтитры.
 Для взаимодействия с аудиодорожками и субтитрами необходимо получить экземпляр MediaOptionsController
 
 Если используется SimpleInteractivePlayer:
 ```
 val controller = simpleInteractivePlayer.mediaOptionsController
 ```
-Если используется DefaultVideoPlayer:
+Если используется ExoVideoPlayer:
 ```
-val controller = defaultVideoPlayer.mediaOptionsController
+val controller = exoVideoPlayer.mediaOptionsController
 ```
 
 Для получения списка доступных аудиодорожек и субтитров текущего видео необходимо у экземпляра класса, реализующего

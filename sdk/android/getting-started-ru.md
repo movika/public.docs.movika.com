@@ -21,7 +21,7 @@ sort: 0
 allprojects {
     repositories {
         maven {
-            url "https://nexus.movika.com/repository/android/"
+            url "https://nexus.movika.net/repository/android/"
         }
     }
 }
@@ -30,9 +30,7 @@ allprojects {
 Затем подключите зависимости
 
 ```
-implementation "com.movika.android:interactive-sdk:3.1.0"
-implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
-implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
+implementation "com.movika.android:interactive-sdk:3.2.0"
 ```
 Убедитесь, что минимальная версия Android SDK не ниже 23
 ```
@@ -85,7 +83,6 @@ class App : Application() {
 val interactivePlayer = SimpleInteractivePlayer(
 	context = context,
 	config = Config(),
-	scope = lifecycleScope, // опционально
 	initBundleState = savedInstanceState?.getBundle(bundleKey), // опционально
 )
 // Добавьте плеер в вашу разметку
@@ -110,19 +107,39 @@ override fun onSaveInstanceState(outState: Bundle) {
 
 ## Загрузка и воспроизведение
 
-### Воспроизведение по ссылке
+### Воспроизведение _интерактивного_ видео по ссылке
 ```
 /* Замените ссылку демонстрационного манифеста на свою */
-val manifestUrl = "https://asazin-cache.cdnvideo.ru/asazin/movika/stage/users/00/movie/2/manifest-v3.json"
-interactivePlayer.runByUrl(
-	url = manifestUrl,
-	onSuccess = { /* Handle success load */ },
-	onFailure = { /* Handle failure load */ }
-)
+val url = "https://asazin-cache.cdnvideo.ru/asazin/movika/stage/users/00/movie/2/manifest-v3.json"
+interactivePlayer.run(ManifestURLAssets(url))
+```
+
+### Воспроизведение _обычного_ видео по ссылке
+```
+/* Замените ссылку демонстрационного видео на свою */
+val url = "https://asazin-cache.cdnvideo.ru/asazin/movika/stage/users/00/movie/2/5_360.mp4"
+interactivePlayer.run(VideoURLAssets(url))
+```
+
+### Воспроизведение с использованием готового объекта интерактивного видео (манифеста)
+```
+val manifest: Manifest = fetchYourManifest()
+interactivePlayer.run(PreparedManifestAssets(manifest))
+```
+
+## Обработка ошибок
 
 ```
-### Воспроизведение с использованием готового объекта
+interactivePlayer.errorObservable.addObserver { error ->
+    val msg = when (error) {
+        is AssetsLoadException -> "Manifest load error!"
+        is InvalidApiKeyException -> "Invalid Api key!"
+        is ExpiredApiKeyException -> "Expired Api key!"
+        is IncompatibleManifestVersionException -> "Incompatible manifest version ${error.receivedVersion}"
+        else -> error::class.simpleName
+    }
+    Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+}
 ```
-val manifest: Manifest = getYourSomeManifest()
-interactivePlayer.run(manifest)
-```
+
+Обработка ошибок **видео** плеера описана в разделе "**События плеера**"
