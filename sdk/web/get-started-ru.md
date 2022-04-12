@@ -43,7 +43,7 @@ sort: 0
     const playerOptions = {
       apiKey: <YOUR_API_KEY>,
       appName: <YOUR_APP_NAME>,
-      manifest: '<URL_TO_MANIFEST>',
+      src: '<URL_TO_MANIFEST>',
     }
 
     const controlsOverlayOptions = {
