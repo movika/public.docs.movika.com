@@ -1,7 +1,7 @@
 ---
-title: Пользовательские интерактивы
-description: Создание пользовательских интерактивов
-keywords: Пользовательские интерактивы, кастомные интерактивы, пользовательские контейнеры, пользовательские контролы, кастомные контейнеры, кастомные контролы
+title: Custom interactives
+description: Custom interactives
+keywords: Custom interactives
 sort: 6
 ---
 

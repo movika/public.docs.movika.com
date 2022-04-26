@@ -1,7 +1,7 @@
 ---
-title: Структура данных
-description: Описание структур данных в SDK и Manifest
-keywords: Структура данных, Manifest, Манифест
+title: Data structure
+description: Data structure
+keywords: Data structure
 sort: 5
 ---
 
