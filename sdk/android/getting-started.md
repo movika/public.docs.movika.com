@@ -30,7 +30,7 @@ allprojects {
 Затем подключите зависимости
 
 ```
-implementation "com.movika.android:interactive-sdk:3.2.2"
+implementation "com.movika.android:interactive-sdk:3.2.3"
 ```
 Убедитесь, что минимальная версия Android SDK не ниже 23
 ```
