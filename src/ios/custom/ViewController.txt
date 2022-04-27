@@ -1,0 +1,81 @@
+//
+//  ViewController.swift
+//  MovikaCustomInteractivesSample
+
+import UIKit
+import MovikaSDK
+
+class ViewController: UIViewController {
+  private lazy var player = MKInteractivePlayer(frame: view.frame)
+  var manifestAsset: MKManifestAsset!
+
+  let buttonDebug: UIButton = {
+    let button = UIButton(frame: CGRect(x: 50, y: 300, width: 50, height: 50))
+    button.setTitle("PLAY", for: .normal)
+    button.setTitleColor(.black, for: .normal)
+    button.backgroundColor = .white
+    button.layer.cornerRadius = 15
+    button.addTarget(self, action: #selector(buttonDebugTapped), for: .touchUpInside)
+    return button
+  }()
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.backgroundColor = .white
+    view.addSubview(player)
+    player.addSubview(buttonDebug)
+  }
+
+  @objc func buttonDebugTapped(){
+    buttonDebug.isHidden = true
+    let testFactory = TestFactory()
+    player.eventsContainer.register(factory: testFactory, with: "MyCustomType")
+
+    let manifestAsset = MKURLManifestAsset(url: URL(string: "https://pastebin.com/raw/FPk3WL0k")!)
+    player.setManifestAsset(manifestAsset)
+    player.play()
+  }
+
+
+}
+
+class TestFactory: MKEventViewFactory {
+  func create(event: MKEvent, videoRect: CGRect) throws -> MKEventView? {
+    return TestView(event: event)
+  }
+}
+
+class TestView: MKEventView {
+  var view: UIView? {
+    button
+  }
+
+  var eventResultCompletion: MKEventResultCompletion?
+  private let event: MKEvent
+
+  init(event: MKEvent){
+    self.event = event
+    button?.addTarget(self, action: #selector(testButtonTapped), for: .touchUpInside)
+  }
+
+  var button: UIButton? = {
+    let view = UIButton(frame: CGRect(x: 50, y: 500, width: 300, height: 50))
+    view.layer.cornerRadius = 20
+    view.backgroundColor = .orange
+    view.setTitle("Custom Interactive", for: .normal)
+    return view
+  }()
+
+  @objc func testButtonTapped(){
+    if let action = event.controls.first?.events.first?.action {
+      eventResultCompletion?(MKEventResultAction(event: event, resultAction: action))
+    }
+  }
+
+
+  func eventViewWillDisappear() {
+    print("WHOOOOOSH")
+  }
+
+}
+
