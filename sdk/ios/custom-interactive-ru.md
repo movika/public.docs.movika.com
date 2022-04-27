@@ -19,6 +19,8 @@ sort: 3
 4) Фабрика **MKEventViewFactory** которую вы передадите будет генерировать компонент **MKEventView**
 5) **MKEventView** это компонент с которым будет взаимодействовать пользователь в интерактивном фильме
 
+[Пример](https://github.com/movika/public.docs.movika.com/files/8569921/ViewController.txt) возможной реализации кастомного интерактива.
+
 ### MKEventView
 
 Данный протокол отвечает главным образом за поведение и вид интерактива. Действия описываются в _eventResultCompletion_, а вид в переменной _view_ соответственно.
@@ -46,10 +48,7 @@ protocol MKEventViewFactory {
 ```
 ___
 
-[Пример](https://github.com/movika/public.docs.movika.com/files/8569921/ViewController.txt) возможной реализации кастомного интерактива. _Кликабельно_
-
-```
 Манифест - JSON файл с данными видео. В рамках SDK интерактивы именуются контейнерами. Манифест содержит информацию о контейнерах: типе, количестве, времени появления, угасания, действиях и т.д. К примеру, тип интерактивов указан в контейнерах в графе "type", там же и указыватся название кастомного интерактива. 
 
-Документация по манифесту: https://docs.movika.com/ru/sdk/android/data-structure
-```
+[Документация по манифесту](https://github.com/movika/public.docs.movika.com/blob/master/sdk/android/custom-interactives-ru.md) 
+
