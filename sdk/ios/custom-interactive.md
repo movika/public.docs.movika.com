@@ -42,7 +42,3 @@ ___
 The manifest is a JSON file with video data. Within the SDK, interactives are called containers. The manifest contains information about containers: type, number, time of appearance, fading, actions, etc. For example, the type of interactives is specified within the containers in the "type" column, and the name of the custom interactive is also specified there. 
 
 [Manifest documentation](../sdk/android/custom-interactives-en.md) 
-
-
-
-Translated with www.DeepL.com/Translator (free version)
