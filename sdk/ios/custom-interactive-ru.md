@@ -19,7 +19,7 @@ sort: 3
 4) Фабрика **MKEventViewFactory** которую вы передадите будет генерировать компонент **MKEventView**
 5) **MKEventView** это компонент с которым будет взаимодействовать пользователь в интерактивном фильме
 
-[Пример](https://github.com/movika/public.docs.movika.com/files/8569921/ViewController.txt) возможной реализации кастомного интерактива.
+[Пример](../../../src/ios/custom/ViewController.txt) возможной реализации кастомного интерактива.
 
 ### MKEventView
 
