@@ -42,6 +42,7 @@ https://docs.movika.com/ru/sdk/ios/get-started
 2. [Структура плеера](/sdk/ios/player-arch-ru.md)
 3. [События плеера](/sdk/ios/player-events-ru.md)
 4. [Пользовательские интерактивы](/sdk/ios/custom-interactive-ru.md)
+4. [История](/sdk/ios/history-ru.md)
 
 #### Android SDK
 
