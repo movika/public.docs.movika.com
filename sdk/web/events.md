@@ -21,7 +21,7 @@ To listen to player events, you just need to add the necessary listeners. All cu
     const playerOptions = {
       apiKey: <YOUR_API_KEY>,
       appName: <YOUR_APP_NAME>,
-      manifest: '<URL_TO_MANIFEST>',
+      src: '<URL_TO_MANIFEST>',
     }
 
     const controlsOverlayOptions = {
@@ -72,3 +72,6 @@ All events currently available are listed below:
 | movika.Events.TOGGLE_VIDEO_FULLSCREEN     | Fires when entering full screen mode and exiting full screen mode                                  |
 | movika.Events.ATTACH_MANIFEST             | Fires when a new manifest is connected to the player                                               |
 | movika.Events.SDK_LOADED                  | Fires when the player is ready for playback                                                        |
+| movika.Events.HISTORY_CHANGED             | Fires when the history object changes                                                              |
+| movika.Events.ERROR                       | Fires when an error occurs in the player                                                           |
+| movika.Events.MUTED                       | Fires when the sound is turned on or off in the player                                             |

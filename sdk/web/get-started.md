@@ -43,7 +43,7 @@ To gain access to download the SDK, you will need to obtain an access key. To ob
     const playerOptions = {
       apiKey: <YOUR_API_KEY>,
       appName: <YOUR_APP_NAME>,
-      manifest: '<URL_TO_MANIFEST>',
+      src: '<URL_TO_MANIFEST>',
     }
 
     const controlsOverlayOptions = {

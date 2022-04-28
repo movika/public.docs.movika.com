@@ -19,7 +19,7 @@ Register your App in the [Movika Developer](https://developer.movika.com) and co
 
 #### Integration with npm:
 
-Version 3.1.5
+Version 3.2.0
 
 1. [Get started](/sdk/web/get-started.md)
 2. [Configurations](/sdk/web/configurations.md)
@@ -40,6 +40,7 @@ Sdk integration [sample](https://github.com/movika/movika-sdk-ios/tree/master/Ex
 1. [Getting started](/sdk/ios/get-started.md)
 2. [Player Structure](/sdk/ios/player-arch.md)
 3. [Player Events](/sdk/ios/player-events.md)
+4. [Custom Interactives](/sdk/ios/custom-interactive.md)
 
 #### Android SDK
 
