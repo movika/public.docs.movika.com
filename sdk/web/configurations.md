@@ -31,20 +31,20 @@ sort: 1
 
 ### **PlayerOptions parameters:**
 
-| Name               | Required | Type    | Default | Description                                                                                                                                                       |
-| ------------------ | -------- | ------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| src                | Yes      | String  | -       | Specifies the URL of the video file or interactive movie manifest. Supports .m3u8, .mp4, .json extensions. Also works with the interactive movie manifest object. |
-| apiKey             | Yes      | String  | -       | apiKey obtained after registering the application with [Movika Developer](https://developer.movika.com)                                                           |
-| appName            | Yes      | String  | -       | appName obtained after registering the application with [Movika Developer](https://developer.movika.com)                                                          |
-| preferredExtension | No       | String  | m3u8    | Preferred playback extension. Available values: mp4 and m3u8                                                                                                      |
-| initialChapter     | No       | String  | -       | Chapter ID indicating which chapter to start playback from                                                                                                        |
-| initialHistory     | No       | Object  | -       | If a valid history object is passed, the player will continue to write history to that object. If the history object is invalid, create a new history object.     |
-| autoplay           | No       | boolean | -       | Specifies that the video will start playing as soon as it is ready                                                                                                |
-| loop               | No       | boolean | -       | Specifies that the video will start over again, every time it is finished                                                                                         |
-| width              | No       | Number  | -       | Sets the width in pixels of the video player                                                                                                                      |
-| height             | No       | Number  | -       | Sets the height in pixels of the video player                                                                                                                     |
-| muted              | No       | boolean | -       | Specifies that the audio output of the video should be muted                                                                                                      |
-| controls           | No       | boolean | -       | Specifies that the default HTMLVideoElement controls should be displayed                                                                                          |
+| Name               | Required | Type             | Default | Description                                                                                                                                                       |
+| ------------------ | -------- | ---------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| src                | Yes      | String \| Object | -       | Specifies the URL of the video file or interactive movie manifest. Supports .m3u8, .mp4, .json extensions. Also works with the interactive movie manifest object. |
+| apiKey             | Yes      | String           | -       | apiKey obtained after registering the application with [Movika Developer](https://developer.movika.com)                                                           |
+| appName            | Yes      | String           | -       | appName obtained after registering the application with [Movika Developer](https://developer.movika.com)                                                          |
+| preferredExtension | No       | String           | m3u8    | Preferred playback extension. Available values: mp4 and m3u8                                                                                                      |
+| initialChapter     | No       | String           | -       | Chapter ID indicating which chapter to start playback from                                                                                                        |
+| initialHistory     | No       | Object           | -       | If a valid history object is passed, the player will continue to write history to that object. If the history object is invalid, create a new history object.     |
+| autoplay           | No       | boolean          | -       | Specifies that the video will start playing as soon as it is ready                                                                                                |
+| loop               | No       | boolean          | -       | Specifies that the video will start over again, every time it is finished                                                                                         |
+| width              | No       | Number           | -       | Sets the width in pixels of the video player                                                                                                                      |
+| height             | No       | Number           | -       | Sets the height in pixels of the video player                                                                                                                     |
+| muted              | No       | boolean          | -       | Specifies that the audio output of the video should be muted                                                                                                      |
+| controls           | No       | boolean          | -       | Specifies that the default HTMLVideoElement controls should be displayed                                                                                          |
 
 ### Methods:
 
@@ -70,14 +70,21 @@ Returns the history of the interactive movie.
   ...
 ```
 
-#### attachManifest(manifest)
+#### attachManifest(manifest, initialChapter)
 
 Attaches the new manifest. The old manifest is detached automatically.
+
+Parameters:
+
+| Name           | Required | Type             | Description                                                |
+| -------------- | -------- | ---------------- | ---------------------------------------------------------- |
+| manifest       | Yes      | String \| Object | Interactive movie manifest URL or object                   |
+| initialChapter | No       | String           | Chapter ID indicating which chapter to start playback from |
 
 ```
   const mp = new Player(mediaElement, playerOptions)
   ...
-  mp.attachManifest(manifest)
+  mp.attachManifest(manifest, initialChapter)
   ...
 ```
 

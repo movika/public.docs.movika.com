@@ -11,6 +11,8 @@ sort: 0
 
 # Начало работы
 
+### Пример проекта на [GitHub](https://github.com/movika/web-sdk-movika-sample)
+
 ## 1. Зарегистрируйте свое приложение в Movika Developer
 
 Зарегистрируйте свое приложение в [Movika Developer](https://developer.movika.com). После регистрации вы увидите таблицу со всеми своими ранее зарегистрированными приложениями. Поля **appName** и **apiKey** нам понадобится для аутентификации в SDK.
