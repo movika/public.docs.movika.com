@@ -19,7 +19,7 @@ Register your App in the [Movika Developer](https://developer.movika.com) and co
 
 #### Integration with npm:
 
-Version 3.2.0
+Version 3.2.4
 
 1. [Get started](/sdk/web/get-started.md)
 2. [Configurations](/sdk/web/configurations.md)

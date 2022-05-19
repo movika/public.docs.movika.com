@@ -11,6 +11,8 @@ This guide contains a list of steps to get started using our SDK. You will learn
 
 # Get started
 
+### Sample project on [GitHub](https://github.com/movika/web-sdk-movika-sample)
+
 ## 1. Register your application with Movika Developer
 
 Register your application with [Movika Developer] (https://developer.movika.com). After registration, you will see a table with all your previously registered applications. We need the **appName** and **apiKey** fields for authentication in the SDK.
