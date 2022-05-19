@@ -54,7 +54,8 @@ sort: 0
 
     const mp = new movika.Player(videoRef.current, playerOptions)
     const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, controlsOverlayOptions)
-    const mi = new movika.Interactives(mp)
+    const mi = new movika.Interactives(mp, mco)
+    mi.run()
 
     return () => {
 			mp.destroy()

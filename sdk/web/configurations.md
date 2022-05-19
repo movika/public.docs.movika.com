@@ -174,24 +174,57 @@ Removes all listeners and clears all properties of the ControlsOverlay instance.
 ### Constructor:
 
 ```
-  new Interactives(playerInstance)
+  new Interactives(playerInstance, controlOverlayInstance)
 ```
 
-### **Interactives parameters:**
+### **Parameters:**
 
-| Name           | Required | Type           | Default | Description                     |
-| -------------- | -------- | -------------- | ------- | ------------------------------- |
-| playerInstance | Yes      | playerInstance | -       | An instance of the Player class |
+| Name                   | Required | Type                   | Default | Description                             |
+| ---------------------- | -------- | ---------------------- | ------- | --------------------------------------- |
+| playerInstance         | Yes      | playerInstance         | -       | An instance of the Player class         |
+| controlOverlayInstance | Yes      | controlOverlayInstance | -       | An instance of the ControlOverlay class |
 
 ### Methods:
+
+#### addFactory(type, fn)
+
+Adds a custom interactive (container) to the list of available interactives (containers)
+
+Parameters
+
+| Name | Required | Type     | Description                                                 |
+| ---- | -------- | -------- | ----------------------------------------------------------- |
+| type | Да       | String   | Unique type of custom interactive                           |
+| fn   | Да       | Function | Function to create custom interactive objects based on type |
+
+```
+  const mi = new Interactives(playerInstance, controlOverlayInstance)
+
+  // add new interactive
+  mi.addFactory('type', (container) => {
+    if (container.type.trim().toLowerCase() === 'type') {
+		  return new MyInteractive(container)
+	  }
+  })
+```
+
+#### removeFactory(type)
+
+Removes a custom interactive (container) from the list of available interactives (containers)
+
+Parameters
+
+| Name | Required | Type   | Description                       |
+| ---- | -------- | ------ | --------------------------------- |
+| type | Да       | String | Unique type of custom interactive |
 
 #### destroy()
 
 Removes all listeners and clears all properties of the Player instance.
 
 ```
-  const mi = new Interactives(playerInstance)
+  const mi = new Interactives(playerInstance, controlOverlayInstance)
 
-  // destroy method
-  mi.destroy()
+  // remove interactive
+  mi.removeFactory('type')
 ```

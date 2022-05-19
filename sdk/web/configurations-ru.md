@@ -174,16 +174,56 @@ sort: 1
 ### Конструктор ControlsOverlay:
 
 ```
-  new Interactives(playerInstance)
+  new Interactives(playerInstance, controlOverlayInstance)
 ```
 
-### Параметры Interactives:
+### Параметры:
 
-| Наименование   | Обязательный | Тип            | По умолчанию | Описание                |
-| -------------- | ------------ | -------------- | ------------ | ----------------------- |
-| playerInstance | Да           | playerInstance | -            | Экземпляр класса Player |
+| Наименование            | Обязательный | Тип                     | По умолчанию | Описание                         |
+| ----------------------- | ------------ | ----------------------- | ------------ | -------------------------------- |
+| playerInstance          | Да           | playerInstance          | -            | Экземпляр класса Player          |
+| controlsOverlayInstance | Да           | controlsOverlayInstance | -            | Экземпляр класса ControlsOverlay |
 
 ### Методы ControlsOverlay:
+
+#### addFactory(type, fn)
+
+Добавляет пользовательский интерактив (контейнер) в список доступных интерактивов (контейнеров)
+
+Параметры
+
+| Наименование | Обязательный | Тип      | Описание                                                                        |
+| ------------ | ------------ | -------- | ------------------------------------------------------------------------------- |
+| type         | Да           | String   | Уникальный тип пользовательского интерактива                                    |
+| fn           | Да           | Function | Функция для создания объектов пользовательского интерактива основываясь на type |
+
+```
+  const mi = new Interactives(playerInstance, controlOverlayInstance)
+
+  // add new interactive
+  mi.addFactory('type', (container) => {
+    if (container.type.trim().toLowerCase() === 'type') {
+		  return new MyInteractive(container)
+	  }
+  })
+```
+
+#### removeFactory(type)
+
+Удаляет пользовательский интерактив (контейнер) из списка доступных интерактивов (контейнеров)
+
+Параметры
+
+| Наименование | Обязательный | Тип    | Описание                                     |
+| ------------ | ------------ | ------ | -------------------------------------------- |
+| type         | Да           | String | Уникальный тип пользовательского интерактива |
+
+```
+  const mi = new Interactives(playerInstance, controlOverlayInstance)
+
+  // remove interactive
+  mi.removeFactory('type')
+```
 
 #### destroy()
 

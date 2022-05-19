@@ -30,7 +30,8 @@ sort: 2
 
     const mp = new movika.Player(videoRef.current, playerOptions)
     const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, controlsOverlayOptions)
-    const mi = new movika.Interactives(mp)
+    const mi = new movika.Interactives(mp, mco)
+    mi.run()
 
     // Подписка на событие окончания видео
     videoRef.current.addEventListener(movika.Events.END_VIDEO, () => {
