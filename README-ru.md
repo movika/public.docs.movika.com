@@ -25,6 +25,7 @@ sort: 0
 2. [Конфигурация](/sdk/web/configurations-ru.md)
 3. [События](/sdk/web/events-ru.md)
 4. [Ошибки](/sdk/web/errors-ru.md)
+5. [Пользовательские интерактивы](sdk/web/custom-interactives-ru.md)
 
 ### Mobile SDK
 

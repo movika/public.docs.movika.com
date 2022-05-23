@@ -13,6 +13,7 @@ sort: 1
 2. **ControlsOverlay** - designed to display the elements of the player.
 3. **Interactives** - designed to display game ("interactive") elements of the player.
 4. **Events** - contains a list of available events for subscription.
+5. **utils** - contains a list of helper functions for implementing custom interactives
 
 ## Player
 
@@ -228,3 +229,221 @@ Removes all listeners and clears all properties of the Player instance.
   // remove interactive
   mi.removeFactory('type')
 ```
+
+## utlis
+
+### new Container(container)
+
+#### Properties:
+
+| Name      | Type   | Description                                                       |
+| --------- | ------ | ----------------------------------------------------------------- |
+| container | Object | The `Container` property from the manifest                        |
+| factories | Map    | A collection of available factory functions for creating controls |
+| controls  | Array  | List of current controls                                          |
+
+#### Methods:
+
+#### constructor(container)
+
+Parameters
+
+| Name      | Required | Type   | Description                                |
+| --------- | -------- | ------ | ------------------------------------------ |
+| container | Yes      | Object | The `Container` property from the manifest |
+
+<!-- #### run()
+
+Matches the types of controls from the current manifest with the passed controls - addControlFactory -->
+
+#### addControlFactory(type, factoryFn)
+
+Add the control factory
+
+Parameters
+
+| Name      | Required | Type     | Description                                      |
+| --------- | -------- | -------- | ------------------------------------------------ |
+| type      | Да       | String   | Unique type of control                           |
+| factoryFn | Да       | Function | Function to create control objects based on type |
+
+#### removeControlFactory(type)
+
+Remove the control factory
+
+Parameters
+
+| Name | Required | Type   | Description                       |
+| ---- | -------- | ------ | --------------------------------- |
+| type | Да       | String | Unique type of custom interactive |
+
+### new ChoiceContainer(container)
+
+#### Properties:
+
+| Name   | Type           | Description                      |
+| ------ | -------------- | -------------------------------- |
+| layout | RelativeLayout | Instance of class RelativeLayout |
+
+#### Methods:
+
+#### constructor(container)
+
+Parameters
+
+| Name      | Required | Type   | Description                                       |
+| --------- | -------- | ------ | ------------------------------------------------- |
+| container | Yes      | Object | `Container` with type `Choice` from the manifest. |
+
+#### createView(callback)
+
+Creates a view and registers event handlers.
+
+Parameters
+
+| Name     | Required | Type     | Description                                                                                                                   |
+| -------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| callback | Yes      | Function | The callback requires 1 required argument - [action](../android/data-structure.md#структура-action) and is called on an event |
+
+#### removeView()
+
+Removes the container HTMLElement
+
+#### hide()
+
+Hides the container HTMLElement
+
+#### show()
+
+Shows the container HTMLElement if it was previously hidden
+
+#### getElement()
+
+Returns the container element
+
+### new ButtonControl(control)
+
+#### Properties:
+
+| Name    | Type   | Description                                    |
+| ------- | ------ | ---------------------------------------------- |
+| control | Object | `Control` with type `Button` from the manifest |
+
+#### Methods:
+
+#### constructor(container)
+
+Parameters
+
+| Name    | Required | Type   | Description                                    |
+| ------- | -------- | ------ | ---------------------------------------------- |
+| control | Yes      | Object | `Control` with type `Button` from the manifest |
+
+#### createView(options)
+
+Creates a view of the control
+
+Parameters
+
+| Name             | Required | Type        | Description                                      |
+| ---------------- | -------- | ----------- | ------------------------------------------------ |
+| options.parent   | Yes      | HTMLElement | Parent element where the control will be created |
+| options.layoutFn | Yes      | Function    | Function to apply control layout                 |
+
+#### setEvents(element, callback)
+
+Adds event listeners for controls
+
+Parameters
+
+| Name     | Required | Type        | Description                               |
+| -------- | -------- | ----------- | ----------------------------------------- |
+| element  | Yes      | HTMLElement | Element that will listen for events       |
+| callback | No       | Function    | The function to be called after the event |
+
+#### getElements()
+
+Returns the HTMLElement of the control
+
+### RelativeLayout()
+
+#### Properties:
+
+| Name   | Type   | Description                                                  |
+| ------ | ------ | ------------------------------------------------------------ |
+| layout | Object | The `Layout` property with type `Relative` from the manifest |
+
+#### Methods:
+
+#### constructor(layout)
+
+Parameters
+
+| Name   | Required | Type   | Description                                                  |
+| ------ | -------- | ------ | ------------------------------------------------------------ |
+| layout | Yes      | Object | The `Layout` property with type `Relative` from the manifest |
+
+#### setContainerLayout(target)
+
+Applies styles to the container HTMLElement
+
+Parameters
+
+| Name   | Required | Type        | Description                               |
+| ------ | -------- | ----------- | ----------------------------------------- |
+| target | Yes      | HTMLElement | The HTMLElement to apply layout styles to |
+
+#### setControlLayout(target, layoutParams)
+
+Applies styles to the control HTMLElement
+
+Parameters
+
+| Name         | Required | Type        | Description                                                         |
+| ------------ | -------- | ----------- | ------------------------------------------------------------------- |
+| target       | Yes      | HTMLElement | The HTMLElement to apply layout styles to                           |
+| layoutParams | Yes      | Object      | The `layoutParams` property of a specific control from the manifest |
+
+### createAreaControl(target, layoutParams)
+
+Returns a AreaControl object
+
+Parameters
+
+| Name    | Required | Type   | Description                                   |
+| ------- | -------- | ------ | --------------------------------------------- |
+| control | Yes      | String | `Control` with type `Area` from the manifest. |
+
+### createButtonControl(control)
+
+Returns a ButtonControl object
+
+Parameters
+
+| Name    | Required | Type   | Description                                    |
+| ------- | -------- | ------ | ---------------------------------------------- |
+| control | Yes      | String | `Control` with type `Button` from the manifest |
+
+### createChoiceContainer(container)
+
+Returns a ChoiceContainer object
+
+Parameters
+
+| Name      | Required | Type   | Description                                      |
+| --------- | -------- | ------ | ------------------------------------------------ |
+| container | Yes      | String | `Container` with type `Choice` from the manifest |
+
+### createRelativeLayout(layout)
+
+Returns a RelativeLayout object
+
+Parameters
+
+| Name   | Required | Type   | Description                                                |
+| ------ | -------- | ------ | ---------------------------------------------------------- |
+| layout | Yes      | String | The `layout` property of type `Relative` from the manifest |
+
+### getRootEl()
+
+Returns the parent HTMLElement where the containers should be placed

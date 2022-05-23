@@ -25,6 +25,7 @@ Version 3.3.0
 2. [Configurations](/sdk/web/configurations.md)
 3. [Events](/sdk/web/events.md)
 4. [Errors](/sdk/web/errors.md)
+5. [Custom Interactives](sdk/web/custom-interactives.md)
 
 ### Mobile SDK
 
