@@ -71,21 +71,22 @@ Returns the history of the interactive movie.
   ...
 ```
 
-#### attachManifest(manifest, initialChapter)
+#### attachManifest({manifest, initialChapter, continueHistory})
 
 Attaches the new manifest. The old manifest is detached automatically.
 
 Parameters:
 
-| Name           | Required | Type             | Description                                                |
-| -------------- | -------- | ---------------- | ---------------------------------------------------------- |
-| manifest       | Yes      | String \| Object | Interactive movie manifest URL or object                   |
-| initialChapter | No       | String           | Chapter ID indicating which chapter to start playback from |
+| Name            | Required | Type             | Default | Description                                                |
+| --------------- | -------- | ---------------- | ------- | ---------------------------------------------------------- |
+| manifest        | Yes      | String \| Object | -       | Interactive movie manifest URL or object                   |
+| initialChapter  | No       | String           | -       | Chapter ID indicating which chapter to start playback from |
+| continueHistory | No       | Boolean          | true    | Decides whether to continue the story or start a new one   |
 
 ```
   const mp = new Player(mediaElement, playerOptions)
   ...
-  mp.attachManifest(manifest, initialChapter)
+  mp.attachManifest({manifest: myManifest, initialChapter: "chapterId", continueHistory: false})
   ...
 ```
 
