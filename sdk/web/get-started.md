@@ -54,7 +54,7 @@ To gain access to download the SDK, you will need to obtain an access key. To ob
 
     const mp = new movika.Player(videoRef.current, playerOptions)
     const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, controlsOverlayOptions)
-    const mi = new movika.Interactives(mp)
+    const mi = new movika.Interactives(mp, mco)
 
     return () => {
 			mp.destroy()

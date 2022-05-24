@@ -30,7 +30,7 @@ To listen to player events, you just need to add the necessary listeners. All cu
 
     const mp = new movika.Player(videoRef.current, playerOptions)
     const mco = new movika.ControlsOverlay(mp, videoContainerRef.current, controlsOverlayOptions)
-    const mi = new movika.Interactives(mp)
+    const mi = new movika.Interactives(mp, mco)
 
     // Подписка на событие окончания видео
     videoRef.current.addEventListener(movika.Events.END_VIDEO, () => {

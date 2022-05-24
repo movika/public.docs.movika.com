@@ -19,12 +19,13 @@ sort: 0
 
 #### Интеграция с помощью npm:
 
-Версия 3.2.4
+Версия 3.3.0
 
 1. [Начало работы](/sdk/web/get-started-ru.md)
 2. [Конфигурация](/sdk/web/configurations-ru.md)
 3. [События](/sdk/web/events-ru.md)
 4. [Ошибки](/sdk/web/errors-ru.md)
+5. [Пользовательские интерактивы](sdk/web/custom-interactives-ru.md)
 
 ### Mobile SDK
 
